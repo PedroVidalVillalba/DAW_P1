@@ -7,29 +7,36 @@ Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo d
 - [Booking](https://booking.com)
 - [Tripadvisor](https://tripadvisor.es)
 - [Skyscanner](https://skyscanner.es)
+- [Google Calendar](https://calendar.google.com/calendar/u/0/r)
 
-Tormenta de ideas
-- Reserva de hoteles
-- Reserva de aviones
-- Reserva de otros medios de transporte. En general, cómo ir al lugar desde donde estés tú
-- Lugares de interés para visitar, con su foto, web, ubicación 
-- Lugares de ocio, restauración, y otro tipo de tiendas conocidas en la zona
+## Tormenta de ideas
+- Reserva de hoteles.
+- Reserva de aviones.
+- Reserva de otros medios de transporte. En general, cómo ir al lugar desde donde estés tú.
+- Lugares de interés para visitar, con su foto, web, ubicación, etc. 
+- Lugares de ocio, restauración, y otro tipo de tiendas conocidas en la zona.
 - Calendario con planificación del viaje, desde el que acceder a la información sobre el medio de transporte elegido, alojamiento, etc. y que permita organizar los lugares de visita de cada día.
 - Lista de lugares y tiendas favoritos, junto a un mapa integrado en donde aparezcan destacados.
-- ???
-**Audiencia**: público genérico, ya que cada vez más personas viajan de forma relativamente habitual, y resulta de gran utilidad una página web desde la que poder gestionar todo el viaje.
-**Elementos visuales**: fotillos, mapas, lo típico. Logo generado con IA que sea característico de la empresa.
-**Financiación**: principalmente a través de anuncios en la página. También se podría incluir un sistema de suscripción o mecenazgo con descuentos dentro de la página web, para clientes habituales. ¿¿Encargo de viajes personalizados con una planificación pagando??
+- Experiencias exclusivas, con planificaciones de viajes realizadas previamente por expertos.
+
+**Otros elementos**
+- **Audiencia**: público genérico, ya que cada vez más personas viajan de forma relativamente habitual, y resulta de gran utilidad una página web desde la que poder gestionar todo el viaje.
+- **Elementos visuales**: principalmente imágenes y vídeos de cada lugar, mapas. Logo generado con IA que sea característico de la empresa.
+- **Financiación**: se podrían obtener beneficios a través de anuncios en la página. También se podría incluir un sistema de suscripción o mecenazgo con descuentos dentro de la página web, para clientes habituales.
+
 
 ## Inventario de contenido
 - Presentación de la página
 - Destinos de moda/recomendados
-- Inspiración (lugares aleatorios, menos conocidos)
-- About us: quiénes somos, nuestra historia, qué nos diferencia, 
+- Exploración (lugares menos conocidos, o aleatorios)
+- About us: quiénes somos, nuestra historia, qué nos diferencia 
 - Búsqueda de hoteles
-- Búsqueda de medios de transporte
+- Búsqueda de medios de transporte (avión, tren, autobús, etc.)
 - Lugares de visita, ocio, restauración, etc.
 - Alquiler de coches
+- Experiencias exclusivas
+- Calendario para la planificación del viaje
+- Mapa de lugares favoritos
 - Newsletter con novedades
 - FAQ
 - Mecanismos de reserva con seguridad
@@ -37,24 +44,38 @@ Tormenta de ideas
 - Consejos generales para viajes al extranjero
 - Nuestro sistema de puntuación
 - Experiencias exclusivas
-- Opiniones de expertos / certificados de calidad / premios
+- Opiniones de expertos 
+- Certificados de calidad, premios
 - Redes sociales
-- Términos de uso / política de cookies / política de privacidad
+- Términos de uso, política de cookies, política de privacidad
 
 ## Arquitectura de información
-- Página principal: Presentación, fotos que llamen la atención
-- Destinos: destinos de moda/recomendados, inspiración, lugares de visita, ocio, restauración, ofertas. Experiencias exclusivas.
-- Planifica un viaje: escoge un destino y unas fechas y descubre y reserva hoteles, aviones, otros medios de transporte, alquiler de coches, entradas a atracciones turísticas, restaurantes, etc.
-- About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, mecanismos de reserva con seguridad, seguro de viajes, consejos generales para viajes al extranjero, redes sociales.
-- Calidad: nuestro sistema de puntuación, opiniones de expertos, certificados de calidad, premios
-- Términos de uso / política de cookies / política de privacidad
+- Página principal: Presentación de la página que llame la atención, newsletter, opiniones de expertos.
+- Reservas: Búsqueda de hoteles, búsqueda de aviones y otros medios de transporte, alquiler de coches, reserva de restaurantes, experiencias exclusivas.
+- Destinos: búsqueda de lugares visita, ocio, restauración etc., destinos de moda/recomendados, exploración, mapa de lugares favoritos.
+- Calendario de planificación: calendario, consejos generales para viajes al extranjero, seguro de viajes, mecanismos de reserva con seguridad.
+- About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios
+- Términos de uso, política de cookies, política de privacidad
 
 ## Mapa de navegación
-Prácticamente igual que la AI
-- Página principal con navegación global: Destinos, Reservas, About us, Calidad, Términos de uso / política de cookies / política de privacidad
+- Página principal: Presentación de la página que llame la atención, newsletter, opiniones de expertos.
+- Reservas: Búsqueda de hoteles, búsqueda de aviones y otros medios de transporte, alquiler de coches, reserva de restaurantes, experiencias exclusivas.
+- Destinos: búsqueda de lugares visita, ocio, restauración etc., destinos de moda/recomendados, exploración, mapa de lugares favoritos.
+- Calendario de planificación: calendario, consejos generales para viajes al extranjero, seguro de viajes, mecanismos de reserva con seguridad.
+- About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios
+- Términos de uso, política de cookies, política de privacidad
 
 ## Prototipo manual
 
+![[1_Principal.jpg]]
+
+![[2_Reservas.jpg]]
+
+![[3_Destinos.jpg]]
+
+![[4_Planificación.jpg]]
+
+![[5_AboutUs.jpg]]
 ## Esqueleto digital
 
 ## Diseño final
