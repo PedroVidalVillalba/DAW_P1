@@ -159,7 +159,7 @@ Se incluye un filtro principal por destino, número de viajeros y fechas de ida 
 
 ![About us](images/5-about_us.jpg)
 
-La página de **About us** es principalmente de texto con información sobre la empresa ficticia. Hay información de contacto, la historia de la empresa, reconocientos y premios, calidad y preguntas frecuentes (FAQ).
+La página de **About us** es principalmente de texto con información sobre la empresa ficticia. Hay información de contacto, la historia de la empresa, reconocimientos y premios, calidad y preguntas frecuentes (FAQ).
 
 ## Esqueleto digital
 El esqueleto digital (*wireframe*) de cada página esbozada en la anterior sección nos da una primera idea de cómo se distribuyen los elementos dentro de la página.
@@ -181,10 +181,9 @@ Cabe destacar que para crear un diagrama con un tamaño razonable, todos los dia
 
 ## Diseño final
 El uso de *mockups* permite ver la apariencia final de la página, incluyendo colores, fuentes de texto, logos e imágenes que acompañan al diseño y que hasta este momento se habían obviado.
-En cuanto la paleta de colores, se optó por usar una paleta ya creada y disponible de forma abierta: [catppuccin latte](https://github.com/catppuccin/catppuccin?tab=readme-ov-file#-palette).
-Como tipografía elegida, se eligió Fira Sans.
+En cuanto la paleta de colores, se optó por usar una paleta ya creada y disponible de forma abierta: [Catppuccin Latte](https://github.com/catppuccin/catppuccin?tab=readme-ov-file#-palette).
 
-
+Como tipografía elegida utilizaremos Helvetica. Debido a que no está disponible en la herramienta utilizada para el diseño final, se ha usado una letra similar, Fira Sans.
 ## Storyboard
 El *storyboard* permite visualizar de forma dinámica el sitio web. Esto permite ilustrar cómo interaccionan elementos y colores, cómo funciona el sistema de navegación propuesto y, en general, tener una idea de si el sitio web representa aquello para lo que fue diseñado.
 
