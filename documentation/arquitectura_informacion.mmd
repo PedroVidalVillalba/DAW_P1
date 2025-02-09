@@ -1,0 +1,47 @@
+---
+title: Arquitectura de información
+---
+graph LR
+    main["Página Principal"] 
+    descubre["Descubre"] 
+    planifica["Planifica"] 
+    reserva["Reserva"] 
+    about-us["About Us"] 
+    legales["Legales"] 
+
+    main -->|Explora| descubre
+    main -->|Organiza| planifica
+    main -->|Reserva| reserva
+    main -->|Sobre nosotros| about-us
+    main -->|Legales| legales
+
+    %% Secciones de Descubre
+    descubre -->|Búsqueda de lugares| descubre-lugares["Lugares"]
+    descubre -->|Destinos recomendados| descubre-destinos["Destinos de moda"]
+    descubre -->|Exploración| descubre-exploracion["Explora el mapa"]
+
+    %% Secciones de Planifica
+    planifica -->|Calendario de viajes| planifica-calendario["Calendario"]
+    planifica -->|Consejos para viajar| planifica-consejos["Consejos"]
+    planifica -->|Seguro de viaje| planifica-seguro["Seguro"]
+    planifica -->|Reservas seguras| planifica-reservas["Seguridad en reservas"]
+
+    %% Secciones de Reserva
+    reserva -->|Hoteles| reserva-hoteles["Hoteles"]
+    reserva -->|Vuelos y transporte| reserva-vuelos["Vuelos y Transporte"]
+    reserva -->|Alquiler de coches| reserva-coches["Alquiler de coches"]
+    reserva -->|Restaurantes| reserva-restaurantes["Restaurantes"]
+    reserva -->|Experiencias exclusivas| reserva-experiencias["Experiencias"]
+
+    %% Secciones de About Us
+    about-us -->|Quiénes somos| about-quienes["Nuestra historia"]
+    about-us -->|Sistema de puntuación| about-puntuacion["Sistema de puntuación"]
+    about-us -->|Redes sociales| about-redes["Redes Sociales"]
+    about-us -->|Certificaciones y premios| about-premios["Certificados y premios"]
+    about-us -->|FAQ| about-faq["FAQ"]
+
+    %% Secciones de Legales
+    legales -->|Términos de uso| legales-terminos["Términos de Uso"]
+    legales -->|Política de cookies| legales-cookies["Política de Cookies"]
+    legales -->|Política de privacidad| legales-privacidad["Política de Privacidad"]
+

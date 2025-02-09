@@ -6,7 +6,7 @@ author:
 date: 2025-02-09
 ---
 # *El problema del viajante*
-![Logo](images/logo.webp)
+![Logo](images/logo.png)
 
 Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo de servicios relacionados con la planificación y la gestión de viajes, incluyendo transporte, alojamiento, lugares de interés para visitar, ocio, restauración, etc.
 
@@ -61,6 +61,7 @@ Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo d
 Una vez disponemos del inventario de contenido, podemos organizar estos elementos jerárquicamente en una arquitectura de la información, que nos dará una primera aproximación al número de páquinas que necesitamos crear y al esquema de navegación que permite relacionarlas. 
 
 Llegamos así, a alto nivel, a la siguiente estructura:
+
 - Página principal: Presentación de la página que llame la atención, newsletter, valoraciones, opiniones de expertos.
 - Descubre: búsqueda de lugares visita, ocio, restauración etc., destinos de moda/recomendados, exploración, mapa de lugares favoritos.
 - Planifica: calendario, consejos generales para viajes al extranjero, seguro de viajes, mecanismos de reserva con seguridad.
@@ -68,55 +69,7 @@ Llegamos así, a alto nivel, a la siguiente estructura:
 - About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios
 - Términos de uso, política de cookies, política de privacidad
 
-
-```mermaid
----
-title: Arquitectura de información
----
-graph LR
-    main["Página Principal"] 
-    descubre["Descubre"] 
-    planifica["Planifica"] 
-    reserva["Reserva"] 
-    about-us["About Us"] 
-    legales["Legales"] 
-
-    main -->|Explora| descubre
-    main -->|Organiza| planifica
-    main -->|Reserva| reserva
-    main -->|Sobre nosotros| about-us
-    main -->|Legales| legales
-
-    %% Secciones de Descubre
-    descubre -->|Búsqueda de lugares| descubre-lugares["Lugares"]
-    descubre -->|Destinos recomendados| descubre-destinos["Destinos de moda"]
-    descubre -->|Exploración| descubre-exploracion["Explora el mapa"]
-
-    %% Secciones de Planifica
-    planifica -->|Calendario de viajes| planifica-calendario["Calendario"]
-    planifica -->|Consejos para viajar| planifica-consejos["Consejos"]
-    planifica -->|Seguro de viaje| planifica-seguro["Seguro"]
-    planifica -->|Reservas seguras| planifica-reservas["Seguridad en reservas"]
-
-    %% Secciones de Reserva
-    reserva -->|Hoteles| reserva-hoteles["Hoteles"]
-    reserva -->|Vuelos y transporte| reserva-vuelos["Vuelos y Transporte"]
-    reserva -->|Alquiler de coches| reserva-coches["Alquiler de coches"]
-    reserva -->|Restaurantes| reserva-restaurantes["Restaurantes"]
-    reserva -->|Experiencias exclusivas| reserva-experiencias["Experiencias"]
-
-    %% Secciones de About Us
-    about-us -->|Quiénes somos| about-quienes["Nuestra historia"]
-    about-us -->|Sistema de puntuación| about-puntuacion["Sistema de puntuación"]
-    about-us -->|Redes sociales| about-redes["Redes Sociales"]
-    about-us -->|Certificaciones y premios| about-premios["Certificados y premios"]
-    about-us -->|FAQ| about-faq["FAQ"]
-
-    %% Secciones de Legales
-    legales -->|Términos de uso| legales-terminos["Términos de Uso"]
-    legales -->|Política de cookies| legales-cookies["Política de Cookies"]
-    legales -->|Política de privacidad| legales-privacidad["Política de Privacidad"]
-```
+![Arquitectura de información](images/arquitectura_informacion.png)
 
 ## Mapa de navegación
 - Página principal: Presentación de la página que llame la atención, newsletter, opiniones de expertos.
@@ -124,7 +77,7 @@ graph LR
 - Destinos: búsqueda de lugares visita, ocio, restauración etc., destinos de moda/recomendados, exploración, mapa de lugares favoritos.
 - Calendario de planificación: calendario, consejos generales para viajes al extranjero, seguro de viajes, mecanismos de reserva con seguridad.
 - About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios
-- Términos de uso, política de cookies, política de privacidad
+- Términos de uso, política de cookies, política de privacidad.
 
 ## Prototipo manual
 A continuación se muestran los bocetos de las interfaces realizadas a mano. Dado el carácter académico de este documento, se considera relevante incluirlas, a pesar de que en un entorno profesional su uso sería poco común. Se han realizado los prototipos para cinvo ventanas de interés, que se comentan a continuación.
@@ -172,8 +125,4 @@ Por otra parte, tenemos un directorio con la documentación en el que se incluye
 
 Para los contenidos en sí de la página web, disponemos de cuatro subdirectorios. Uno está destinado a almacenar todas las imágenes que serán necesarias para la elaboración del sitio web. Por otra parte, disponemos de una carpeta en la que se almacenarán los documentos HTML que darán estructura a las diferentes páginas. En el directorio de estilos se almacenarán los ficheros de CSS necesarios para dotar al sitio web de una apariencia profesional y consistente. Por último en el directorio de scripts se incluirán los ficheros de JavaScript que doten al sitio web de funcionalidades dinámicas. 
 
-```mermaid
-graph LR
-project --> documentation & images & index[/index.html/] & html & scripts & styles
-documentation --> doc-images[images]
-```
+![Estructura de ficheros](images/estructura_ficheros.png)
