@@ -155,13 +155,12 @@ Se incluye un filtro principal por destino, número de viajeros y fechas de ida 
 
 ![About us](images/5-about_us.jpg)
 
-La página de **About us** es principalmente de texto con información sobre la empresa ficticia. Hay información de contacto, la historia de la empresa, reconocientos y premios, calidad y preguntas frecuentes (FAQ).
+La página de **About us** es principalmente de texto con información sobre la empresa ficticia. Hay información de contacto, la historia de la empresa, reconocimientos y premios, calidad y preguntas frecuentes (FAQ).
 
 ## Esqueleto digital
 
 ## Diseño final
-Paleta de colores: Catppuccin.
-Fuente: Helvetica.
+La paleta de colores elegida ha sido [Catppuccin Latte](https://github.com/catppuccin/catppuccin/tree/main), mientras que la fuente que utilizaremos será Helvetica. Debido a que no está disponible en la herramienta utilizada para el diseño final, se ha usado una letra similar, Fira Sans.
  
 ## Storyboard
 
