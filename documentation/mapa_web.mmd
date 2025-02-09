@@ -1,0 +1,90 @@
+---
+title: Mapa Web
+---
+graph LR
+    %% Pagina Principal
+    main["Pagina Principal"]
+
+    %% Subgrafico para "Descubre"
+    subgraph Descubre
+        descubre["Descubre"]
+        descubre-lugares["Busqueda de lugares"]
+        descubre-destinos["Destinos recomendados"]
+        descubre-exploracion["Exploracion"]
+    end
+
+    %% Subgrafico para "Planifica"
+    subgraph Planifica
+        planifica["Planifica"]
+        planifica-calendario["Calendario de viajes"]
+        planifica-consejos["Consejos para viajar"]
+        planifica-seguro["Seguro de viaje"]
+        planifica-reservas["Reservas seguras"]
+    end
+
+    %% Subgrafico para "Reserva"
+    subgraph Reserva
+        reserva["Reserva"]
+        reserva-hoteles["Hoteles"]
+        reserva-vuelos["Vuelos y transporte"]
+        reserva-coches["Alquiler de coches"]
+        reserva-restaurantes["Restaurantes"]
+        reserva-experiencias["Experiencias exclusivas"]
+    end
+
+    %% Subgrafico para "About Us"
+    subgraph AboutUs[About Us]
+        about-us["About Us"]
+        about-quienes["Quienes somos"]
+        about-puntuacion["Sistema de puntuacion"]
+        about-redes["Redes sociales"]
+        about-premios["Certificaciones y premios"]
+        about-faq["FAQ"]
+    end
+
+    %% Subgrafico para "Legales"
+    subgraph Legales
+        legales["Legales"]
+        legales-terminos["Terminos de uso"]
+        legales-cookies["Politica de cookies"]
+        legales-privacidad["Politica de privacidad"]
+    end
+
+    %% Conexiones desde la pagina principal hacia cada seccion
+    main --> descubre
+    main --> planifica
+    main --> reserva
+    main --> about-us
+    main --> legales
+
+    %% Conexiones internas de cada seccion
+    %% Descubre
+    descubre --> descubre-lugares
+    descubre --> descubre-destinos
+    descubre --> descubre-exploracion
+
+    %% Planifica
+    planifica --> planifica-calendario
+    planifica --> planifica-consejos
+    planifica --> planifica-seguro
+    planifica --> planifica-reservas
+
+    %% Reserva
+    reserva --> reserva-hoteles
+    reserva --> reserva-vuelos
+    reserva --> reserva-coches
+    reserva --> reserva-restaurantes
+    reserva --> reserva-experiencias
+
+    %% About Us
+    about-us --> about-quienes
+    about-us --> about-puntuacion
+    about-us --> about-redes
+    about-us --> about-premios
+    about-us --> about-faq
+
+    %% Legales
+    legales --> legales-terminos
+    legales --> legales-cookies
+    legales --> legales-privacidad
+

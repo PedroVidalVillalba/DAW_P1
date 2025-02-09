@@ -73,62 +73,102 @@ Llegamos así, a alto nivel, a la siguiente estructura:
 - Términos de uso, política de cookies, política de privacidad.
 
 
+## Mapa de navegación
+El mapa de navegación, o mapa web, plasma las relaciones jerárquicas recogidas por la arquitectura de la información y las organiza en páginas concretas que serán posteriormente implementables.
+
 ```mermaid
 ---
-title: Arquitectura de información
+title: Mapa Web
 ---
 graph LR
-    main["Página Principal"] 
-    descubre["Descubre"] 
-    planifica["Planifica"] 
-    reserva["Reserva"] 
-    about-us["About Us"] 
-    legales["Legales"] 
+    %% Página Principal
+    main["Página Principal"]
 
-    main -->|Explora| descubre
-    main -->|Organiza| planifica
-    main -->|Reserva| reserva
-    main -->|Sobre nosotros| about-us
-    main -->|Legales| legales
+    %% Subgráfico para "Descubre"
+    subgraph Descubre
+        descubre["Descubre"]
+        descubre-lugares["Búsqueda de lugares"]
+        descubre-destinos["Destinos recomendados"]
+        descubre-exploracion["Exploración"]
+    end
 
-    %% Secciones de Descubre
-    descubre -->|Búsqueda de lugares| descubre-lugares["Lugares"]
-    descubre -->|Destinos recomendados| descubre-destinos["Destinos de moda"]
-    descubre -->|Exploración| descubre-exploracion["Explora el mapa"]
+    %% Subgráfico para "Planifica"
+    subgraph Planifica
+        planifica["Planifica"]
+        planifica-calendario["Calendario de viajes"]
+        planifica-consejos["Consejos para viajar"]
+        planifica-seguro["Seguro de viaje"]
+        planifica-reservas["Reservas seguras"]
+    end
 
-    %% Secciones de Planifica
-    planifica -->|Calendario de viajes| planifica-calendario["Calendario"]
-    planifica -->|Consejos para viajar| planifica-consejos["Consejos"]
-    planifica -->|Seguro de viaje| planifica-seguro["Seguro"]
-    planifica -->|Reservas seguras| planifica-reservas["Seguridad en reservas"]
+    %% Subgráfico para "Reserva"
+    subgraph Reserva
+        reserva["Reserva"]
+        reserva-hoteles["Hoteles"]
+        reserva-vuelos["Vuelos y transporte"]
+        reserva-coches["Alquiler de coches"]
+        reserva-restaurantes["Restaurantes"]
+        reserva-experiencias["Experiencias exclusivas"]
+    end
 
-    %% Secciones de Reserva
-    reserva -->|Hoteles| reserva-hoteles["Hoteles"]
-    reserva -->|Vuelos y transporte| reserva-vuelos["Vuelos y Transporte"]
-    reserva -->|Alquiler de coches| reserva-coches["Alquiler de coches"]
-    reserva -->|Restaurantes| reserva-restaurantes["Restaurantes"]
-    reserva -->|Experiencias exclusivas| reserva-experiencias["Experiencias"]
+    %% Subgráfico para "About Us"
+    subgraph AboutUs[About Us]
+        about-us["About Us"]
+        about-quienes["Quiénes somos"]
+        about-puntuacion["Sistema de puntuación"]
+        about-redes["Redes sociales"]
+        about-premios["Certificaciones y premios"]
+        about-faq["FAQ"]
+    end
 
-    %% Secciones de About Us
-    about-us -->|Quiénes somos| about-quienes["Nuestra historia"]
-    about-us -->|Sistema de puntuación| about-puntuacion["Sistema de puntuación"]
-    about-us -->|Redes sociales| about-redes["Redes Sociales"]
-    about-us -->|Certificaciones y premios| about-premios["Certificados y premios"]
-    about-us -->|FAQ| about-faq["FAQ"]
+    %% Subgráfico para "Legales"
+    subgraph Legales
+        legales["Legales"]
+        legales-terminos["Términos de uso"]
+        legales-cookies["Política de cookies"]
+        legales-privacidad["Política de privacidad"]
+    end
 
-    %% Secciones de Legales
-    legales -->|Términos de uso| legales-terminos["Términos de Uso"]
-    legales -->|Política de cookies| legales-cookies["Política de Cookies"]
-    legales -->|Política de privacidad| legales-privacidad["Política de Privacidad"]
+    %% Conexiones desde la página principal hacia cada sección
+    main --> descubre
+    main --> planifica
+    main --> reserva
+    main --> about-us
+    main --> legales
+
+    %% Conexiones internas de cada sección
+    %% Descubre
+    descubre --> descubre-lugares
+    descubre --> descubre-destinos
+    descubre --> descubre-exploracion
+
+    %% Planifica
+    planifica --> planifica-calendario
+    planifica --> planifica-consejos
+    planifica --> planifica-seguro
+    planifica --> planifica-reservas
+
+    %% Reserva
+    reserva --> reserva-hoteles
+    reserva --> reserva-vuelos
+    reserva --> reserva-coches
+    reserva --> reserva-restaurantes
+    reserva --> reserva-experiencias
+
+    %% About Us
+    about-us --> about-quienes
+    about-us --> about-puntuacion
+    about-us --> about-redes
+    about-us --> about-premios
+    about-us --> about-faq
+
+    %% Legales
+    legales --> legales-terminos
+    legales --> legales-cookies
+    legales --> legales-privacidad
+
 ```
 
-## Mapa de navegación
-- Página principal: Presentación de la página que llame la atención, newsletter, opiniones de expertos.
-- Reservas: Búsqueda de hoteles, búsqueda de aviones y otros medios de transporte, alquiler de coches, reserva de restaurantes, experiencias exclusivas.
-- Destinos: búsqueda de lugares visita, ocio, restauración etc., destinos de moda/recomendados, exploración, mapa de lugares favoritos.
-- Calendario de planificación: calendario, consejos generales para viajes al extranjero, seguro de viajes, mecanismos de reserva con seguridad.
-- About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios
-- Términos de uso, política de cookies, política de privacidad
 
 ## Prototipo manual
 A continuación se muestran los bocetos de las interfaces realizadas a mano. Dado el carácter académico de este documento, se considera relevante incluirlas, a pesar de que en un entorno profesional su uso sería poco común. Se han realizado los prototipos para cinvo ventanas de interés, que se comentan a continuación.
@@ -184,6 +224,17 @@ El uso de *mockups* permite ver la apariencia final de la página, incluyendo co
 En cuanto la paleta de colores, se optó por usar una paleta ya creada y disponible de forma abierta: [Catppuccin Latte](https://github.com/catppuccin/catppuccin?tab=readme-ov-file#-palette).
 
 Como tipografía elegida utilizaremos Helvetica. Debido a que no está disponible en la herramienta utilizada para el diseño final, se ha usado una letra similar, Fira Sans.
+
+![Mockup de la página principal](images/mockup-principal.png)
+
+![Mockup de Descubre](images/mockup-descubre.png)
+
+![Mockup de Planifica](images/mockup-planifica.png)
+
+![Mockup de Reserva](images/mockup-reserva.png)
+
+![Mockup de About Us](images/mockup-about_us.png)
+
 ## Storyboard
 El *storyboard* permite visualizar de forma dinámica el sitio web. Esto permite ilustrar cómo interaccionan elementos y colores, cómo funciona el sistema de navegación propuesto y, en general, tener una idea de si el sitio web representa aquello para lo que fue diseñado.
 
