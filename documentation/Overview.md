@@ -10,6 +10,8 @@ date: 2025-02-09
 
 Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo de servicios relacionados con la planificación y la gestión de viajes, incluyendo transporte, alojamiento, lugares de interés para visitar, ocio, restauración, etc.
 
+El proyecto puede encontrarse en [https://github.com/PedroVidalVillalba/DAW_P1](https://github.com/PedroVidalVillalba/DAW_P1), donde se encuentra también la última versión estable de este mismo documento.
+
 ## Sitios en los que nos hemos inspirado
 - [Experience travel group](https://experiencetravelgroup.com)
 - [Booking](https://booking.com)
@@ -237,6 +239,12 @@ Como tipografía elegida utilizaremos Helvetica. Debido a que no está disponibl
 
 ## Storyboard
 El *storyboard* permite visualizar de forma dinámica el sitio web. Esto permite ilustrar cómo interaccionan elementos y colores, cómo funciona el sistema de navegación propuesto y, en general, tener una idea de si el sitio web representa aquello para lo que fue diseñado.
+
+![Storyboard 1: Descubrir destinos](images/storyboard-descubrir.png)
+
+![Storyboard 2: Planificar viaje](images/storyboard-planificar.png)
+
+![Storyboard 3: Reservar servicios](images/storyboard-reservar.png)
 
 ## Estructura de ficheros
 Para la organización de los ficheros del proyecto, optamos por una estructura simple en directorios en la que el documento principal, 'index.html', está por sí solo en el nivel raíz, pues es lo que espera el servidor web. 
