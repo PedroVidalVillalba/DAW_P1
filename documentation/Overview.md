@@ -6,7 +6,7 @@ author:
 date: 2025-02-09
 ---
 # *El problema del viajante*
-![Logo](images/logo.webp)
+![Logo](images/logo.png)
 
 Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo de servicios relacionados con la planificación y la gestión de viajes, incluyendo transporte, alojamiento, lugares de interés para visitar, ocio, restauración, etc.
 
@@ -28,12 +28,15 @@ Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo d
 - Experiencias exclusivas, con planificaciones de viajes realizadas previamente por expertos.
 
 **Otros elementos**:
+
 - **Audiencia**: público genérico, ya que cada vez más personas viajan de forma relativamente habitual, y resulta de gran utilidad una página web desde la que poder gestionar todo el viaje.
 - **Elementos visuales**: principalmente imágenes y vídeos de cada lugar, mapas. Logo generado con IA que sea característico de la empresa.
 - **Financiación**: se podrían obtener beneficios a través de anuncios en la página. También se podría incluir un sistema de suscripción o mecenazgo con descuentos dentro de la página web, para clientes habituales.
 
 
 ## Inventario de contenido
+A continuación se recoge en la siguiente lista el inventario de contenido del sitio web diseñado. Este contiene el conjunto de elementos relativos al sitio web y orientados hacia la audiencia a la que va dirigida la página, es decir, son elementos con los que el usuario de la web podrá interactuar. 
+
 - Presentación de la página
 - Destinos de moda/recomendados
 - Exploración (lugares menos conocidos, o aleatorios)
@@ -61,12 +64,13 @@ Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo d
 Una vez disponemos del inventario de contenido, podemos organizar estos elementos jerárquicamente en una arquitectura de la información, que nos dará una primera aproximación al número de páquinas que necesitamos crear y al esquema de navegación que permite relacionarlas. 
 
 Llegamos así, a alto nivel, a la siguiente estructura:
+
 - Página principal: Presentación de la página que llame la atención, newsletter, valoraciones, opiniones de expertos.
 - Descubre: búsqueda de lugares visita, ocio, restauración etc., destinos de moda/recomendados, exploración, mapa de lugares favoritos.
 - Planifica: calendario, consejos generales para viajes al extranjero, seguro de viajes, mecanismos de reserva con seguridad.
 - Reserva: Búsqueda de hoteles, búsqueda de aviones y otros medios de transporte, alquiler de coches, reserva de restaurantes, experiencias exclusivas.
-- About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios
-- Términos de uso, política de cookies, política de privacidad
+- About us: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios.
+- Términos de uso, política de cookies, política de privacidad.
 
 
 ```mermaid
@@ -158,12 +162,31 @@ Se incluye un filtro principal por destino, número de viajeros y fechas de ida 
 La página de **About us** es principalmente de texto con información sobre la empresa ficticia. Hay información de contacto, la historia de la empresa, reconocientos y premios, calidad y preguntas frecuentes (FAQ).
 
 ## Esqueleto digital
+El esqueleto digital (*wireframe*) de cada página esbozada en la anterior sección nos da una primera idea de cómo se distribuyen los elementos dentro de la página.
+
+Así, ayuda a establecer las proporciones entre los elementos de la página y a establecer la jerarquía de información del documento en términos de tamaño y posición.
+Para hacer el diseño, hemos utilizado el sitio web [Figma](https://figma.com) y nos hemos basado en la regla de las 12 columnas, en las que cada una de las páginas se divide verticalmente en 12 partes, el cual es un número suficientemente pequeño para ser fácilmente manejable (a diferencia de trabajar, por ejemplo, empleando píxeles) pero a la vez es lo suficientemente grande y tiene bastantes divisores como para permitir flexibilidad en el diseño. En los diseños que se muestran a continuación se marcan el número de columnas que ocupan los elementos destacados.
+
+Cabe destacar que para crear un diagrama con un tamaño razonable, todos los diagramas empleados se crearon en un tamaño equivalente a la resolución HD estándar (1920x1024 píxeles). Sin embargo, la expectativa de cualquier usuario de un sitio web es que las páginas admitan siempre desplazamiento en vertical para visualizar toda la información de la página. El desplazamiento en horizontal, si bien posible y utilizado, es menos habitual. Por este motivo, se representa el número de columnas pero no el de filas, y muchos de los elementos aparecen artificialmente distorsionados en la horizontal para poder entrar en el tamaño fijado, lo cual no se mantendrá en la página real.
+
+![Wireframe de la página principal](images/wireframe-principal.png)
+
+![Wireframe de Descubre](images/wireframe-descubre.png)
+
+![Wireframe de Planifica](images/wireframe-planifica.png)
+
+![Wireframe de Reserva](images/wireframe-reserva.png)
+
+![Wireframe de About Us](images/wireframe-about_us.png)
 
 ## Diseño final
-Paleta de colores: Catppuccin.
-Fuente: Helvetica.
- 
+El uso de *mockups* permite ver la apariencia final de la página, incluyendo colores, fuentes de texto, logos e imágenes que acompañan al diseño y que hasta este momento se habían obviado.
+En cuanto la paleta de colores, se optó por usar una paleta ya creada y disponible de forma abierta: [catppuccin latte](https://github.com/catppuccin/catppuccin?tab=readme-ov-file#-palette).
+Como tipografía elegida, se eligió Fira Sans.
+
+
 ## Storyboard
+El *storyboard* permite visualizar de forma dinámica el sitio web. Esto permite ilustrar cómo interaccionan elementos y colores, cómo funciona el sistema de navegación propuesto y, en general, tener una idea de si el sitio web representa aquello para lo que fue diseñado.
 
 ## Estructura de ficheros
 Para la organización de los ficheros del proyecto, optamos por una estructura simple en directorios en la que el documento principal, 'index.html', está por sí solo en el nivel raíz, pues es lo que espera el servidor web. 
