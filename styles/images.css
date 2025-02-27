@@ -1,0 +1,41 @@
+@import url("../styles/colors.css");
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centrar imágenes horizontalmente */
+    gap: 50px; /* Espacio entre imágenes */
+}
+
+.image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-box img {
+    width: 380px; /* Hay que ver bien el tamaño de la imagen. */
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-box figcaption {
+    margin-top: 8px;
+    padding: 10px 0 10px 0;
+    background-color: var(--rosewater);
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .image-container {
+        /* Disposición de imágenes en vertical para móvil */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}

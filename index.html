@@ -3,41 +3,59 @@
 
 <!-- https://www.w3schools.com/html/ -->
 <head>
-  <title> Página principal </title>
+  <title> El Problema del Viajante </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Keywords" content="Viajes, Hoteles, Casas, Aviones, Ir a, Experiencias">
+  <meta name="Description" content="Página de reserva de viajes y búsqueda de lugares para visitar">
+  <meta name="Authors" content="Yago Falgueras Casarejos, Pedro Vidal Villalba">
+
+  <link rel="stylesheet" href="./styles/nav.css">
+  <link rel="stylesheet" href="./styles/images.css">
+  <link rel="icon" type="image/png" href="./images/logo.png">
 </head>
 
 <body>
 <header>
   <nav>
+    <a href="./index.html" class="logo" title="Inicio">
+      <img src="./images/logo.png" width="100" height="100" alt="Logo">
+    </a>
+
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
     <ul>
-      <li> <figure>
-        <img src="/images/logo.png" width="128" height="128" alt="Logo">
-      </figure>
-        <a href="/index.html"> El Problema del Viajante </a></li>
-      <li> <a href="/html/descubre/descubre.html"> Descubre </a></li>
-      <li> <a href="/html/planifica/planifica.html"> Planifica </a></li>
-      <li> <a href="/html/reserva/reserva.html"> Reserva </a></li>
-      <li> <a href="/html/about_us/aboutUs.html"> About us </a></li>
-      <li> <figure>
-        <img src="/images/icon.png" width="80" height="80" alt="Login">
-      </figure>
-        <a href="/html/login/login.html"> About us </a></li>
+      <li> <a href="./html/descubre/descubre.html"> Descubre </a></li>
+      <li> <a href="./html/planifica/planifica.html"> Planifica </a></li>
+      <li> <a href="./html/reserva/reserva.html"> Reserva </a></li>
+      <li> <a href="./html/about_us/about_us.html"> About us </a></li>
     </ul>
+
+    <a href="./html/login/login.html" class="login">
+      <img src="./images/icon.png" width="80" height="80" alt="Login">
+    </a>
   </nav>
 </header>
 
 <main>
   <section id="Intro">
-    <figure>
-      <img src="/images/principal/Greece.jpg" width="446" height="325" alt="Imagen Grecia">
-      <figcaption> Grecia </figcaption>
-    </figure>
-    <figure>
-      <img src="/images/principal/Mexico.jpg" width="446" height="325" alt="Imagen México">
-      <figcaption> México </figcaption>
-    </figure>
+    <div class="image-container">
+      <div class="image-box">
+        <figure>
+          <img src="./images/principal/Greece.jpg" width="446" height="325" alt="Imagen Grecia">
+          <figcaption> Grecia </figcaption>
+        </figure>
+      </div>
+
+      <div class="image-box">
+        <figure>
+          <img src="./images/principal/Mexico.jpg" width="446" height="325" alt="Imagen México">
+          <figcaption> México </figcaption>
+        </figure>
+      </div>
+    </div>
+
   </section>
 
   <section id="Frase">
@@ -47,10 +65,10 @@
   <section id="Newsletter">
     <h3> Newsletter: ¡Ya disponibles nuevos destinos para el verano de 2025! </h3>
     <ul>
-      <li> <a href="/html/principal/newsletter/news.html"> Nuevos destinos verano 2025 </a></li>
-      <li> <a href="/html/principal/newsletter/news.html"> Guía de viajes por Europa </a></li>
-      <li> <a href="/html/principal/newsletter/news.html"> Guía de viajes por América </a></li>
-      <li> <a href="/html/principal/newsletter/news.html"> Guía de viajes por Asia </a></li>
+      <li> <a href="./html/principal/newsletter/news.html"> Nuevos destinos verano 2025 </a></li>
+      <li> <a href="./html/principal/newsletter/news.html"> Guía de viajes por Europa </a></li>
+      <li> <a href="./html/principal/newsletter/news.html"> Guía de viajes por América </a></li>
+      <li> <a href="./html/principal/newsletter/news.html"> Guía de viajes por Asia </a></li>
     </ul>
   </section>
 
