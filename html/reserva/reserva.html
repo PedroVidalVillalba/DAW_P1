@@ -1,96 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reserva</title>
-  </head>
 
-  <body>
-    <header>
-      <figure></figure>
+<head>
+  <title>Reserva</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../../styles/general.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="../../images/logo.png" alt="Logo" width="200" height="200" />
+      <ul>
+        <li>
+          <a href="../../index.html"> El problema del viajante </a>
+        </li>
+        <li><a href="../../html/descubre/descubre.html">Descubre</a></li>
+        <li><a href="../../html/planifica/planifica.html">Planifica</a></li>
+        <li><a href="../../html/reserva/reserva.html">Reserva</a></li>
+        <li><a href="../../html/about_us/about_us.html">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="barra_de_navegacion_secundaria">
+      <h2>Barra de navegación secundaria</h2>
+      <p>
+        Este párrafo y el header anterior habría que borrarlos cuando se metan
+        los estilos y ya quede claro qué es cada parte.
+      </p>
       <nav>
         <ul>
           <li>
-            <a href="/index.html">
-              <img src="/images/logo.png" alt="Logo" width="200" height="200" />
-              El problema del viajante
-            </a>
+            <a href="../../html/reserva/transporte.html">Transporte</a>
           </li>
-          <li><a href="/html/descubre/descubre.html">Descubre</a></li>
-          <li><a href="/html/planifica/planifica.html">Planifica</a></li>
-          <li><a href="/html/reserva/reserva.html">Reserva</a></li>
-          <li><a href="/html/about_us/about_us.html">About us</a></li>
+          <li>
+            <a href="../../html/reserva/alojamiento.html">Alojamiento</a>
+          </li>
+          <li>
+            <a href="../../html/descubre/alquiler_coches.html">Alquiler de coches</a>
+          </li>
+          <li>
+            <a href="../../html/descubre/experiencias_exclusivas.html">Experiencias exclusivas</a>
+          </li>
         </ul>
       </nav>
-    </header>
-    <main>
-      <section id="barra_de_navegacion_secundaria">
-        <h2>Barra de navegación secundaria</h2>
-        <p>
-          Este párrafo y el header anterior habría que borrarlos cuando se metan
-          los estilos y ya quede claro qué es cada parte.
-        </p>
-        <nav>
-          <ul>
-            <li>
-              <a href="/html/reserva/transporte.html">Transporte</a>
-            </li>
-            <li><a href="/html/reserva/alojamiento.html">Alojamiento</a></li>
-            <li><a href="/html/descubre/alquiler_coches.html">Alquiler de coches</a></li>
-            <li><a href="/html/descubre/experiencias_exclusivas.html">Experiencias exclusivas</a></li>
-          </ul>
-        </nav>
-      </section>
+    </section>
 
-      <section id="filtros_principales">
-        <form>
-          <input type="text" name="destino" value="Destino">
-          <input type="number" name="numero_viajeros" value="1"><br> <!-- Habría que mirar cómo hacer para colocar esto bien-->
-          <input type="date" name="fecha_ida">
-          <input type="date" name="fecha_vuelta">
-        </form>
-      </section>
+    <section id="filtros_principales">
+      <form>
+        <input type="text" name="destino" value="Destino" />
+        <input type="number" name="numero_viajeros" value="1" /><br />
+        <!-- Habría que mirar cómo hacer para colocar esto bien-->
+        <input type="date" name="fecha_ida" />
+        <input type="date" name="fecha_vuelta" />
+      </form>
+    </section>
 
-      <aside id="filtros_secundarios">
-        <h2>Filtros</h2>
-        <h4>Puntuación</h4>
-        <p><input type="range" min="0" max="5" name="puntuacion" value="2"></p>
-        <h4>Servicios</h4>
-        <ul>
-          <li><input type="checkbox">Filtro 1</li>
-          <li><input type="checkbox">Filtro 2</li>
-        </ul>
-      </aside>
+    <aside id="filtros_secundarios">
+      <h2>Filtros</h2>
+      <h4>Puntuación</h4>
+      <p>
+        <input type="range" min="0" max="5" name="puntuacion" value="2" />
+      </p>
+      <h4>Servicios</h4>
+      <ul>
+        <li><input type="checkbox" />Filtro 1</li>
+        <li><input type="checkbox" />Filtro 2</li>
+      </ul>
+    </aside>
 
-      <section id="servicios">
-        <h2>Servicios</h2>
+    <section id="servicios">
+      <h2>Servicios</h2>
 
-        <figure class="servicio">
-          <img src="" alt="Imagen de un servicio" width="300" height="250" />
-          <figcaption>
-            <p><b>Nombre:</b> Un nombre</p>
-            <p><b>Puntuación:</b> 3</p>
-            <p><b>Descripción:</b> Aquí iría la descripción del sitio</p>
-            <p><b>Rango de precio:</b> 100€</p>
-          </figcaption>
-        </figure>
+      <figure class="servicio">
+        <img src="../../images/principal/Greece.jpg" alt="Imagen de un servicio" width="300" height="250" />
+        <figcaption>
+          <p><b>Nombre:</b> Un nombre</p>
+          <p><b>Puntuación:</b> 3</p>
+          <p><b>Descripción:</b> Aquí iría la descripción del sitio</p>
+          <p><b>Rango de precio:</b> 100€</p>
+        </figcaption>
+      </figure>
 
-        <figure class="servicio">
-          <img src="" alt="Imagen de otro servicio" width="300" height="250" />
-          <figcaption>
-            <p><b>Nombre:</b> Otro nombre</p>
-            <p><b>Puntuación:</b> 4</p>
-            <p><b>Descripción:</b> Otra descripción</p>
-            <p><b>Precio:</b> 72€</p>
-          </figcaption>
-        </figure>
-      </section>
-    </main>
+      <figure class="servicio">
+        <img src="../../images/principal/Mexico.jpg" alt="Imagen de otro servicio" width="300" height="250" />
+        <figcaption>
+          <p><b>Nombre:</b> Otro nombre</p>
+          <p><b>Puntuación:</b> 4</p>
+          <p><b>Descripción:</b> Otra descripción</p>
+          <p><b>Precio:</b> 72€</p>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
 
-    <footer>
-      <p>Esto es el footer</p>
-    </footer>
-  </body>
+  <footer>
+    <p>Esto es el footer</p>
+  </footer>
+</body>
+
 </html>
-
