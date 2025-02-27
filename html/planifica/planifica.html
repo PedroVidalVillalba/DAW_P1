@@ -2,56 +2,96 @@
 <html lang="es">
 
 <head>
-  <title> Planifica </title>
+  <title> El Problema del Viajante </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Keywords" content="Viajes, Hoteles, Casas, Aviones, Ir a, Experiencias">
+  <meta name="Description" content="Página de reserva de viajes y búsqueda de lugares para visitar">
+  <meta name="Authors" content="Yago Falgueras Casarejos, Pedro Vidal Villalba">
+
+  <link rel="stylesheet" href="../../styles/general.css">
+  <link rel="stylesheet" href="../../styles/nav.css">
+  <link rel="stylesheet" href="../../styles/images.css">
+  <link rel="stylesheet" href="../../styles/grid.css">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
 </head>
 
 <body>
 <header>
   <nav>
+    <a href="../../index.html" class="logo" title="Inicio">
+      <img src="../../images/logo.png" width="100" height="100" alt="Logo">
+    </a>
+
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
     <ul>
-      <li> <figure>
-        <img src="/images/logo.png" width="128" height="128" alt="Logo">
-      </figure>
-        <a href="/index.html"> El Problema del Viajante </a></li>
-      <li> <a href="/html/descubre/descubre.html"> Descubre </a></li>
-      <li> <a href="/html/planifica/planifica.html"> Planifica </a></li>
-      <li> <a href="/html/reserva/reserva.html"> Reserva </a></li>
-      <li> <a href="/html/about_us/about_us.html"> About us </a></li>
-      <li> <figure>
-        <img src="/images/icon.png" width="80" height="80" alt="Login">
-      </figure>
-        <a href="/html/login/login.html"> </a></li>
+      <li> <a href="../../html/descubre/descubre.html"> Descubre </a></li>
+      <li> <a href="../../html/planifica/planifica.html"> Planifica </a></li>
+      <li> <a href="../../html/reserva/reserva.html"> Reserva </a></li>
+      <li> <a href="../../html/about_us/about_us.html"> About us </a></li>
     </ul>
+
+    <a href="../../html/login/login.html" class="login">
+      <img src="../../images/icon.png" width="80" height="80" alt="Login">
+    </a>
   </nav>
 </header>
 
 
 <main>
-  <section id="Viajeros">
-    <h2> Viajeros </h2>
-    <ul>
-      <li> Alice </li>
-      <li> Bob </li>
-    </ul>
-  </section>
+  <div class="grid-container">
+    <section id="Viajeros" class="grid-travellers-title">
+      <h2> Viajeros <img src="../../images/planifica/share_icon.jpg" alt="Compartir" title="Compartir" width="24" height="24"> </h2>
+    </section>
 
-  <section id="Agenda">
-    <h2> Agenda </h2>
-    <label for="fecha">Fecha:</label>
-    <input type="date" id="fecha" name="fecha">
-  </section>
+    <section class="grid-travellers">
+      <ul>
+        <li class="avatar">
+          <img src="../../images/icon.png" alt="Usuario"> Alice
+        </li>
+        <li class="avatar">
+          <img src="../../images/icon.png" alt="Bob"> Bob
+        </li>
+      </ul>
+    </section>
 
-  <section id="Consejos generales">
-    <h2> Consejos generales </h2>
-    Lista de consejos
-  </section>
+    <section class="grid-calendar-title">
+      <h2> Agenda </h2>
+    </section>
 
-  <section id="Reserva con seguridad">
-    <h2> Reserva con seguridad </h2>
-    Consejos de seguridad
-  </section>
+    <section class="grid-calendar-search-bar">
+      <label>
+        <input type="date" value="2025-02-17">
+      </label>
+    </section>
+
+    <section class="grid-calendar">
+      Aquí va el calendario
+    </section>
+
+    <section id="Consejos generales" class="grid-advices">
+      <h2> Consejos generales </h2>
+      <ol>
+        <li>
+          Consejo 1
+        </li>
+        <li>
+          Consejo 2
+        </li>
+        <li>
+          Consejo 3
+        </li>
+      </ol>
+    </section>
+
+    <section id="Reserva con seguridad" class="grid-security">
+      <h2> Reserva con seguridad </h2>
+      Consejos de seguridad
+    </section>
+
+  </div>
 </main>
 
 

@@ -258,3 +258,10 @@ graph LR
 project --> documentation & images & index[/index.html/] & html & scripts & styles
 documentation --> doc-images[images]
 ```
+
+## Responsividad CSS
+Página principal: Bootstrap, posible carrusel
+Descubre: Multicol
+Planifica: CSS Grid
+Reserva: Flex, filas para abajo
+About us: Flexible Grid

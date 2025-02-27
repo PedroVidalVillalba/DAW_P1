@@ -1,0 +1,100 @@
+@import url("../styles/colors.css");
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30px 300px 200px 200px;
+    grid-gap: 50px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1400px;
+    /* Cómo centrarlo bien?????
+    alignment-baseline: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;*/
+    background-color: var(--surface0);
+}
+
+.grid-travellers-title {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.grid-travellers {
+    grid-column: 1;
+    grid-row: 2;
+
+}
+
+.grid-calendar-title {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.grid-calendar-search-bar {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start; /* ???????????? */
+}
+
+.grid-calendar {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.grid-advices {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    background-color: var(--rosewater);
+    padding-inline: 20px;
+}
+
+.grid-security {
+    grid-column: 1 / 4;
+    grid-row: 4;
+    background-color: var(--lavender-light);
+    padding-inline: 20px;
+}
+
+input[type="date"] {
+    padding: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    border: var(--sapphire);
+    border-radius: 5px;
+    font-size: 16px;
+    align-content: center;
+}
+
+
+.grid-container h2 {
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-travellers ul {
+    list-style: none;
+    background-color: var(--lavender-light);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    opacity: 1;
+}
+.grid-travellers img {
+    width: 20px;
+    height: 20px;
+}
+.grid-travellers li {
+    font-size: 1.5em;
+    color: black;
+    opacity: 1;
+}
+.grid-advices {
+
+}
+
+
+
+
