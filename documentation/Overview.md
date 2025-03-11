@@ -260,7 +260,8 @@ documentation --> doc-images[images]
 ```
 
 ## Responsividad CSS
-Página principal: Bootstrap, posible carrusel
+ -- Página principal: Bootstrap, posible carrusel
+
 Descubre: Multicol
 Planifica: CSS Grid
 Reserva: Flex, filas para abajo

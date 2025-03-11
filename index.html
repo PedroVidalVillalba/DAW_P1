@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="./styles/general.css">
   <link rel="stylesheet" href="./styles/nav.css">
   <link rel="stylesheet" href="./styles/images.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="icon" type="image/png" href="./images/logo.png">
 </head>
 
@@ -41,57 +43,94 @@
 </header>
 
 <main>
-  <section id="Intro">
-    <div class="image-container">
-      <div class="image-box">
-        <figure>
-          <img src="./images/principal/Greece.jpg" width="446" height="325" alt="Imagen Grecia">
-          <figcaption> Grecia </figcaption>
-        </figure>
+  <section class="container mt-4">
+    <div id="carouselDestinos" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
 
-      <div class="image-box">
-        <figure>
-          <img src="./images/principal/Mexico.jpg" width="446" height="325" alt="Imagen México">
-          <figcaption> México </figcaption>
-        </figure>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./images/principal/Carousel1.JPG" class="d-block w-100" alt="Grecia">
+          <div class="carousel-caption d-none d-md-block">
+            <h3> España </h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./images/principal/Carousel2.jpg" class="d-block w-100" alt="México">
+          <div class="carousel-caption d-none d-md-block">
+            <h3> Grecia </h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./images/principal/Carousel3.jpg" class="d-block w-100" alt="México">
+          <div class="carousel-caption d-none d-md-block">
+            <h3> México </h3>
+          </div>
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestinos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselDestinos" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
     </div>
 
+    <section id="Frase" class="text-center">
+      <h2> Empieza a planear tus mejores vacaciones </h2>
+    </section>
   </section>
 
-  <section id="Frase">
-    <h2> Empieza a planear tus mejores vacaciones </h2>
-  </section>
 
   <section id="Newsletter">
-    <h3> Newsletter: ¡Ya disponibles nuevos destinos para el verano de 2025! </h3>
-    <ul>
-      <li> <a href="./html/principal/newsletter/news.html"> Nuevos destinos verano 2025 </a></li>
-      <li> <a href="./html/principal/newsletter/news.html"> Guía de viajes por Europa </a></li>
-      <li> <a href="./html/principal/newsletter/news.html"> Guía de viajes por América </a></li>
-      <li> <a href="./html/principal/newsletter/news.html"> Guía de viajes por Asia </a></li>
-    </ul>
+    <div class="alert alert-primary" role="alert">
+      <h4 class="text-center"> Newsletter: ¡Ya disponibles nuevos destinos para el verano de 2025! </h4>
+      <hr>
+      <ul>
+        <li> <p> <a href="./html/principal/newsletter/news.html" class="alert-link"> Nuevos destinos verano 2025:</a> Consulta los nuevos países disponibles por todo el mundo. </p></li>
+        <li> <p> <a href="./html/principal/newsletter/news.html" class="alert-link"> Guía de viajes por Europa:</a> España, Portugal, Italia, Grecia y más. </p></li>
+        <li> <p> <a href="./html/principal/newsletter/news.html" class="alert-link"> Guía de viajes por América:</a> México, República Dominicana, Canadá, Argentina y más. </p></li>
+        <li> <p> <a href="./html/principal/newsletter/news.html" class="alert-link"> Guía de viajes por Asia:</a> Japón, Nepal, Maldivas, Filipinas y más. </p></li>
+      </ul>
+    </div>
   </section>
 
+
   <section id="Valoraciones">
-    <h3> Valoraciones </h3>
-    <div>
-      <p> Alice ★★★★★ </p>
-      <p> Muy recomendable </p>
-    </div>
-    <div>
-      <p> Bob ★★★★★ </p>
-      <p> Me ha encantado </p>
+    <h3 class="text-center"> Valoraciones </h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Jennifer <span class="text-warning">★★★★★</span></h5>
+            <p class="card-text">Experiencia increíble</p>
+            <p class="text-muted">Muy recomendable visitar España, en especial toda la zona de Galicia.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Alice <span class="text-warning">★★★★★</span></h5>
+            <p class="card-text">Me ha encantado</p>
+            <p class="text-muted">Un viaje inolvidable a México con mi pareja, ojalá repertir!</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
+
 
 
 <footer>
   <p> Pie de página </p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
