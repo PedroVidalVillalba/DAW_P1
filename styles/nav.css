@@ -26,6 +26,17 @@ nav .logo-container p {
     align-items: center;
 }
 
+nav .login {
+    margin-left: auto;
+}
+
+nav .login img {
+    height: 80px;
+    width: auto;
+}
+
+
+
 nav ul {
     display: flex;
     flex-grow: 1;
@@ -53,15 +64,6 @@ nav a:hover {
     border-radius: 5px;
 }
 
-nav .login {
-    margin-left: auto;
-}
-
-nav .login img {
-    height: 60px;
-    width: auto;
-}
-
 .menu-toggle {
     display: none;
     position: relative;
@@ -79,6 +81,7 @@ nav .login img {
 #menu-checkbox {
     display: none;
 }
+
 @media (max-width: 900px) {
     /* Versión de móvil: Icono de hamburguesa con desplegable vertical */
     nav ul {

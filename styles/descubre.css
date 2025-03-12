@@ -1,0 +1,31 @@
+@import url("../styles/colors.css");
+@import url("../styles/general.css");
+@import url("../styles/nav.css");
+@import url("../styles/images.css");
+
+nav.secundaria {
+    background-color: var(--base);
+    border-bottom: 0;
+    column-count: 6;
+}
+
+.image-container {
+    display: block;
+    gap: 50px; /* Espacio entre imágenes */
+}
+
+@media screen and (min-width: 768px) {
+    .col1 {
+        width: 33%;
+        float: left;
+    }
+    .col2 {
+        width: 33%;
+        float: left;
+        align-content: center;
+    }
+    .col3 {
+        width: 33%;
+        flow-from: right;
+    }
+}

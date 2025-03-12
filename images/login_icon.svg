@@ -1,6 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
- <circle r="100" cx=150 cy=150 stroke="black" stroke-width="20" fill="none"/>
- <circle r="40" cx=150 cy=120 />
- <circle r="60" cx=150 cy=200 />
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="login_icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="13.493954"
+     inkscape:cx="22.417446"
+     inkscape:cy="20.30539"
+     inkscape:window-width="1556"
+     inkscape:window-height="921"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       pattern="M 0,18.867925 C 0,8.4528302 8.4528302,0 18.867925,0 c 10.415094,0 18.867924,8.4528302 18.867924,18.867925 0,10.415094 -8.45283,18.867924 -18.867924,18.867924 C 8.4528302,37.735849 0,29.283019 0,18.867925 Z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       hide_knot="false"
+       fuse_tolerance="0" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 24.5,12.5 a 12,12 0 0 0 -12,12 12,12 0 0 0 3.630859,8.583984 A 10,10 0 0 1 24.5,28.5 10,10 0 0 1 32.888672,33.066406 12,12 0 0 0 36.5,24.5 a 12,12 0 0 0 -12,-12 z"
+       style="fill-opacity:0;stroke:#000000"
+       id="path5" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000"
+       id="path2"
+       cx="24.5"
+       cy="21.5"
+       r="5" />
+    <path
+       d="M 32.888672,33.066406 A 10,10 0 0 0 24.5,28.5 10,10 0 0 0 16.130859,33.083984 12,12 0 0 0 24.5,36.5 12,12 0 0 0 32.888672,33.066406 Z"
+       style="stroke:#000000"
+       id="path6" />
+  </g>
 </svg>

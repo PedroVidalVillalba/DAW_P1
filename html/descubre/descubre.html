@@ -5,57 +5,57 @@
   <title>Descubre</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../../styles/general.css" />
+  <meta name="Keywords" content="Viajes, Hoteles, Casas, Aviones, Ir a, Experiencias">
+  <meta name="Description" content="Página de reserva de viajes y búsqueda de lugares para visitar">
+  <meta name="Authors" content="Yago Falgueras Casarejos, Pedro Vidal Villalba">
+
+  <link rel="stylesheet" href="../../styles/descubre.css">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
 </head>
 
 <body>
   <header>
-    <figure></figure>
     <nav>
+      <a href="../../index.html" class="logo" title="Inicio">
+        <img src="../../images/logo.png" alt="Logo">
+      </a>
+
+      <input type="checkbox" id="menu-checkbox">
+      <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
       <ul>
-        <li>
-          <a href="../../index.html">
-            <img src="../../images/logo.png" alt="Logo" width="200" height="200" />
-            El problema del viajante
-          </a>
-        </li>
         <li><a href="../../html/descubre/descubre.html">Descubre</a></li>
         <li><a href="../../html/planifica/planifica.html">Planifica</a></li>
         <li><a href="../../html/reserva/reserva.html">Reserva</a></li>
         <li><a href="../../html/about_us/about_us.html">About us</a></li>
       </ul>
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
-          <circle r="100" cx=150 cy=150 stroke="black" stroke-width="20" fill="none"/>
-          <circle r="40" cx=150 cy=120 />
-          <circle r="60" cx=150 cy=200 />
-        </svg>
-        <link rel="img/svg" href="../../images/login_icon.svg">
-          
+      <a href="../../html/login/login.html" class="login">
+        <img src="../../images/login_icon.svg" alt="Login">
+      </a>
     </nav>
   </header>
-  <main>
-    <section id="barra_de_navegacion_secundaria">
-      <h2>Barra de navegación secundaria</h2>
-      <p>
-        Este párrafo y el header anterior habría que borrarlos cuando se metan
-        los estilos y ya quede claro qué es cada parte.
-      </p>
-      <nav>
-        <ul>
-          <li>
-            <a href="../../html/descubre/recomendaciones.html">Recomendaciones</a>
-          </li>
-          <li><a href="../../html/descubre/novedades.html">Novedades</a></li>
-          <li><a href="../../html/descubre/ofertas.html">Ofertas</a></li>
-          <li><a href="../../html/descubre/favoritos.html">Favoritos</a></li>
-          <li><a href="../../html/descubre/explora.html">Explora</a></li>
-          <li>&#128269 Busca</li>
-        </ul>
-      </nav>
-    </section>
 
-    <section id="destinos">
-      <div class="targeta_destino">
+  <main>
+    <nav class="secundaria">
+      <ul>
+        <li><a href="../../html/descubre/recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="../../html/descubre/novedades.html">Novedades</a></li>
+        <li><a href="../../html/descubre/ofertas.html">Ofertas</a></li>
+        <li><a href="../../html/descubre/favoritos.html">Favoritos</a></li>
+        <li><a href="../../html/descubre/explora.html">Explora</a></li>
+        <li>&#128269 Busca</li>
+      </ul>
+    </nav>
+
+    <section id="destinos" class="image-container">
+      <div class="image-box tarjeta-destino col1">
+        <figure>
+          <img src="../../images/principal/Greece.jpg" width="446" height="325" alt="Imagen Grecia">
+          <figcaption> Grecia </figcaption>
+        </figure>
+      </div>
+
+      <div class="image-box tarjeta_destino col2">
         <figure>
           <img src="../../images/principal/Greece.jpg" alt="Imagen de un destino" width="300" height="250" />
         </figure>
@@ -67,7 +67,11 @@
         <p><b>Rango de precio:</b> 2000 - 3000 €</p>
       </div>
 
-      <div class="targeta_destino">
+      <figure>
+        <img src="../../images/share_icon.svg" width="200" height="200" alt="Imagen de un destino" />
+      </figure>
+
+      <div class="image-box tarjeta_destino col3">
         <figure>
           <img src="../../images/principal/Mexico.jpg" alt="Imagen de otro destino" width="300" height="250" />
         </figure>
@@ -86,6 +90,11 @@
         Aquí iría el mapa interactivo, pero la verdad que no sé cómo meterlo
         todavía.
       </p>
+      <figure>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190029.1150736489!2d12.371190841824987!3d41.909953274744666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma%2C%20Italia!5e0!3m2!1ses!2ses!4v1740675829399!5m2!1ses!2ses"
+                width="600" height="450" style="border:0;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </figure>
     </section>
   </main>
 
