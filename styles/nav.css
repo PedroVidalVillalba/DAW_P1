@@ -64,7 +64,21 @@ nav a:hover {
     border-radius: 5px;
 }
 
-.menu-toggle {
+/*.menu-toggle {*/
+/*    display: none;*/
+/*    position: relative;*/
+/*    font-size: 40px;*/
+/*    cursor: pointer;*/
+/*    color: black;*/
+/*    transition: background-color 0.5s ease, color 0.5s ease;*/
+/*}*/
+
+/*.menu-toggle:hover {*/
+/*    color: var(--sapphire);*/
+/*    border-radius: 5px;*/
+/*}*/
+
+#mobile-menu {
     display: none;
     position: relative;
     font-size: 40px;
@@ -73,13 +87,26 @@ nav a:hover {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.menu-toggle:hover {
+#mobile-menu:hover {
     color: var(--sapphire);
     border-radius: 5px;
 }
 
-#menu-checkbox {
-    display: none;
+/* Default styling for the SVG elements */
+.login svg .login-path,
+.login svg .login-path2,
+.login svg .login-circle {
+    fill: #000; /* default color */
+    stroke: #000;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* Change color on hover using var(--sapphire) */
+.login:hover svg .login-path,
+.login:hover svg .login-path2,
+.login:hover svg .login-circle {
+    fill: var(--sapphire);
+    stroke: var(--sapphire);
 }
 
 @media (max-width: 900px) {
@@ -100,12 +127,12 @@ nav a:hover {
     }
 
     /* Mostrar la barra cuando el checkbox está activado */
-    #menu-checkbox:checked ~ ul {
-        display: flex;
-    }
+    /*#menu-checkbox:checked ~ ul {*/
+    /*    display: flex;*/
+    /*}*/
 
     /* Mostrar el icono hamburguesa */
-    .menu-toggle {
+    #mobile-menu {
         display: block;
         position: absolute;
         right: 120px;
@@ -114,7 +141,7 @@ nav a:hover {
 
 @media (min-width: 901px) {
     /* Restablecer la barra de navegación cuando se vuelva a un ancho lo suficiente grande */
-    #menu-checkbox {
+    #mobile-menu {
         display: none;
     }
 
