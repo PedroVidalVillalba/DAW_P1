@@ -16,21 +16,23 @@
 <body>
   <header>
     <nav>
-      <a href="../../index.html" class="logo" title="Inicio">
-        <img src="../../images/logo.png" alt="Logo">
+      <a href="../../index.html" class="logo-container" title="Inicio">
+        <img src="../../images/logo.png" width="100" height="100" alt="Logo">
+        <p> El Problema del Viajante </p>
       </a>
 
       <input type="checkbox" id="menu-checkbox">
       <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
 
       <ul>
-        <li><a href="../../html/descubre/descubre.html">Descubre</a></li>
-        <li><a href="../../html/planifica/planifica.html">Planifica</a></li>
-        <li><a href="../../html/reserva/reserva.html">Reserva</a></li>
-        <li><a href="../../html/about_us/about_us.html">About us</a></li>
+        <li> <a href="../../html/descubre/descubre.html"> Descubre </a></li>
+        <li> <a href="../../html/planifica/planifica.html"> Planifica </a></li>
+        <li> <a href="../../html/reserva/reserva.html"> Reserva </a></li>
+        <li> <a href="../../html/about_us/about_us.html"> About us </a></li>
       </ul>
-      <a href="../../html/login/login.html" class="login">
-        <img src="../../images/login_icon.svg" alt="Login">
+
+      <a href="../../html/login/login.html" class="login" title="Login">
+        <img src="../../images/login_icon.svg" width="80" height="80" alt="Login">
       </a>
     </nav>
   </header>
@@ -47,40 +49,35 @@
       </ul>
     </nav>
 
-    <section id="destinos" class="image-container">
-      <div class="image-box tarjeta-destino col1">
-        <figure>
-          <img src="../../images/principal/Greece.jpg" width="446" height="325" alt="Imagen Grecia">
-          <figcaption> Grecia </figcaption>
-        </figure>
+    <section id="destinos" >
+      <div class="tarjeta-destino">
+        <img src="../../images/principal/Greece.jpg" alt="Grecia"  class="imagen-destino" width="300" height="250" />
+        <div class="detalles-destino">
+          <h2>Grecia</h2>
+          <p><strong>Descripción:</strong> Aquí iría la descripción del sitio</p>
+          <p><b>Rango de precio:</b> 2000 - 3000 €</p>
+          <button type="button" class="boton-reserva">Reserva</button>
+        </div>
       </div>
 
-      <div class="image-box tarjeta_destino col2">
-        <figure>
-          <img src="../../images/principal/Greece.jpg" alt="Imagen de un destino" width="300" height="250" />
-        </figure>
-        <p>
-          <b>Nombre:</b> Un nombre
-          <button type="button">Reserva</button>
-        </p>
-        <p><b>Descripción:</b> Aquí iría la descripción del sitio</p>
-        <p><b>Rango de precio:</b> 2000 - 3000 €</p>
+      <div class="tarjeta-destino">
+        <img src="../../images/principal/Greece.jpg" alt="Grecia"  class="imagen-destino" width="300" height="250" />
+        <div class="detalles-destino">
+          <h2>Grecia</h2>
+          <p><strong>Descripción:</strong> Aquí iría la descripción del sitio</p>
+          <p><b>Rango de precio:</b> 2000 - 3000 €</p>
+          <button type="button" class="boton-reserva">Reserva</button>
+        </div>
       </div>
 
-      <figure>
-        <img src="../../images/share_icon.svg" width="200" height="200" alt="Imagen de un destino" />
-      </figure>
-
-      <div class="image-box tarjeta_destino col3">
-        <figure>
-          <img src="../../images/principal/Mexico.jpg" alt="Imagen de otro destino" width="300" height="250" />
-        </figure>
-        <p>
-          <b>Nombre:</b> Otro nombre
-          <button type="button">Reserva</button>
-        </p>
-        <p><b>Descripción:</b> Otra descripción</p>
-        <p><b>Rango de precio:</b> 1000 - 1500 €</p>
+      <div class="tarjeta-destino">
+        <img src="../../images/principal/Mexico.jpg" alt="México" class="imagen-destino"  width="300" height="250"/>
+        <div class="detalles-destino">
+          <h2>México</h2>
+          <p><strong>Descripción:</strong> Otra descripción</p>
+          <p><strong>Rango de precio:</strong> 1000 - 1500 €</p>
+          <button type="button" class="boton-reserva">Reserva</button>
+        </div>
       </div>
     </section>
 
