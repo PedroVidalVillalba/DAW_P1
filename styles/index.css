@@ -5,6 +5,8 @@ https://getbootstrap.com/docs/5.3/customize/sass/ */
 
 /* https://getbootstrap.com/docs/5.3/components/carousel/ */
 
+
+
 .carousel-item img{
     border-radius: 10px;
     object-fit: contain;

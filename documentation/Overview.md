@@ -265,4 +265,10 @@ documentation --> doc-images[images]
 Descubre: Multicol
 Planifica: CSS Grid
 Reserva: Flex, filas para abajo
-About us: Flexible Grid
+About us: Flexible Grids
+
+## JavaScript
+Semana 1: refactor menú navegación, ??
+
+## Cambios
+About us: se han cambiado los recuadros de colores por solo los bordes de colores, para no saturar demasiado

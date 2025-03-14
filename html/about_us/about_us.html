@@ -4,98 +4,159 @@
 <head>
   <title> Sobre nosotros </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Keywords" content="Viajes, Hoteles, Casas, Aviones, Ir a, Experiencias">
+  <meta name="Description" content="Página de reserva de viajes y búsqueda de lugares para visitar">
+  <meta name="Authors" content="Yago Falgueras Casarejos, Pedro Vidal Villalba">
+
+  <link rel="stylesheet" href="../../styles/general.css">
+  <link rel="stylesheet" href="../../styles/nav.css">
+  <link rel="stylesheet" href="../../styles/images.css">
+  <link rel="stylesheet" href="../../styles/about_us.css">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
 </head>
 
 <body>
 <header>
-  <nav>
+  <nav class="main-nav">
+    <a href="../../index.html" class="logo-container" title="Inicio">
+      <img src="../../images/logo.png" width="100" height="100" alt="Logo">
+      <p> El Problema del Viajante </p>
+    </a>
+
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+
     <ul>
-      <li> <figure>
-        <img src="/images/logo.png" width="128" height="128" alt="Logo">
-      </figure>
-        <a href="/index.html"> El Problema del Viajante </a></li>
-      <li> <a href="/html/descubre/descubre.html"> Descubre </a></li>
-      <li> <a href="/html/planifica/planifica.html"> Planifica </a></li>
-      <li> <a href="/html/reserva/reserva.html"> Reserva </a></li>
-      <li> <a href="/html/about_us/about_us.html"> About us </a></li>
-      <li> <figure>
-        <img src="/images/icon.png" width="80" height="80" alt="Login">
-      </figure>
-        <a href="/html/login/login.html"> About us </a></li>
+      <li> <a href="../../html/descubre/descubre.html"> Descubre </a></li>
+      <li> <a href="../../html/planifica/planifica.html"> Planifica </a></li>
+      <li> <a href="../../html/reserva/reserva.html"> Reserva </a></li>
+      <li> <a href="../../html/about_us/about_us.html"> About us </a></li>
     </ul>
+
+    <a href="../../html/login/login.html" class="login" title="Login">
+      <img src="../../images/login_icon.svg" width="80" height="80" alt="Login">
+    </a>
   </nav>
 </header>
 
-<main>
-  <section id="Nombre">
-    <figure>
-      <img src="/images/logo.png" width="128" height="128" alt="Logo">
-    </figure>
-    <h1> El problema del viajante </h1>
-  </section>
+<main class="about-us-container">
+  <div class="column1">
+    <section class="nombre">
+      <a href="../../index.html" class="title-container" title="Inicio">
+        <img src="../../images/logo.png" alt="Logo">
+        <h1> El Problema del Viajante </h1>
+      </a>
+    </section>
 
-  <section id="Nuestra historia">
-    <h3> Nuestra historia </h3>
-    Esta empresa comenzó como un simple trabajo para una asignatura de la carrera y se convirtió en ...
-  </section>
+    <section class="nuestra-historia">
+      <h3> Nuestra historia </h3>
+      <hr class="separator">
+      <p> Esta empresa comenzó como un proyecto para una asignatura de la universidad en el año 2025 y se convirtió en una solución
+        innovadora para el descubrimiento de nuevos lugares, utilizada por viajeros y empresas para planificar trayectos
+        de manera eficiente y reducir costes e imprevistos, gracias a los conocimientos previos obtenidos con toda información de la
+        que se dispone en la actualidad, reunida en un solo lugar.</p>
+    </section>
 
-  <section id="Compromiso de calidad">
-    <h3> Compromiso de calidad </h3>
-    Desde un primer momento, lo más importante es garantizar la mejor experiencia para el usuario, desde la reserva hasta la estancia.
-  </section>
+    <section class="compromiso-de-calidad">
+      <h3> Compromiso de calidad </h3>
+      <hr class="separator">
+      <p> Desde un primer momento, lo más importante es garantizar la mejor experiencia para el usuario, desde la reserva
+        hasta la estancia y el posterior recuerdo del viaje. Para ello, esta página reúne una gran cantidad de contenido que
+        se encuentra en Internet, el cual es seleccionado y filtrado minuciosamente por nuestros expertos, para luego ser
+        mostrado de una forma interactiva y atractiva para el usuario. </p>
+    </section>
 
-  <section id="FAQ">
-    <h3> Preguntas frecuentes </h3>
-    <dl>
-      <dt> Pregunta 1 </dt>
-      <dd> Respuesta 1 </dd>
-      <dt> Pregunta 2 </dt>
-      <dd> Respuesta 2 </dd>
-    </dl>
-  </section>
+    <section class="FAQ">
+      <h3> Preguntas frecuentes </h3>
+      <hr class="separator">
+      <dl>
+        <dt> ¿Puedo realizar una reserva desde esta página web? </dt>
+        <dd> No. Nuestra página se limita a mostrar información sobre ofertas actuales de otras páginas de confianza que
+          sí están dedicadas a la reserva de hoteles, experiencias, etc. Al pinchar en una de estas ofertas, se redirige
+          la petición a la página respectiva para consultar más detalles y en ella realizar el pago. </dd>
+        <dt> ¿De dónde sale la información mostrada en la página? </dt>
+        <dd> La información proviene de una selección de nuestros expertos de datos obtenidos de páginas web de confianza,
+          así como de la propia experiencia de los mismos en sus viajes a lo largo del mundo. Todas las experiencias han
+          sido previamente probadas y estudiadas por ellos. Los detalles sobre el origen de toda la información se puede
+          encontrar en la página de <a href="../../html/about_us/origen_informacion.html"> El origen de la información </a>. </dd>
+      </dl>
+    </section>
+  </div>
 
-  <section id="Contáctanos">
-    <h3> Contáctanos </h3>
-    <ul>
-      <li> Teléfono </li>
-      <li> Email </li>
-      <li>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-          <figure>
-            <img src="/images/about_us/Instagram_logo.png" width="3840" height="2160" alt="">
-            <figcaption> Instagram </figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-          <figure>
-            <img src="/images/about_us/Youtube_logo.png" width="640" height="443" alt="">
-            <figcaption> YouTube </figcaption>
-          </figure>
-        </a>
-      </li>
-      <li> Tiktok </li>
-      <li> Twitter (X) </li>
-    </ul>
-  </section>
+  <div class="column2">
+    <section class="contactanos">
+      <h3> Contáctanos </h3>
+      <!-- https://www.iconfinder.com/search?q=facebook&utm_source=chatgpt.com&category=social-media -->
+      <ul>
+        <li>
+          <div class="social-media-container">
+            <img src="../../images/about_us/Phone.svg" alt="Logo Teléfono">
+            <p> Teléfono </p>
+          </div>
+        </li>
+        <li>
+          <a href="https://workspace.google.com/intl/es/gmail/" class="social-media-container" target="_blank" rel="noopener noreferrer">
+            <img src="../../images/about_us/Gmail.svg" alt="Logo Gmail">
+            <p> Gmail </p>
+          </a>
+        </li>
+        <li>
+          <p class="blank-space"> Espacio en blanco </p>
+        </li>
+      </ul>
 
-  <section id="Foto de empresa">
-    <h2> Foto de empresa </h2>
-    <figure>
-      <img src="" width="" height="" alt="Imagen">
-      <figcaption> Fundadores de <em> El Problema del Viajero </em> </figcaption>
-    </figure>
-  </section>
+      <h3> Redes sociales </h3>
+
+      <ul>
+        <li>
+          <a href="https://www.facebook.com" class="social-media-container" target="_blank" rel="noopener noreferrer">
+            <img src="../../images/about_us/Facebook.svg" alt="Logo Facebook">
+            <p> Facebook </p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" class="social-media-container" target="_blank" rel="noopener noreferrer">
+            <img src="../../images/about_us/Instagram.svg" alt="Logo Instagram">
+            <p> Instagram </p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/" class="social-media-container" target="_blank" rel="noopener noreferrer">
+            <img src="../../images/about_us/Tiktok.svg" alt="Logo TikTok">
+            <p> TikTok </p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.x.com/" class="social-media-container" target="_blank" rel="noopener noreferrer">
+            <img src="../../images/about_us/X.svg" alt="Logo X">
+            <p> X (Twitter) </p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/" class="social-media-container" target="_blank" rel="noopener noreferrer">
+            <img src="../../images/about_us/Youtube.svg" alt="Logo YouTube">
+            <p> YouTube </p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="foto-de-empresa">
+      <figure>
+        <img src="../../images/about_us/Foto_empresa.png" alt="Imagen">
+        <figcaption> Fundadores de <em> El Problema del Viajante </em> </figcaption>
+      </figure>
+    </section>
+  </div>
 
 </main>
 
 
 
-<footer>
+<!--<footer>
   <p> Pie de página </p>
-</footer>
+</footer>-->
 
 
 </body>
