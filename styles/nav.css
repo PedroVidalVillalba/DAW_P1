@@ -140,15 +140,88 @@ nav a:hover {
     }
 }
 
+
+#mobile-menu-sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Oculto fuera de la pantalla */
+    width: 250px;
+    height: 100%;
+    background-color: var(--surface1);
+    box-shadow: -2px 0 10px var(--crust);
+    transition: right 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+/* Clase para mostrar el menú */
+#mobile-menu-sidebar.open {
+    right: 0; /* Desliza el menú hacia dentro */
+}
+
+/* Estilos para los enlaces dentro del menú */
+#mobile-menu-sidebar ul {
+    list-style: none;
+    padding-left: 100px;
+    width: 100%;
+    text-align: left;
+}
+
+#mobile-menu-sidebar li {
+    padding: 15px 0;
+}
+
+#mobile-menu-sidebar a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease;;
+}
+
+#mobile-menu-sidebar a:hover {
+    color: var(--sapphire);
+}
+
+#menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70%;
+}
+
+/* Botón de cierre (flecha hacia la derecha) */
+#close-menu {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    background: none;
+    border: none;
+    transition: background-color 0.5s ease, color 0.5s ease;;
+}
+
+#close-menu:hover {
+    color: var(--sapphire);
+}
+
+
 @media (min-width: 901px) {
     /* Restablecer la barra de navegación cuando se vuelva a un ancho lo suficiente grande */
     #mobile-menu {
         display: none;
     }
 
-    nav ul {
+
+    /*nav ul {
         display: flex !important;
         position: static;
         padding: 0;
-    }
+    }*/
 }

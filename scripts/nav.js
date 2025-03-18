@@ -45,12 +45,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Gestionar el menú móvil manualmente en JavaScript
     const mobileMenu = document.getElementById("mobile-menu");
+    const menuSidebar = document.createElement("div");
+    menuSidebar.id = "mobile-menu-sidebar";
+    menuSidebar.innerHTML = `
+        <button id="close-menu">➡</button>
+        <ul id="menu-content" class="nav-links">
+            <li> <a href="${rootPath}/html/descubre/descubre.html"> Descubre </a></li>
+            <li> <a href="${rootPath}/html/planifica/planifica.html"> Planifica </a></li>
+            <li> <a href="${rootPath}/html/reserva/reserva.html"> Reserva </a></li>
+            <li> <a href="${rootPath}/html/about_us/about_us.html"> About us </a></li>
+        </ul>
+    `;
+
+    document.body.appendChild(menuSidebar);
+    const closeButton = document.getElementById("close-menu");
+
+
+    mobileMenu.addEventListener("click", function () {
+        menuSidebar.classList.add("open"); // Muestra el menú
+    });
+    closeButton.addEventListener("click", function () {
+        menuSidebar.classList.remove("open"); // Oculta el menú
+    });
+
+
     const menuLinks = document.querySelector(".nav-links");
-
-    mobileMenu.addEventListener("click", () => {
-        menuLinks.style.display = (menuLinks.style.display === "none" ? "flex" : "none");
-    })
-
     // document.querySelectorAll(".nav-links a").forEach(link => {
     //     link.addEventListener("click", () => {
     //         menuCheckbox.checked = false;
