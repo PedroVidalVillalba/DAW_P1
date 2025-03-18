@@ -1,11 +1,5 @@
 @import url("../styles/colors.css");
 
-/* Ver bien el tema de los puntos de ruptura
-https://getbootstrap.com/docs/5.3/customize/sass/ */
-
-/* https://getbootstrap.com/docs/5.3/components/carousel/ */
-
-
 
 .carousel-item img{
     border-radius: 10px;
@@ -22,7 +16,7 @@ https://getbootstrap.com/docs/5.3/customize/sass/ */
     color: black;
 }
 
-.alert {
+/*.alert {
     padding-inline: 20px;
     margin-left: 50px;
     margin-right: 50px;
@@ -30,7 +24,7 @@ https://getbootstrap.com/docs/5.3/customize/sass/ */
 }
 .alert-danger {
     background-color: var(--lavender-light);
-}
+}*/
 
 #Frase {
     margin-top: 20px;
@@ -40,6 +34,16 @@ https://getbootstrap.com/docs/5.3/customize/sass/ */
     margin: 50px;
 }
 
+.alert {
+    margin: 50px auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.alert p {
+    font-size: 1.1rem;
+}
+
 @media (max-width: 900px) {
     .image-container {
         flex-direction: column;
@@ -47,5 +51,8 @@ https://getbootstrap.com/docs/5.3/customize/sass/ */
     }
     .image-box {
         width: 90%;
+    }
+    .alert p {
+        font-size: 1rem;
     }
 }

@@ -1,9 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const ROOT_NAME = "/P1/"
-    // Obtener la ruta base del archivo actual
-    const currentPath = window.location.pathname;
-    // Localizar el directorio raíz
-    const rootPath = currentPath.substring(0, currentPath.search(ROOT_NAME) + ROOT_NAME.length - 1);
+    // Se busca si ya se ha obtenido la ruta base. Solo se calcula la primera vez
+    let rootPath = localStorage.getItem("rootPath");
+
+    if (!rootPath) {
+        const currentPath = window.location.pathname;
+
+        if (currentPath.endsWith("/index.html")) {
+            // Caso habitual: abrir la página en index.html
+            rootPath = currentPath.replace("/index.html", "");
+        } else {
+            // Si estamos en otra página, buscar la parte del path antes de "/html/"
+            const match = currentPath.match(/^(.*?\/)html\//);
+            rootPath = match ? match[1].slice(0, -1) : "."; // Si no encuentra "/html/", usar "."
+        }
+
+        // Guardar la ruta para futuras cargas
+        localStorage.setItem("rootPath", rootPath);
+    }
+
 
     const navContainer = document.createElement("nav");
     navContainer.className = "main-nav";

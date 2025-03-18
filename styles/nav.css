@@ -1,7 +1,6 @@
 @import url("../styles/colors.css");
 
 nav {
-    /*all: revert;/* todo: arreglar el nav para que no herede las caracteristicas de bootstrap */
     display: flex;
     align-items: center;
     justify-content: space-between;
