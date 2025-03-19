@@ -271,4 +271,6 @@ About us: Flexible Grids
 Semana 1: refactor menú navegación, ??
 
 ## Cambios
+Principal: se ha cambiado la zona principal por un carrusel con bootstrap
 About us: se han cambiado los recuadros de colores por solo los bordes de colores, para no saturar demasiado
+Planifica: lo mismo

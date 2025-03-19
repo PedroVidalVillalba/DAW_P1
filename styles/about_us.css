@@ -160,6 +160,7 @@ main .contactanos h3 {
     color: var(--green);
     text-align: center;
     font-size: 1.8rem;
+    line-height: 25pt;
 }
 
 main .contactanos ul {
