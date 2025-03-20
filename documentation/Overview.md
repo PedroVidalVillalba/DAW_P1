@@ -268,7 +268,8 @@ Reserva: Flex, filas para abajo
 About us: Flexible Grids
 
 ## JavaScript
-Semana 1: refactor menú navegación, ??
+Semana 1: refactor menú navegación, calendario de Planifica
+Semana 2: quizás se pueda añadir JQuery a algo de la semana 1
 
 ## Cambios
 Principal: se ha cambiado la zona principal por un carrusel con bootstrap
