@@ -6,7 +6,7 @@ author:
 date: 2025-02-09
 ---
 # *El problema del viajante*
-![Logo](images/logo.png)
+![Logo](images/logo.svg)
 
 Vamos a crear una agencia de viajes ficticia en la que se ofrecerán todo tipo de servicios relacionados con la planificación y la gestión de viajes, incluyendo transporte, alojamiento, lugares de interés para visitar, ocio, restauración, etc.
 

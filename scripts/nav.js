@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navContainer.className = "main-nav";
     navContainer.innerHTML = `
         <a href="${rootPath}/index.html" class="logo-container" title="Inicio">
-            <img src="${rootPath}/images/logo.png" width="100" height="100" alt="Logo">
+            <img src="${rootPath}/images/logo.svg" width="100" height="100" alt="Logo">
             <p> El Problema del Viajante </p>
         </a>
 
