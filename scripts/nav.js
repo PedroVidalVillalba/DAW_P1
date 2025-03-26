@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Se busca si ya se ha obtenido la ruta base. Solo se calcula la primera vez
-    let rootPath = localStorage.getItem("rootPath");
+    let rootPath = sessionStorage.getItem("rootPath");
 
     if (!rootPath) {
         const currentPath = window.location.pathname;
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Guardar la ruta para futuras cargas
-        localStorage.setItem("rootPath", rootPath);
+        sessionStorage.setItem("rootPath", rootPath);
     }
 
     // Se inserta un header si no lo hay

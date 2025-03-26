@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let rootPath = localStorage.getItem("rootPath");
+    let rootPath = sessionStorage.getItem("rootPath");
 
     const footerContainer = document.createElement("footer");
     footerContainer.className = "footer-container";

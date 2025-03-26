@@ -14,17 +14,23 @@
   <link rel="stylesheet" href="../../styles/footer.css">
   <link rel="stylesheet" href="../../styles/images.css">
   <link rel="stylesheet" href="../../styles/planifica.css">
+  <!-- Librería con la que se ha hecho el calendario -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="icon" type="image/png" href="../../images/logo.png">
 </head>
 
 <body>
-<header><!-- La cabecera y barra de navegación se crean directamente con JavaScript --></header>
+<!-- La cabecera y barra de navegación se crean directamente con JavaScript -->
 
 
 <main>
   <div class="grid-container">
     <section id="Viajeros" class="grid-travellers-title">
-      <h2> Viajeros <img src="../../images/share_icon.svg" alt="Compartir" title="Compartir" width="40" height="40"> </h2>
+      <h2> Viajeros
+        <a href="https://google.es/" class="share-button" target="_blank" rel="noopener noreferrer">
+          <img src="../../images/share_icon.svg" alt="Compartir" title="Compartir" width="40" height="40">
+        </a>
+      </h2>
     </section>
 
     <section class="grid-travellers">
@@ -43,14 +49,16 @@
     </section>
 
     <section class="grid-calendar-search-bar">
-      <label>
-        <input type="date" value="2025-02-17">
-      </label>
+      <label for="datepicker"></label>
+      <input type="text" id="datepicker" placeholder="Selecciona una fecha">
     </section>
 
 <!--    https://flatpickr.js.org/-->
     <section class="grid-calendar">
-      Aquí va el calendario con JavaScript
+      <div id="calendar">
+        <!--Aquí va el calendario con JavaScript -->
+      </div>
+
     </section>
 
     <section id="Consejos generales" class="grid-advices">
@@ -91,9 +99,11 @@
 
 <script src="../../scripts/nav.js"></script>
 <script src="../../scripts/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+<script src="../../scripts/calendar.js"></script>
+
 </body>
-
-
 
 </html>
 
