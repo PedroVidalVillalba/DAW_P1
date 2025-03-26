@@ -1,6 +1,8 @@
 @import url("../styles/colors.css");
 
-nav {
+.main-nav {
+    /*all: initial;
+    font-family: inherit;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,28 +11,29 @@ nav {
     border-bottom: 5px solid var(--sapphire);
 }
 
-nav .logo-container {
+.main-nav .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre la imagen y el texto */
+    gap: 0 10px; /* Espacio entre la imagen y el texto */
     text-decoration: none;
 }
 
-nav .logo-container img {
+.main-nav .logo-container img {
     height: 80px;
     width: auto;
 }
 
-nav .logo-container p {
+.main-nav .logo-container p {
     max-width: 160px;
     align-items: center;
+    line-height: 1.1;
 }
 
-nav .login {
+.main-nav .login {
     margin-left: auto;
 }
 
-nav .login img {
+.main-nav .login img {
     height: 80px;
     width: auto;
 }
@@ -38,7 +41,7 @@ nav .login img {
 
 
 
-nav ul {
+.main-nav ul {
     display: flex;
     flex-grow: 1;
     justify-content: center;
@@ -48,11 +51,11 @@ nav ul {
     gap: 5%;
 }
 
-nav li {
+.main-nav li {
     display: inline-block;
 }
 
-nav a {
+.main-nav a {
     text-decoration: none;
     color: black;
     font-size: 1.5em;
@@ -60,7 +63,7 @@ nav a {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-nav a:hover {
+.main-nav a:hover {
     color: var(--sapphire);
     border-radius: 5px;
 }
@@ -112,7 +115,7 @@ nav a:hover {
 
 @media (max-width: 900px) {
     /* Versión de móvil: Icono de hamburguesa con desplegable vertical */
-    nav ul {
+    .main-nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -213,13 +216,13 @@ nav a:hover {
 
 
 @media (min-width: 901px) {
-    /* Restablecer la barra de navegación cuando se vuelva a un ancho lo suficiente grande */
+    /* Restablecer la barra de .main-navegación cuando se vuelva a un ancho lo suficiente grande */
     #mobile-menu {
         display: none;
     }
 
 
-    /*nav ul {
+    /*.main-nav ul {
         display: flex !important;
         position: static;
         padding: 0;

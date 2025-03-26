@@ -16,25 +16,25 @@ nav.secundaria {
 
 
 @media screen and (min-width: 900px) {
-    #destinos {
+    #destinations {
         column-count: 2;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    #destinos {
+    #destinations {
         column-count: 3;
     }
 }
 
 @media screen and (max-width: 700px) {
-    #destinos {
+    #destinations {
         column-count: 1;
     }
 }
 
 /* Contenedor de la carta de viaje */
- .tarjeta-destino {
+ .destination-card {
      background-color: var(--base);
      padding-inline: 20px;
      border: 3px solid var(--lavender-light);
@@ -47,34 +47,37 @@ nav.secundaria {
  }
 
 /* Estilo de la imagen */
-.tarjeta-destino .imagen-destino {
+.destination-image {
     display: block;
+    margin: auto;
+    padding-top: 20px;
+    border-radius: 20px;
     width: 100%;
     height: auto;
 }
 
 /* Contenedor de los detalles */
-.tarjeta-destino .detalles-destino {
+.destination-details {
     padding: 16px;
     text-align: center;
 }
 
 /* Nombre del destino name */
-.tarjeta-destino .detalles-destino h2 {
+.destination-details h2 {
     margin: 0 0 10px;
     font-size: 1.5rem;
     color: var(--text);
 }
 
 /* Descripción y precio */
-.tarjeta-destino .detalles-destino p {
+.destination-details p {
     margin: 0 0 10px;
     color: var(--subtext1);
     font-size: 0.95rem;
 }
 
 /* Reservation button */
-.tarjeta-destino .boton-reserva {
+button .reserve {
     background-color: var(--blue);
     color: var(--base);
     border: none;
@@ -85,7 +88,7 @@ nav.secundaria {
     transition: background-color 0.3s ease;
 }
 
-.tarjeta-destino .boton-reserva:hover {
+button .reserve:hover {
     background-color: var(--lavender);
 }
 

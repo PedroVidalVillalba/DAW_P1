@@ -1,0 +1,28 @@
+@import url("../styles/colors.css");
+
+.footer-container {
+    background-color: var(--surface1);
+    border-top: 5px solid var(--sapphire);
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.footer-container p {
+    font-size: 12px;
+    color: white;
+    line-height: 1;
+}
+
+.footer-container a {
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+}
+.footer-container a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}

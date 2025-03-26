@@ -1,0 +1,57 @@
+@import url("../styles/colors.css");
+
+.legal-stuff-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--lavender-light);
+}
+
+.separator {
+    border: none;
+    height: 2px;
+    background-color: var(--lavender-light);
+}
+
+.legal-stuff-header {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.legal-stuff-list {
+    list-style: none;
+    counter-reset: list-counter;
+
+}
+
+.legal-stuff-list li {
+    counter-increment: list-counter;
+    position: relative;
+    padding-left: 25px;
+}
+
+.legal-stuff-list li::before {
+    content: counter(list-counter) ".";
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.legal-stuff-list h3 {
+    display: inline;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.legal-stuff-list p {
+    margin-top: 5px;
+    margin-bottom: 25px;
+    padding-right: 20px;
+}
+
+
+

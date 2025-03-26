@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Se busca si ya se ha obtenido la ruta base. Solo se calcula la primera vez
-    let rootPath = localStorage.getItem("rootPath");
+    let rootPath = sessionStorage.getItem("rootPath");
 
     if (!rootPath) {
         const currentPath = window.location.pathname;
@@ -14,10 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
             rootPath = match ? match[1].slice(0, -1) : "."; // Si no encuentra "/html/", usar "."
         }
 
+        // En el caso de GitHub Pages, ajustamos la ruta para que no dependa de "/html"
+        if (window.location.host === "pedrovidalvillalba.github.io") {
+            rootPath = "/DAW_P1";
+        }
+
         // Guardar la ruta para futuras cargas
-        localStorage.setItem("rootPath", rootPath);
+        sessionStorage.setItem("rootPath", rootPath);
     }
 
+    // Se inserta un header si no lo hay
+    let header = document.querySelector("header");
+    if (!header) {
+        header = document.createElement("header");
+        document.body.insertBefore(header, document.body.firstChild); // Lo coloca al inicio del body
+    }
 
     const navContainer = document.createElement("nav");
     navContainer.className = "main-nav";
@@ -70,15 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const menuLinks = document.querySelector(".nav-links");
-    // document.querySelectorAll(".nav-links a").forEach(link => {
-    //     link.addEventListener("click", () => {
-    //         menuCheckbox.checked = false;
-    //         () => menuLinks.style.display = menuCheckbox.checked ? "flex" : "none";
-    //     });
-    // });
 
     function checkScreenSize() {
         menuLinks.style.display = window.innerWidth > 900 ? "flex" : "none";
+        if (window.innerWidth > 900) menuSidebar.classList.remove("open");
     }
 
     window.addEventListener("resize", checkScreenSize);
