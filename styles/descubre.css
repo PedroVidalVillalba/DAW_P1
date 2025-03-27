@@ -77,7 +77,7 @@ nav.secundaria {
 }
 
 /* Reservation button */
-button .reserve {
+button.reserve {
     background-color: var(--blue);
     color: var(--base);
     border: none;
@@ -88,7 +88,7 @@ button .reserve {
     transition: background-color 0.3s ease;
 }
 
-button .reserve:hover {
+button.reserve:hover {
     background-color: var(--lavender);
 }
 
