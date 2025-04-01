@@ -48,12 +48,10 @@ nav.secundaria {
 
 /* Estilo de la imagen */
 .destination-image {
-    display: block;
     margin: auto;
     padding-top: 20px;
     border-radius: 20px;
-    width: 100%;
-    height: auto;
+
 }
 
 /* Contenedor de los detalles */

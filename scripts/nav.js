@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentPath.endsWith("/index.html")) {
             // Caso habitual: abrir la página en index.html
             rootPath = currentPath.replace("/index.html", "");
+        } else if (currentPath.endsWith("/")) {
+            rootPath = currentPath.slice(0, currentPath.lastIndexOf("/"));
         } else {
             // Si estamos en otra página, buscar la parte del path antes de "/html/"
-            const match = currentPath.match(/^(.*?\/)html\//);
-            rootPath = match ? match[1].slice(0, -1) : "."; // Si no encuentra "/html/", usar "."
+            const match = currentPath.match(/^(.*)\/html\//);
+            rootPath = match ? match[1] : currentPath.substring(0, -1);
         }
 
         // En el caso de GitHub Pages, ajustamos la ruta para que no dependa de "/html"

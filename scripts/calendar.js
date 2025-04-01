@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let rootPath = sessionStorage.getItem("rootPath");
     let selectedDate = new Date();
     let calendarInstance;
 
     // Cargar eventos desde JSON
     async function loadEvents() {
         try {
-            const response = await fetch("../data/events.json");
+            const response = await fetch(rootPath + "/data/events.json");
             return await response.json();
         } catch (error) {
             console.error("Error cargando eventos:", error);
