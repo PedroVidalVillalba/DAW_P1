@@ -1,0 +1,70 @@
+@import url("../styles/colors.css");
+
+article {
+    margin: 20px auto;
+    padding: 10px 25px 25px 25px;
+    max-width: 1200px;
+}
+
+article h1 {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    border-bottom: 4px dotted var(--sapphire);
+}
+
+article h1:hover {
+    color: var(--sapphire);
+}
+
+article h2 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+article p {
+    font-size: 1.1rem;
+}
+
+article li {
+    font-size: 1.1rem;
+}
+
+article img {
+    display: block;
+    margin: 0 auto;
+    max-width: 1120px;
+    height: auto;
+}
+
+article figcaption {
+    text-align: center;
+}
+
+
+@media (max-width: 1250px) {
+    article p {
+        font-size: 1rem;
+    }
+
+    article li {
+        font-size: 1rem;
+    }
+
+    article img {
+        max-width: 850px;
+    }
+}
+
+@media (max-width: 970px) {
+    article img {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 700px) {
+    article img {
+        max-width: 100%;
+    }
+}

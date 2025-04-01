@@ -160,6 +160,10 @@
     z-index: 1000;
 }
 
+body.open {
+    overflow-x: hidden;
+}
+
 /* Clase para mostrar el menú */
 #mobile-menu-sidebar.open {
     right: 0; /* Desliza el menú hacia dentro */
