@@ -5,26 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!rootPath) {
         const currentPath = window.location.pathname;
 
-        if (currentPath.endsWith("/index.html")) {
-            // Caso habitual: abrir la página en index.html
-            rootPath = currentPath.replace("/index.html", "");
-        } else if (currentPath.endsWith("/")) {
-            rootPath = currentPath.slice(0, currentPath.lastIndexOf("/"));
-        } else {
-            // Si estamos en otra página, buscar la parte del path antes de "/html/"
-            const match = currentPath.match(/^(.*)\/html\//);
-            rootPath = match ? match[1] : currentPath.substring(0, -1);
-        }
-
-        // En el caso de GitHub Pages, ajustamos la ruta para que no dependa de "/html"
-        if (window.location.host === "pedrovidalvillalba.github.io") {
-            rootPath = "/DAW_P1";
-        }
+        // Si estamos en otra página, buscar la parte del path antes de "/html/"
+        const match = currentPath.match(/^(.*)(\/html\/|\/index.html)/);
+        rootPath = match ? match[1] : currentPath.substring(0, currentPath.length - 1); // Si no encuentra "/html/", usar "."
 
         // Guardar la ruta para futuras cargas
         sessionStorage.setItem("rootPath", rootPath);
     }
 
+    console.log(rootPath);
     // Se inserta un header si no lo hay
     let header = document.querySelector("header");
     if (!header) {

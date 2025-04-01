@@ -1,4 +1,8 @@
 # Obsidian configuration
 .obsidian/
 .idea/
-
+documentation/tex/*.aux
+documentation/tex/*.log
+documentation/tex/*.gz
+documentation/tex/*.out
+documentation/tex/*.toc
