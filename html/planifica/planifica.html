@@ -36,10 +36,13 @@
     <section class="grid-travellers">
       <ul>
         <li class="avatar">
-          <img src="../../images/icon.png" alt="Usuario"> Alice
+          <img src="../../images/icon.png" alt="Usuario"> <p>Alice</p>
         </li>
         <li class="avatar">
-          <img src="../../images/icon.png" alt="Bob"> Bob
+          <img src="../../images/icon.png" alt="Usuario"> <p>Bob</p>
+        </li>
+        <li class="avatar">
+          <img src="../../images/icon.png" alt="Usuario"> <p>Charlie</p>
         </li>
       </ul>
     </section>
@@ -48,12 +51,11 @@
       <h2> Agenda </h2>
     </section>
 
-    <section class="grid-calendar-search-bar">
-      <label for="datepicker"></label>
-      <input type="text" id="datepicker" placeholder="Selecciona una fecha">
+    <section class="grid-calendar-events">
+      <h3>Próximos eventos </h3>
+      <ol id="events-list"></ol>
     </section>
 
-<!--    https://flatpickr.js.org/-->
     <section class="grid-calendar">
       <div id="calendar">
         <!--Aquí va el calendario con JavaScript -->
