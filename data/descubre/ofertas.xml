@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<destinations>
+    <destination>
+        <image>
+            <src>descubre/7-Thailand.jpg</src>
+            <alt>Tailandia</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Chiang Mai</name>
+            <description>Descubre templos antiguos y mercados nocturnos vibrantes.</description>
+            <price>
+                <lower>800</lower>
+                <upper>1800</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>18.7953</latitude>
+            <longitude>98.9986</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/8-Portugal.jpg</src>
+            <alt>Portugal</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Lisboa</name>
+            <description>Calles empedradas, tranvías clásicos y vistas al océano.</description>
+            <price>
+                <lower>700</lower>
+                <upper>1600</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>38.7223</latitude>
+            <longitude>-9.1393</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/9-Colombia.jpg</src>
+            <alt>Colombia</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Cartagena de Indias</name>
+            <description>Ciudad amurallada con playas caribeñas y cultura colonial.</description>
+            <price>
+                <lower>900</lower>
+                <upper>2000</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>10.3910</latitude>
+            <longitude>-75.4794</longitude>
+        </location>
+    </destination>
+</destinations>

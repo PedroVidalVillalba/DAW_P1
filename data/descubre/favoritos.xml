@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<destinations>
+    <destination>
+        <image>
+            <src>descubre/10-France.jpg</src>
+            <alt>París</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Paris</name>
+            <description>La ciudad del amor, ideal para una escapada romántica.</description>
+            <price>
+                <lower>2500</lower>
+                <upper>5000</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>48.8584</latitude>
+            <longitude>2.2945</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/11-Japan.jpg</src>
+            <alt>Tokyo</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Tokyo</name>
+            <description>Fusión de tecnología, cultura tradicional y gastronomía única.</description>
+            <price>
+                <lower>3500</lower>
+                <upper>6000</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>35.6580</latitude>
+            <longitude>139.7016</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/12-USA.jpg</src>
+            <alt>Nueva York</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Nueva York</name>
+            <description>La ciudad que nunca duerme, llena de energía y diversidad.</description>
+            <price>
+                <lower>3000</lower>
+                <upper>5500</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>40.7851</latitude>
+            <longitude>-73.9683</longitude>
+        </location>
+    </destination>
+</destinations>

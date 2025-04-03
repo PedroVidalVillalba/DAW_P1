@@ -24,15 +24,15 @@
     overflow: hidden;
     float: right;
     text-align: center;
-    padding: 20px;
+    padding: 50px 20px 20px 20px;
 }
 
-main .nombre {
+.nombre {
     display: flex;
     align-items: center;
 }
 
-main .title-container {
+.title-container {
     display: flex;
     align-items: center;
     text-decoration: none; /* Evita subrayado en el enlace */
@@ -43,87 +43,89 @@ main .title-container {
 }
 
 
-main .title-container img {
+.title-container img {
     height: 100px;
     width: auto;
 }
 
-main .title-container h1 {
+.title-container h1 {
     flex-grow: 1; /* Ocupa el espacio restante */
+    margin: 0 auto;
     font-size: 2rem;
+    line-height: normal;
     color: var(--sapphire);
     font-weight: bold;
 }
 
-main .nuestra-historia {
+.nuestra-historia {
     padding: 0 20px 20px 20px;
     border-radius: 10px;
     border: 2px solid var(--rosewater);
     margin: 20px auto;
 }
 
-main .nuestra-historia h3 {
+.nuestra-historia h3 {
     color: var(--rosewater);
     text-align: center;
     font-size: 1.8rem;
 }
 
-main .nuestra-historia p {
+.nuestra-historia p {
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.6; /* Espaciado entre líneas */
 }
 
-main hr {
+hr {
     border: none;
     height: 2px;
 }
 
-main .nuestra-historia hr {
+.nuestra-historia hr {
     background-color: var(--rosewater);
 }
 
-main .compromiso-de-calidad {
+.compromiso-de-calidad {
     padding: 0 20px 20px 20px;
     border-radius: 10px;
     border: 2px solid var(--lavender);
     margin: 20px auto;
 }
 
-main .compromiso-de-calidad h3 {
+.compromiso-de-calidad h3 {
     color: var(--lavender);
     text-align: center;
     font-size: 1.8rem;
 }
 
-main .compromiso-de-calidad p {
+.compromiso-de-calidad p {
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.6; /* Espaciado entre líneas */
 }
 
-main .compromiso-de-calidad hr {
+.compromiso-de-calidad hr {
     background-color: var(--lavender);
 }
 
-main .FAQ {
+.FAQ {
     padding: 0 20px 20px 20px;
     border-radius: 10px;
     border: 2px solid var(--peach);
     margin: 20px auto;
 }
 
-main .FAQ h3 {
+.FAQ h3 {
     color: var(--peach);
     text-align: center;
     font-size: 1.8rem;
 }
 
-main .FAQ dl {
+.FAQ dl {
     counter-reset: faq-counter; /* Iniciar el contador */
 }
 
-main .FAQ dt {
+.FAQ dt {
     counter-increment: faq-counter;
     padding-left: 10px;
     text-align: left;
@@ -132,53 +134,53 @@ main .FAQ dt {
     font-weight: bold;
 }
 
-main .FAQ dt::before {
+.FAQ dt::before {
     content: counter(faq-counter) ". "; /* Agregar numeración */
     font-weight: bold;
     color: var(--peach);
 }
 
-main .FAQ dd {
+.FAQ dd {
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.6; /* Espaciado entre líneas */
 }
 
-main .FAQ hr {
+.FAQ hr {
     background-color: var(--peach);
 }
 
 
-main .contactanos {
+.contactanos {
     padding: 0 20px 0 20px;
     border-radius: 10px;
     border: 2px solid var(--green);
     margin: 20px auto;
 }
 
-main .contactanos h3 {
+.contactanos h3 {
     color: var(--green);
     text-align: center;
     font-size: 1.8rem;
     line-height: 25pt;
 }
 
-main .contactanos ul {
+.contactanos ul {
     list-style: none;
     padding: 10px;
 }
 
-main .contactanos li {
+.contactanos li {
     margin-bottom: 15px;
 }
 
-main .contactanos a {
+.contactanos a {
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
-main .social-media-container {
+.social-media-container {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -190,19 +192,19 @@ main .social-media-container {
     color: black;
 }
 
-main .social-media-container:hover {
+.social-media-container:hover {
     border-color: var(--green);
     color: var(--green);
 }
 
-main .social-media-container img {
+.social-media-container img {
     height: 40px;
     width: auto;
     padding-left: 10px;
     object-fit: cover;
 }
 
-main .social-media-container p {
+.social-media-container p {
     flex-grow: 1; /* Ocupa el espacio restante */
     text-decoration: none;
     text-align: left;
@@ -213,22 +215,22 @@ main .social-media-container p {
     transition: inherit;
 }
 
-main .social-media-container:hover p {
+.social-media-container:hover p {
     color: var(--green);
 }
 
-main .blank-space {
+.blank-space {
     margin-top: 25px;
     visibility: hidden;
 }
 
-main .foto-de-empresa {
+.foto-de-empresa {
     width: 100%;
     text-align: center;
     margin-top: 40px;
 }
 
-main .foto-de-empresa img {
+.foto-de-empresa img {
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -242,26 +244,26 @@ main .foto-de-empresa img {
         max-width: 580px;
     }
 
-    main .nuestra-historia p {
+    .nuestra-historia p {
         font-size: 1.1rem;
         line-height: 1.5;
     }
 
-    main .compromiso-de-calidad p {
+    .compromiso-de-calidad p {
         font-size: 1.1rem;
         line-height: 1.5;
     }
 
-    main .FAQ dd {
+    .FAQ dd {
         font-size: 1.1rem;
         line-height: 1.5;
     }
 
-    main .contactanos {
+    .contactanos {
         padding: 0 5px 0 5px;
     }
 
-    main .contactanos h3 {
+    .contactanos h3 {
         color: var(--green);
         text-align: center;
         font-size: 1.5rem;
@@ -282,17 +284,17 @@ main .foto-de-empresa img {
         float: none;
     }
 
-    main .nuestra-historia p {
+    .nuestra-historia p {
         font-size: 1rem;
         line-height: 1.3;
     }
 
-    main .compromiso-de-calidad p {
+    .compromiso-de-calidad p {
         font-size: 1rem;
         line-height: 1.3;
     }
 
-    main .FAQ dd {
+    .FAQ dd {
         font-size: 1rem;
         line-height: 1.3;
     }

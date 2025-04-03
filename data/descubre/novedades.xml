@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<destinations>
+    <destination>
+        <image>
+            <src>descubre/4-Croatia.jpg</src>
+            <alt>Croacia</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Dubrovnik</name>
+            <description>La "Perla del Adriático", famosa por su arquitectura histórica.</description>
+            <price>
+                <lower>1300</lower>
+                <upper>2700</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>42.6507</latitude>
+            <longitude>18.0944</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/5-Vietnam.jpg</src>
+            <alt>Vietnam</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Hanoi</name>
+            <description>Capital vibrante con mezcla de influencias francesas y asiáticas.</description>
+            <price>
+                <lower>950</lower>
+                <upper>2200</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>21.0278</latitude>
+            <longitude>105.8342</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/6-Morocco.jpg</src>
+            <alt>Marruecos</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Chefchaouen</name>
+            <description>La ciudad azul, famosa por sus callejones y montañas del Rif.</description>
+            <price>
+                <lower>1000</lower>
+                <upper>2400</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>35.1714</latitude>
+            <longitude>-5.2699</longitude>
+        </location>
+    </destination>
+</destinations>

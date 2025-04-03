@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("rootPath", rootPath);
     }
 
-    console.log(rootPath);
     // Se inserta un header si no lo hay
     let header = document.querySelector("header");
     if (!header) {
@@ -65,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mobileMenu.addEventListener("click", function () {
         menuSidebar.classList.add("open"); // Muestra el menú
+        body.classList.toggle("open"); // Ajuste del ancho
     });
     closeButton.addEventListener("click", function () {
         menuSidebar.classList.remove("open"); // Oculta el menú

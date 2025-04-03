@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<destinations>
+    <destination>
+        <image>
+            <src>descubre/13-Iceland.jpg</src>
+            <alt>Islandia</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Landmannalaugar</name>
+            <description>Senderismo entre montañas de colores y aguas termales naturales.</description>
+            <price>
+                <lower>1800</lower>
+                <upper>3500</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>63.9830</latitude>
+            <longitude>-19.0618</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/14-Nepal.jpg</src>
+            <alt>Nepal</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Annapurna</name>
+            <description>Trekking por una de las rutas más desafiantes del Himalaya.</description>
+            <price>
+                <lower>2500</lower>
+                <upper>4500</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>28.3949</latitude>
+            <longitude>84.1240</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/15-CostaRica.jpg</src>
+            <alt>Costa Rica</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Parque Nacional Corcovado</name>
+            <description>Explora selvas vírgenes y avista jaguares y tortugas marinas.</description>
+            <price>
+                <lower>1200</lower>
+                <upper>2800</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>8.5400</latitude>
+            <longitude>-83.5700</longitude>
+        </location>
+    </destination>
+</destinations>

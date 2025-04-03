@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<destinations>
+    <destination>
+        <image>
+            <src>descubre/1-Greece.jpg</src>
+            <alt>Grecia</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Atenas</name>
+            <description>Cuna de la civilización occidental. Descubre la Acrópolis, el Partenón y platos tradicionales como la moussaka.</description>
+            <price>
+                <lower>1800</lower>
+                <upper>3200</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>37.9838</latitude>
+            <longitude>23.7275</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/2-Spain.jpg</src>
+            <alt>España</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Barcelona</name>
+            <description>Arte modernista, playas mediterráneas y tapas en La Rambla. No te pierdas la Sagrada Familia.</description>
+            <price>
+                <lower>900</lower>
+                <upper>2200</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>41.3851</latitude>
+            <longitude>2.1734</longitude>
+        </location>
+    </destination>
+    <destination>
+        <image>
+            <src>descubre/3-Mexico.jpg</src>
+            <alt>Riviera Maya</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Tulum</name>
+            <description>Playas de arena blanca, ruinas mayas frente al mar y cenotes cristalinos. Perfecto para snorkel y relajo.</description>
+            <price>
+                <lower>1600</lower>
+                <upper>3000</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>20.2150</latitude>
+            <longitude>-87.4515</longitude>
+        </location>
+    </destination>
+</destinations>

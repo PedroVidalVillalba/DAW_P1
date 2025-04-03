@@ -4,6 +4,7 @@
 .carousel-item img{
     border-radius: 10px;
     object-fit: contain;
+    height: auto;
 }
 
 .carousel-caption h3 {
@@ -16,42 +17,68 @@
     color: black;
 }
 
-/*.alert {
-    padding-inline: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
-    background-color: var(--rosewater);
-}
-.alert-danger {
-    background-color: var(--lavender-light);
-}*/
 
 #Frase {
     margin-top: 20px;
 }
 
-.card {
-    margin: 50px;
+#Newsletter {
+    margin-top: 100px;
 }
+
 
 .alert {
     margin: 50px auto;
     max-width: 1200px;
     width: 90%;
+
+    /* Usamos el color de bootstrap pero quitándole opacidad */
+    box-shadow: 2px 4px 15px color-mix(in srgb, var(--bs-primary-border-subtle) 60%, transparent);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.alert:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 8px 20px color-mix(in srgb, var(--bs-primary-border-subtle) 80%, transparent);
+    /*color: white;  Mejor contraste */
 }
 
 .alert p {
     font-size: 1.1rem;
 }
 
+#Valoraciones {
+    margin-top: 100px;
+}
+
+.card {
+    margin: 50px;
+}
+
+.review-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.review-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+
+
+
 @media (max-width: 900px) {
-    .image-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .image-box {
-        width: 90%;
-    }
     .alert p {
         font-size: 1rem;
     }
