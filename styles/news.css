@@ -44,6 +44,9 @@ article figcaption {
 
 
 @media (max-width: 1250px) {
+    article {
+        max-width: 900px;
+    }
     article p {
         font-size: 1rem;
     }
@@ -58,6 +61,9 @@ article figcaption {
 }
 
 @media (max-width: 970px) {
+    article {
+        max-width: 650px;
+    }
     article img {
         max-width: 600px;
     }
