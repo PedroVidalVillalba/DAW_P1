@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("rootPath", rootPath);
     }
 
-    console.log(rootPath);
     // Se inserta un header si no lo hay
     let header = document.querySelector("header");
     if (!header) {
