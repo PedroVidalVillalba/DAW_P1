@@ -4,19 +4,20 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 50px;
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
     padding: 20px;
     margin: 20px auto;
     max-width: 1300px;
     border-radius: 20px; /* Bordes redondeados */
     border: 5px solid var(--surface0);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
     grid-template-areas:
-    "travellers-title calendar-title      calendar"
-    "travellers       calendar-search-bar calendar"
-    "advices          advices             advices"
-    "security         security            security"
+    "travellers-title calendar-title  calendar-title"
+    "travellers       calendar-events calendar"
+    "advices          advices         advices"
+    "security         security        security"
 }
 
 .grid-travellers-title {
@@ -50,8 +51,40 @@
 
 .grid-travellers {
     grid-area: travellers;
-
+    border-right: 3px solid var(--lavender-light);
 }
+
+.grid-travellers ul {
+    list-style: none;
+    padding: 20px;
+    opacity: 1;
+}
+
+.grid-travellers .avatar {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    transition: transform 0.5s, box-shadow 0.5s, border 0.5s;
+}
+
+.grid-travellers .avatar:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 10px rgba(0, 0, 255, 0.2);
+    border-color: rgba(0, 0, 255, 0.2);
+}
+
+.grid-travellers .avatar img {
+    width: 30px;
+    height: 30px;
+    padding-right: 20px;
+}
+
+
 
 .grid-calendar-title {
     grid-area: calendar-title;
@@ -64,8 +97,8 @@
     text-align: center;
 }
 
-.grid-calendar-search-bar {
-    grid-area: calendar-search-bar;
+.grid-calendar-events {
+    grid-area: calendar-events;
     margin: 10px auto;
 }
 
@@ -74,18 +107,11 @@
 }
 
 .grid-advices {
-    margin-top: 40px;
     grid-area: advices;
+    margin-top: 80px;
     padding-inline: 20px;
     border-radius: 15px;
     border: 3px solid var(--rosewater);
-}
-
-.grid-security {
-    grid-area: security;
-    border-radius: 15px;
-    border: 3px solid var(--lavender-light);
-    padding-inline: 20px;
 }
 
 .grid-advices h2 {
@@ -98,6 +124,7 @@
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.6;
+    margin-bottom: 12px;
 }
 
 .separator {
@@ -107,6 +134,15 @@
 
 .grid-advices .separator {
     background-color: var(--rosewater);
+}
+
+.grid-security {
+    grid-area: security;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    border: 3px solid var(--lavender-light);
+    padding-inline: 20px;
 }
 
 .grid-security h2 {
@@ -130,6 +166,7 @@
     text-align: left;
     font-size: 1.2rem;
     line-height: 1.6;
+    margin-bottom: 12px;
     counter-increment: num;
 }
 
@@ -145,25 +182,7 @@
     background-color: var(--lavender-light);
 }
 
-input[type="text"] {
-    padding: 5px;
-    transition: border-color 0.5s ease, color 0.5s ease;
-    border: 2px solid var(--crust);
-    border-radius: 5px;
-    font-size: 16px;
-    align-content: center;
-    cursor: pointer;
-}
 
-input[type="text"]:hover {
-    border-color: var(--sapphire);
-}
-
-input[type="text"]:focus {
-    outline: none;
-    border-color: var(--sapphire);
-    color: var(--text);
-}
 
 
 .grid-container h2 {
@@ -174,30 +193,47 @@ input[type="text"]:focus {
     text-align: center;
 }
 
-.grid-travellers ul {
+
+
+.grid-calendar-events h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#events-list {
     list-style: none;
-    border-radius: 15px;
-    border: 3px solid var(--lavender-light);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    opacity: 1;
+    padding: 0;
+    margin: 0;
 }
-.grid-travellers img {
-    width: 20px;
-    height: 20px;
+
+#events-list li {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: transform 0.5s, box-shadow 0.5s, border 0.5s;
 }
-.grid-travellers li {
-    font-size: 1.5em;
-    color: black;
-    opacity: 1;
+
+#events-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 10px rgba(0, 0, 255, 0.2);
+    border-color: rgba(0, 0, 255, 0.2);
+}
+
+.event-day {
+    background: red !important;
+    color: white !important;
+    font-weight: bold !important;
 }
 
 
 /* Parte del calendario con flatpickr */
 .flatpickr-calendar {
-    margin: 20px auto;
+    margin: 10px auto;
     background: var(--base);
-    border: 2px solid var(--sapphire) !important;
+    outline: 2px solid var(--sapphire) !important;
     border-radius: 5px !important;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -211,6 +247,7 @@ input[type="text"]:focus {
 }
 
 
+
 /* Apariencia de los días */
 .flatpickr-day {
     border-radius: 50%; /* Hacer los días circulares */
@@ -219,23 +256,18 @@ input[type="text"]:focus {
 
 /* Día seleccionado */
 .flatpickr-day.selected {
-    background: var(--blue);
+    background: var(--sapphire) !important;
     color: white;
     font-weight: bold;
 }
 
-/* Eventos en rojo */
-.flatpickr-day.event-day {
-    background: red !important;
-    color: white !important;
-    font-weight: bold;
-}
 
 /* Días de la semana en negrita */
 .flatpickr-weekdays {
     font-weight: bold;
     border-bottom: 2px solid var(--sapphire);
     padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 /* Bordes entre los días */
@@ -254,21 +286,34 @@ input[type="text"]:focus {
 @media (max-width: 1100px){
     .grid-container {
         max-width: 700px;
-        margin-outside: 30px;
+        margin: 20px auto;
         width: 90%;
+        border-color: transparent;
+        box-shadow: 0 0 transparent;
 
-        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+        grid-template-columns: 1fr;
         grid-template-areas:
-        "travellers-title calendar-title"
-        "travellers       calendar-search-bar"
-        "calendar         calendar"
-        "advices          advices"
-        "security         security"
+        "travellers-title"
+        "travellers"
+        "calendar-title"
+        "calendar"
+        "calendar-events"
+        "advices"
+        "security"
+    }
+
+    .grid-travellers {
+        padding-right: 50px;
+        padding-left: 50px;
+        border-right-color: transparent;
+        border-bottom: 3px solid var(--lavender-light);
     }
 
     .grid-advices li {
         font-size: 1rem;
         line-height: 1.3;
+        margin-bottom: 8px;
     }
 
     .grid-security p {
@@ -279,5 +324,6 @@ input[type="text"]:focus {
     .grid-security li {
         font-size: 1rem;
         line-height: 1.3;
+        margin-bottom: 8px;
     }
 }
