@@ -49,7 +49,7 @@
 \usepackage{upquote}
 \usepackage{listings}
 \lstdefinelanguage{JavaScript}{
-	morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, let, const},
+	morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, let, const, async, await},
 	morecomment=[s]{/*}{*/},
 	morecomment=[l]//,
 	morestring=[b]",
@@ -124,9 +124,6 @@
 	\section{Introducción}
 	\textbf{El Problema del Viajante} es una agencia de viajes ficticia en la que se ofrecerán todo tipo de servicios relacionados con la planificación y la gestión de viajes, incluyendo transporte, alojamiento, lugares de interés para visitar, ocio, restauración, etc.
 	
-	\textcolor{red}{------------ Hay que mejorar la intro, mínimo una carilla ---------}
-	\textcolor{red}{Poner en algún lado que nosotros no hacemos las reservas como tal, solo lo ponemos bonito y redirigimos a otros lugares donde sí se puede reservar}
-	
 	El proyecto puede encontrarse en \href{https://github.com/PedroVidalVillalba/DAW_P1}{https://github.com/PedroVidalVillalba/DAW\_P1}, donde se encuentra también la última versión estable de este mismo documento y de la página web.
 	
 	
@@ -139,6 +136,10 @@
 	\end{itemize}
 	
 	 En estas páginas se puede comprobar que es habitual ofrecer una experiencia lo más completa posible respecto a la organización desde el mismo lugar el transporte y alojamiento. Pero hemos echado en falta que ninguna tenga aspectos más relacionados con la planificación en el propio viaje, como lugares de interés o restaurantes, y que incluso se pueda acceder a la reserva desde la propia página, de forma que se cree un itinerario. Además, ya no sería necesario acceder a otro lugar para indicar en el calendario las fechas indicadas, sino que ya se mostrarían en la propia página, y este calendario podría sincronizarse con el de la cuenta de Google, u otros semejantes.
+	 
+	 También es importante destacar que el objetivo principal de la página no sería realmente obtener beneficios vendiendo viajes por todo el mundo, sino que serviría como una interfaz desde la que poder consultar gran cantidad de destinos y obtener información sobre cada uno ellos, todo en un mismo lugar. Además, si se llegase a desplegar la aplicación de forma realista, sería necesario comunicarse con otras páginas web, a las que se redirigía al usuario para que realice su reserva del viaje.
+	 
+	 No obstante, sí que sería interesante ofrecer viajes personalizados dentro la aplicación, a un precio más alto de lo habitual pero que ofreciesen todo un itinerario planificado previamente por los trabajadores de la empresa ficticia. De esta forma, las personas que no quieran organizar los lugares de visita de su viaje, pueden acceder a esta característica.
 	
 	
 	
@@ -544,7 +545,7 @@
 		\caption{Página About us - Ancho 1920px}
 	\end{figure}
 
-	La figura anterior muestra cómo se vería en un ordenador actual. El contenido aparece centrado, y la información de contacto y redes sociales hacia el lateral.
+	La figura anterior muestra cómo se vería en un ordenador actual, o en una pantalla de tamaño grande. El contenido aparece centrado, y la información de contacto y redes sociales hacia el lateral.
 	
 	\begin{figure} [H]
 		\centering
@@ -552,7 +553,7 @@
 		\caption{Página About us - Ancho 1024px}
 	\end{figure}
 
-	Así se mostraría el contenido en un ordenador antiguo. La letra de los párrafos es ligeramente más pequeña, y cada columna es un poco menos ancha, para ajustarse a una pantalla más cuadrada.
+	Así se mostraría el contenido en una pantalla de tamaño mediano. La letra de los párrafos es ligeramente más pequeña, y cada columna es un poco menos ancha, para ajustarse a una pantalla más estrecha.
 
 	\begin{figure} [H]
 		\centering
@@ -573,7 +574,7 @@
 		\caption{Esquema About us}
 	\end{figure}
 
-	Se muestra en la imagen el esquema que sigue la página, que es bastante sencillo como se ha comentado. Tiene dos columnas, sobre las que se aplica el efecto, la primera está dividida en secciones, y están compuestas todas ellas por un encabezado y párrafos. La segunda columna tiene la sección de contacto, con dos listas, y la foto de empresa.
+	Se muestra en la imagen el esquema que sigue la página, que es bastante sencillo como se ha comentado. Tiene dos columnas, sobre las que se aplica el efecto, la primera está dividida en secciones, y están compuestas todas ellas por un encabezado y párrafos. La segunda columna tiene la sección de contacto y redes sociales, con dos listas, y finalmente aparece la foto de empresa.
 
 	
 	\section{CSS Multicol}
@@ -618,6 +619,8 @@
 	}
 }
 	\end{lstlisting}
+
+	La propiedad más relevante del código es \texttt{grid-template-aread}, la cual, como indica su nombre, crea una plantilla de la cuadrícula, por lo que se puede ajustar fácilmente la disposición de los elementos asignándole a cada uno su área. Se pasa así de un diseño en tres columnas para pantallas más anchas, a uno de una columna en dispositivos más pequeños.
 	
 	\begin{figure} [H]
 		\centering
@@ -684,7 +687,7 @@
 		\caption{Página principal - Ancho 1024px}
 	\end{figure}
 	
-	Otro aspecto positivo de utilizar \textit{Bootstrap} es que él mismo gestiona los puntos de ruptura, lo cual también facilita el formateo de la página. Otro elemento destacable es que se han incluido imágenes de diferentes tamaños con el objetivo de minimizar el ancho de banda utilizado, especialmente pensado para dispositivos móviles, los cuales suelen tener conexiones más inestables.
+	Otro aspecto positivo de utilizar \textit{Bootstrap} es que él mismo gestiona los puntos de ruptura, lo cual también facilita el formateo de la página. Otro elemento destacable es que se han incluido imágenes de diferentes tamaños con el objetivo de minimizar el ancho de banda utilizado, especialmente pensado para dispositivos móviles, los cuales suelen tener conexiones más débiles e inestables.
 
 	\begin{figure} [H]
 		\centering
@@ -728,7 +731,7 @@
 	Se ha incluido código JavaScript en tres elementos principales, los cuales se comentarán ahora en qué consiste cada uno, y luego se entrará en detalles específicos en cada uno de los apartados, pues tienen varias partes.
 	
 	\begin{itemize}
-		\item \textbf{Inclusión dinámica del menú de navegación y del pie de página}: con el objetivo de evitar copiar y pegar constantemente estos elementos, con el riesgo de realizar de forma incorrecta, en especial si se realiza un cambio, se ha decidido añadirlo mediante un código JavaScript. Este calcula la ruta desde la que se encuentra cada página, y funciona tanto con un servidor como sin él, sin importar dónde esté ubicada la raíz.
+		\item \textbf{Inclusión dinámica del menú de navegación y del pie de página}: con el objetivo de evitar copiar y pegar constantemente estos elementos, con el riesgo de realizarlo de forma incorrecta, en especial si se realiza un cambio, se ha decidido añadirlo mediante un código JavaScript. Este calcula la ruta desde la que se encuentra cada página, y funciona tanto con un servidor como sin él, sin importar dónde esté ubicada la raíz.
 		\item \textbf{Calendario responsivo}: se ha utilizado el calendario proporcionado por la página web \href{https://flatpickr.js.org/}{flatpickr} para añadir sobre él eventos cargados desde un fichero, los cuales también se muestran en la pestaña Planifica.
 		\item \textcolor{red}{Lo tuyo}
 	\end{itemize}
@@ -778,7 +781,7 @@ document.querySelector("header").appendChild(navContainer);
 		\caption{Página principal con el menú de navegación}
 	\end{figure}
 
-	En este caso no hay elementos que cambien dinámicamente, por lo que solamente se pueden mostrar dos imágenes de las grandes diferencias que produce en el aspecto de la página un menú de navegación visualmente interesante respecto de no tenerlo.
+	En este caso, no hay elementos que cambien dinámicamente, por lo que solamente se pueden mostrar dos imágenes de las grandes diferencias que produce en el aspecto de la página un menú de navegación visualmente interesante respecto de no tenerlo.
 	
 	
 	\begin{lstlisting}
@@ -786,7 +789,7 @@ const mobileMenu = document.getElementById("mobile-menu");
 const closeButton = document.getElementById("close-menu");
 	\end{lstlisting}
 
-	Para finalizar, se incluyen dos accesos a elementos del DOM que devuelve el nodo cuyo id coincide con el nombre indicado. Estos se utilizan para la gestión del menú de navegación para móviles, que se crea mediante una barra lateral. Solamente en el código del menú de navegación hay muchas más accesos al DOM de todo tipo, pero aquí solo se incluyen algunos de los más relevantes para la comprensión del código.
+	Para finalizar, se incluyen dos accesos a elementos del DOM que devuelven el nodo cuyo id coincide con el nombre indicado. Estos se utilizan para la gestión del menú de navegación para móviles, que se crea mediante una barra lateral. Solamente en el código del menú de navegación hay muchas más accesos al DOM de todo tipo, pero aquí solo se incluyen algunos de los más relevantes para la comprensión del código.
 	
 	\begin{figure} [H]
 		\centering
@@ -801,7 +804,7 @@ const closeButton = document.getElementById("close-menu");
 
 	\subsection{Respuesta a eventos}
 
-	En relación con el menú de móvil, también hay que comentar la respuesta a eventos, la cual es necesaria para el funcionamiento correcto del mismo, ya que requiere desplazar la barra lateral a una zona visible de la pantalla, y que desaparezca cuando se cierra.
+	En relación con el menú de móvil, también hay que comentar la respuesta a eventos, la cual es necesaria para el funcionamiento correcto del mismo, ya que requiere desplazar la barra lateral a una zona visible de la pantalla, y que desaparezca otra vez cuando se cierra.
 	
 	\begin{lstlisting}
 mobileMenu.addEventListener("click", function () {
@@ -810,7 +813,7 @@ mobileMenu.addEventListener("click", function () {
 });
 	\end{lstlisting} 
 
-	En el elemento \texttt{mobileMenu} que se ha mencionado anteriormente que se obtiene mediante un acceso al DOM, se añade un \textit{listener} que ejecuta la función mostrada cuando se hace click sobre el botón del menú. Cuando se pulsa con el ratón, se muestra el menú mediante una transición realizada con CSS y ajusta la clase \texttt{open}, alternando entre el estado abierto y cerrado, lo cual permite activar y desactivar estilos dinámicamente. El botón de cierre tiene un funcionamiento similar, por lo que no se incluye.
+	En el elemento \texttt{mobileMenu} que se ha mencionado anteriormente, el cual se obtiene mediante un acceso al DOM, se añade un \textit{listener} que ejecuta la función mostrada cuando se hace click sobre el botón del menú. Cuando se pulsa con el ratón, se muestra el menú mediante una transición realizada con CSS al añadirle la clase \texttt{open}, que tiene su propio formateo. Además, ajusta la clase \texttt{open} del cuerpo, alternando entre el estado abierto y cerrado, lo cual permite activar y desactivar estilos dinámicamente. El botón de cierre tiene un funcionamiento similar, por lo que no se incluye.
 	
 	\begin{figure} [H]
 		\centering
@@ -834,9 +837,9 @@ function checkScreenSize() {
 window.addEventListener("resize", checkScreenSize);
 	\end{lstlisting}
 
-	Otro evento incluido en este script está relacionado con los cambios en el tamaño de la pantalla. Cuando se redimensiona la pantalla, se comprueba el ancho de esta, lo cual permite saber cuándo mostrar el menú de móvil. Además, en caso de que esté abierta la barra lateral (\texttt{menuLinks}) cuando se amplíe la pantalla a un ancho superior a 900px, esta se cierra automáticamente, con una transición suave creada con CSS.
+	Otro evento incluido en este script está relacionado con los cambios en el tamaño de la pantalla. Cuando se redimensiona la pantalla, se comprueba el ancho de esta, lo cual permite saber cuándo mostrar y ocultar el menú de móvil. Además, en caso de que esté abierta la barra lateral (\texttt{menuLinks}) cuando se amplíe la pantalla a un ancho superior a 900px, esta se cierra automáticamente, con una transición suave creada con CSS.
 	
-	Este efecto no se puede mostrar con nuevas imágenes ya que es totalmente dinámico, y ya se han mostrado en múltiples ocasiones fotos con el menú de navegación de ordenador y de móvil.
+	Este efecto no se puede mostrar con nuevas imágenes ya que es totalmente dinámico, y ya se han mostrado en múltiples ocasiones fotos con el menú de navegación de ordenador y de móvil, por lo que no se incluyen de nuevo.
 	
 	\begin{Huge}
 		\textcolor{red}{Falta un evento (algo con un listener). Que no sea click ni resize si puede ser}
@@ -853,14 +856,14 @@ window.addEventListener("resize", checkScreenSize);
 	\end{Huge}
 	
 	\section{Carga de contenido}
-	En esta sección se mostrarán dos posibles formas de cargar contenido, una utilizando API Fetch para leer un archivo JSON, en el que se encuentran los eventos que luego se muestran en el calendario, y otra que \textcolor{red}{??????????????????????} para cargar un archivo XML y \textcolor{red}{habla algo del Single Page Application si quieres}
+	En esta sección se mostrarán dos posibles formas de cargar contenido, una utilizando API Fetch para leer un archivo JSON, en el que se encuentran los eventos que luego se muestran en el calendario, y otra que usa \textcolor{red}{??????????????????????} para cargar un archivo XML y \textcolor{red}{habla algo del Single Page Application si quieres}
 	\subsection{Formato XML}
 	\begin{Huge}
 		\textcolor{red}{Falta -----------------------------------}
 	\end{Huge}
 
 	\subsection{Formato JSON}
-	Como se ha mencionado, se carga un archivo JSON sencillo que incluye los próximos eventos relevantes para el usuario, los cuales se muestran en el calendario. El formato utilizado en el archivo JSON es
+	Como se ha mencionado, se carga un archivo JSON sencillo que incluye los próximos eventos relevantes para el usuario, los cuales se muestran en el calendario señalando los días en los que ocurren, y junto a él en una lista donde aparece la fecha en formato de texto y el nombre del evento. El formato utilizado en el archivo JSON es
 	
 	\begin{lstlisting}
 {"events": [
@@ -890,7 +893,7 @@ loadEvents().then(function (events) {
 });
 	\end{lstlisting}
 	
-	Este código lleva al cliente el archivo indicando en la función \texttt{fetch()}, y lo lee, devolviendo un array con los eventos en caso de éxito, es decir, que el archivo ha sido procesado correctamente. En ese caso, se ejecuta la función \texttt{initCalendar()}, la cual no se incluye ya que principalmente se encarga de configurar el calendario para mostrar de la forma adecuada (en español, que el primer día de la semana sea el lunes, etc.). Sí que es interesante comentar una de las funciones a las que llama \texttt{initCalendar()}, que se muestra a continuación.
+	Este código lleva al cliente el archivo indicado en la función \texttt{fetch()}, y lo lee, devolviendo un array con los eventos en caso de éxito, es decir, si el archivo ha sido procesado correctamente. En ese caso, se ejecuta la función \texttt{initCalendar()}, la cual no se incluye ya que principalmente se encarga de configurar el calendario para mostrarlo de forma adecuada (en español, que el primer día de la semana sea el lunes, etc.). Sí que es interesante comentar una de las funciones a las que llama \texttt{initCalendar()}, que se muestra a continuación.
 	
 	\begin{lstlisting}
 function highlightEvents(instance, events) {
@@ -899,17 +902,16 @@ function highlightEvents(instance, events) {
 		
 		days.forEach(function (day) {
 			let date = formatLocalDate(day.dateObj); // Formato YYYY-MM-DD
-			// Comprobar si la fecha está en la lista de eventos
+			// Comprobar si la fecha esta en la lista de eventos
 			if (markedDates.includes(date)) {
 				day.classList.add("event-day");
 			}
 		});
 	}, 100);
-	
 }
 	\end{lstlisting}
 	
-	Esta función se encarga de resaltar los días en los que hay algún evento. Para ello, se accede al DOM para obtener todos los nodos que son un día, y para cada uno se comprueba si existe algún evento cuya fecha coincida con la del propio días. En caso afirmativo, se añade la clase \texttt{event-day}, la cual muestra el día de color rojo. Los días marcados también se añaden en una lista al lado del calendario junto con su título, aunque este código no se muestra debido a su simplicidad.
+	Esta función se encarga de resaltar los días en los que hay algún evento. Para ello, se accede al DOM para obtener todos los nodos que son un día, los cuales fueron creados al instanciar el calendario, y para cada uno se comprueba si existe algún evento cuya fecha coincida con la del propio día. En caso afirmativo, se añade la clase \texttt{event-day} al mencionado día, la cual lo muestra de color rojo. Los días marcados también se añaden en una lista al lado del calendario junto con el nombre del evento, aunque este código no se muestra debido a su simplicidad.
 	
 	\begin{figure} [H]
 		\centering
@@ -924,7 +926,7 @@ function highlightEvents(instance, events) {
 	\end{figure}
 	
 
-	En las dos imágenes anteriores se muestran las grandes diferencias entre el calendario por defecto de flatpickr y las modificaciones añadidas con JavaScript. De nuevo, hay detalles que no se muestran en las imágenes como la responsividad al pasar el ratón por encima de los días del calendario, o por encima de la lista de eventos.
+	En las dos imágenes anteriores se muestran las diferencias entre el calendario proporcionado por \href{https://flatpickr.js.org/}{flatpickr} y las modificaciones añadidas con JavaScript. De nuevo, hay detalles que no se muestran en las imágenes como la responsividad al pasar el ratón por encima de los días del calendario, o por encima de la lista de eventos.
 	
 	
 	
@@ -963,14 +965,72 @@ function highlightEvents(instance, events) {
 	\label{sect:anexo2}
 	En esta sección se incluye una lista de cambios realizados a lo largo del proyecto, que difieren respecto al diseño original que se planteó. Cada uno incluye una breve descripción y una justificación de por qué se ha hecho.
 	
-	\subsection{Diseño final}
-	\textcolor{red}{------------------------ Hay que escribir esto bien y razonar -----------------------}
-	Principal: se ha cambiado la zona principal por un carrusel con bootstrap
-	About us: se han cambiado los recuadros de colores por solo los bordes de colores, para no saturar demasiado
-	Planifica: lo mismo
+	\begin{Huge}
+		\textcolor{red}{------------------------ Faltan tus cambios -----------------------}
+	\end{Huge}
+	
+	\subsection{Diseño Página principal}
+	
+	En la página principal se ha cambiado la zona principal en la que se pretendían mostrar dos imágenes en el diseño inicial. Después de investigar todas las posibilidades que ofrece la librería \textit{Bootstrap}, se decidió incorporar un carrusel de fotos, que dota a la página de un aspecto más profesional y trabajado.
+	
+	Otro cambio menos relevante es que ha optado por un color azul para el fondo de la sección de noticias, el cual es más suave que el color flamenco inicial, y encaja mejor en el diseño de la página. El apartado de valoraciones se mantiene sin cambios.
+	
+	\begin{figure} [H]
+		\centering
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{mockup-principal.png}
+		\end{minipage}
+		\hspace{0.04\textwidth}
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{full-1.png}
+		\end{minipage}
+		\caption{Comparativa diseño inicial y final de la página Principal}
+	\end{figure}
 	
 	
-	\subsection{Estructura de ficheros}
+	\subsection{Diseño Planifica}
+	
+	En la página Planifica, se ha optado por un diseño ligeramente menos recargado, en el que los recuadros mostrados no tienen el fondo de colores diferentes, sino que solo el borde, delimitando así cada zona. También se ha añadido una línea que separa la sección de Viajeros de la Agenda, y se han destacado los títulos de las secciones de Consejos generales y Reserva con Seguridad, para mostrarlos de una forma más elegante.
+	
+	La diferencia más importante respecto al alcance del diseño inicial, aunque no tanto en el aspecto, se encuentra en el calendario. Se ha eliminado la entrada de una fecha mediante teclado, optando por realizar todas las acciones desde el propio calendario. Y no ha sido posible realizar todo lo que se pretendía de sincronizar el calendario con la cuenta del usuario ni que el calendario fuese compartido por varios usuarios, debido a las limitaciones de no tener un servidor que aloje la página web. Es por ello que se ha optado por limitarse a mostrar ciertos eventos organizados por la empresa ficticia, y que estos aparezcan marcados en el calendario.
+	
+	\begin{figure} [H]
+		\centering
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{mockup-planifica.png}
+		\end{minipage}
+		\hspace{0.04\textwidth}
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{full-3.png}
+		\end{minipage}
+		\caption{Comparativa diseño inicial y final de la página Planifica}
+	\end{figure}
+
+	
+	\subsection{Diseño About us}
+	
+	De forma similar a lo que ocurría con la pestaña de Planifica, en la página About us se han eliminado los fondos de colores de los recuadros, dejando únicamente el borde que separa cada sección, aunque el diseño se ha mantenido semejante. Los colores de los bordes también se han cambiado ligeramente, con el objetivo de mejorar el aspecto de la página. Finalmente, el borde de la sección de Preguntas frecuentes es naranja, y el de Contacto verde, lo cual dota a la página de un aspecto más vivo.
+	
+	\begin{figure} [H]
+		\centering
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{mockup-about_us.png}
+		\end{minipage}
+		\hspace{0.04\textwidth}
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{full-5.png}
+		\end{minipage}
+		\caption{Comparativa diseño inicial y final de la página About us}
+	\end{figure}
+	
+	
+	\section{Estructura de ficheros}
 	La estructura de ficheros general se ha mantenido a lo largo del proyecto, aunque se ha añadido algún subdirectorio a los que se mencionan en \ref{ficheros}. Concretamente, cada una de las cinco páginas principales tiene su propio directorio dentro de /html y /images, con el objetivo de facilitar la gestión de grandes cantidades de contenido.
 	
 	\begin{huge}
@@ -978,10 +1038,18 @@ function highlightEvents(instance, events) {
 	\end{huge}
 	
 	
-	
-	\begin{thebibliography}{widestlabel}
-		\href{https://html.spec.whatwg.org/multipage/}{W3C}
-		Aquí deberían ir páginas de consulta (w3schools, bootstrap, flatpickr, etc.), y quizás páginas en las que nos hemos inspirado
+
+	\begin{thebibliography}{9}
+		\bibitem{exp} \href{https://experiencetravelgroup.com}{Experience travel group}
+		\bibitem{book} \href{https://booking.com}{Booking}
+		\bibitem{trip} \href{https://tripadvisor.es}{Tripadvisor}
+		\bibitem{sky} \href{https://skyscanner.es}{Skyscanner}
+		\bibitem{gcal} \href{https://calendar.google.com/calendar/u/0/r}{Google Calendar}
+		\bibitem{w3c} \href{https://html.spec.whatwg.org/multipage/}{W3C (Estándares HTML5 y revisor de código HTML, CSS y JavaScript)}
+		\bibitem{w3s} \href{https://www.w3schools.com/}{W3Schools (Guías generales de uso de HTML y CSS)} 
+		\bibitem{campus} Campus Virtual de la asignatura
+		\bibitem{bootstrap} \href{https://getbootstrap.com/}{Bootstrap (Librería de CSS y JavaScript)}
+		\bibitem{flatpickr} \href{https://flatpickr.js.org/}{Flatpickr (Calendario responsivo con CSS y JavaScript)}
 	\end{thebibliography}
 	
 	
