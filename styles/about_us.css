@@ -236,7 +236,7 @@ hr {
     border-radius: 5px;
 }
 
-@media (max-width: 1200px) and (min-width: 901px){
+@media screen and (max-width: 1200px) and (min-width: 901px){
     .about-us-container {
         max-width: 1000px;
     }
@@ -271,7 +271,7 @@ hr {
 
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .column1 {
         width: 90%;
         margin: 0 auto;

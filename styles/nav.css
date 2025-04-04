@@ -36,6 +36,10 @@
     line-height: 1.1;
 }
 
+.main-nav .logo-title {
+    visibility: visible;
+}
+
 .main-nav .login {
     margin-left: 20px;
     margin-right: 20px;
@@ -118,7 +122,7 @@
     stroke: var(--sapphire);
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
     /* Versión de móvil: Icono de hamburguesa con desplegable vertical */
     .main-nav ul {
         display: none;
@@ -242,10 +246,16 @@ body.open {
 }
 
 
-@media (min-width: 901px) {
+@media screen and (min-width: 901px) {
     /* Restablecer la barra de .main-navegación cuando se vuelva a un ancho lo suficiente grande */
     #mobile-menu {
         display: none;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+    .main-nav .logo-title {
+        visibility: hidden;
+    }
 }
