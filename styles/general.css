@@ -1,6 +1,9 @@
 @import url("../styles/colors.css");
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--base);
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -10,4 +13,8 @@ body {
   padding: 0;
   overflow-x: hidden;
   max-width: 100%;
+}
+
+main {
+  flex: 1;
 }

@@ -1,0 +1,282 @@
+[
+    {
+        "id": 1,
+        "tipo": "alojamiento",
+        "nombre": "Hotel La Montaña",
+        "destino": "México",
+        "puntuacion": 4,
+        "capacidad": 4,
+        "precio": 150,
+        "servicios": ["wifi", "desayuno", "piscina"],
+        "disponibilidad": {
+            "inicio": "2025-03-01",
+            "fin": "2025-07-31"
+        }
+    },
+    {
+        "id": 2,
+        "tipo": "transporte",
+        "nombre": "Vuelo Barcelona-Madrid",
+        "destino": "España",
+        "puntuacion": 3,
+        "capacidad": 2,
+        "precio": 89,
+        "servicios": ["equipaje", "wifi"],
+        "disponibilidad": {
+            "inicio": "2025-03-15",
+            "fin": "2025-05-04"
+        }
+    },
+    {
+        "id": 3,
+        "tipo": "experiencias",
+        "nombre": "Tour Gastronómico Roma",
+        "destino": "Italia",
+        "puntuacion": 5,
+        "capacidad": 8,
+        "precio": 200,
+        "servicios": ["guía", "degustación"],
+        "disponibilidad": {
+            "inicio": "2025-04-04",
+            "fin": "2026-08-12"
+        }
+    },
+    {
+        "id": 4,
+        "tipo": "coches",
+        "nombre": "Fiat 500 - Alquiler Diario",
+        "destino": "Italia",
+        "puntuacion": 4,
+        "capacidad": 4,
+        "precio": 45,
+        "servicios": ["seguro", "gps"],
+        "disponibilidad": {
+            "inicio": "2025-01-01",
+            "fin": "2026-12-31"
+        }
+    },
+    {
+        "id": 5,
+        "tipo": "alojamiento",
+        "nombre": "Cabañas del Bosque",
+        "destino": "Chile",
+        "puntuacion": 5,
+        "capacidad": 6,
+        "precio": 180,
+        "servicios": ["chimenea", "wifi", "parqueadero"],
+        "disponibilidad": {
+            "inicio": "2025-05-01",
+            "fin": "2025-10-30"
+        }
+    },
+    {
+        "id": 6,
+        "tipo": "transporte",
+        "nombre": "Tren Intercity París-Lyon",
+        "destino": "Francia",
+        "puntuacion": 4,
+        "capacidad": 1,
+        "precio": 75,
+        "servicios": ["wifi", "catering"],
+        "disponibilidad": {
+            "inicio": "2025-04-01",
+            "fin": "2025-12-15"
+        }
+    },
+    {
+        "id": 7,
+        "tipo": "coches",
+        "nombre": "Jeep Wrangler 4x4",
+        "destino": "Costa Rica",
+        "puntuacion": 5,
+        "capacidad": 5,
+        "precio": 120,
+        "servicios": ["seguro", "gps", "techo solar"],
+        "disponibilidad": {
+            "inicio": "2025-06-01",
+            "fin": "2025-11-30"
+        }
+    },
+    {
+        "id": 8,
+        "tipo": "experiencias",
+        "nombre": "Buceo en Gran Barrera",
+        "destino": "Australia",
+        "puntuacion": 5,
+        "capacidad": 4,
+        "precio": 350,
+        "servicios": ["equipo", "instructor"],
+        "disponibilidad": {
+            "inicio": "2025-07-01",
+            "fin": "2025-09-30"
+        }
+    },
+    {
+        "id": 9,
+        "tipo": "alojamiento",
+        "nombre": "Hostal Centro Histórico",
+        "destino": "Perú",
+        "puntuacion": 3,
+        "capacidad": 2,
+        "precio": 40,
+        "servicios": ["wifi", "desayuno"],
+        "disponibilidad": {
+            "inicio": "2025-01-10",
+            "fin": "2025-12-20"
+        }
+    },
+    {
+        "id": 10,
+        "tipo": "transporte",
+        "nombre": "Autobús Nueva York-Washington",
+        "destino": "EEUU",
+        "puntuacion": 2,
+        "capacidad": 1,
+        "precio": 25,
+        "servicios": ["wifi", "enchufes"],
+        "disponibilidad": {
+            "inicio": "2025-03-01",
+            "fin": "2025-11-01"
+        }
+    },
+    {
+        "id": 11,
+        "tipo": "coches",
+        "nombre": "Tesla Model 3 - Premium",
+        "destino": "España",
+        "puntuacion": 5,
+        "capacidad": 5,
+        "precio": 150,
+        "servicios": ["carga eléctrica", "autopilot"],
+        "disponibilidad": {
+            "inicio": "2025-02-01",
+            "fin": "2025-12-31"
+        }
+    },
+    {
+        "id": 12,
+        "tipo": "experiencias",
+        "nombre": "Tour Aurora Boreal",
+        "destino": "Noruega",
+        "puntuacion": 4,
+        "capacidad": 12,
+        "precio": 450,
+        "servicios": ["guía", "fotógrafo"],
+        "disponibilidad": {
+            "inicio": "2025-09-01",
+            "fin": "2025-03-31"
+        }
+    },
+    {
+        "id": 13,
+        "tipo": "alojamiento",
+        "nombre": "Resort Playa del Carmen",
+        "destino": "México",
+        "puntuacion": 5,
+        "capacidad": 4,
+        "precio": 300,
+        "servicios": ["spa", "piscina", "bar"],
+        "disponibilidad": {
+            "inicio": "2025-04-01",
+            "fin": "2025-10-31"
+        }
+    },
+    {
+        "id": 14,
+        "tipo": "transporte",
+        "nombre": "Ferry Santorini-Mikonos",
+        "destino": "Grecia",
+        "puntuacion": 4,
+        "capacidad": 1,
+        "precio": 60,
+        "servicios": ["cubierta VIP", "restaurante"],
+        "disponibilidad": {
+            "inicio": "2025-05-15",
+            "fin": "2025-09-15"
+        }
+    },
+    {
+        "id": 15,
+        "tipo": "coches",
+        "nombre": "Harley Davidson Tour",
+        "destino": "EEUU",
+        "puntuacion": 5,
+        "capacidad": 2,
+        "precio": 180,
+        "servicios": ["casco", "guía"],
+        "disponibilidad": {
+            "inicio": "2025-04-01",
+            "fin": "2025-10-31"
+        }
+    },
+    {
+        "id": 16,
+        "tipo": "experiencias",
+        "nombre": "Safari Fotográfico",
+        "destino": "Kenia",
+        "puntuacion": 5,
+        "capacidad": 6,
+        "precio": 600,
+        "servicios": ["jeep", "guía"],
+        "disponibilidad": {
+            "inicio": "2025-06-01",
+            "fin": "2025-11-30"
+        }
+    },
+    {
+        "id": 17,
+        "tipo": "alojamiento",
+        "nombre": "Casa Flotante Amsterdam",
+        "destino": "Holanda",
+        "puntuacion": 4,
+        "capacidad": 4,
+        "precio": 220,
+        "servicios": ["terraza", "bicicletas"],
+        "disponibilidad": {
+            "inicio": "2025-03-01",
+            "fin": "2025-10-31"
+        }
+    },
+    {
+        "id": 18,
+        "tipo": "transporte",
+        "nombre": "Helicóptero NYC",
+        "destino": "EEUU",
+        "puntuacion": 5,
+        "capacidad": 3,
+        "precio": 500,
+        "servicios": ["vista panorámica", "champán"],
+        "disponibilidad": {
+            "inicio": "2025-05-01",
+            "fin": "2025-10-31"
+        }
+    },
+    {
+        "id": 19,
+        "tipo": "coches",
+        "nombre": "Porsche 911 Alquiler",
+        "destino": "Alemania",
+        "puntuacion": 5,
+        "capacidad": 2,
+        "precio": 350,
+        "servicios": ["seguro premium", "conductor"],
+        "disponibilidad": {
+            "inicio": "2025-04-01",
+            "fin": "2025-11-30"
+        }
+    },
+    {
+        "id": 20,
+        "tipo": "experiencias",
+        "nombre": "Clase de Sushi Master",
+        "destino": "Japón",
+        "puntuacion": 5,
+        "capacidad": 8,
+        "precio": 150,
+        "servicios": ["chef profesional", "degustación"],
+        "disponibilidad": {
+            "inicio": "2025-01-01",
+            "fin": "2025-12-31"
+        }
+    }
+]

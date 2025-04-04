@@ -1,4 +1,6 @@
 @import url("../styles/colors.css");
+@import url("../styles/secondary_nav.css");
+@import url("../styles/popup_error.css");
 
 @media screen and (min-width: 900px) {
     #destinations {
@@ -89,7 +91,7 @@
     font-size: 0.95rem;
 }
 
-/* Reservation button */
+/* Botón de reservas */
 button.reserve {
     background-color: var(--blue);
     color: var(--base);
@@ -117,101 +119,4 @@ button.reserve:hover {
 #map:hover {
     border-color: var(--sapphire);
     transition: border-color 0.5s ease;
-}
-
-/* Popup general */
-.popup {
-    position: fixed;
-    background-color: var(--maroon);
-    color: var(--base);
-    padding: 12px 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    opacity: 0;
-    animation: floatPopup 3s ease forwards;
-    z-index: 9999;
-    pointer-events: none; /* Permite clics a través del popup */
-}
-
-/* Animación específica para flotar */
-@keyframes floatPopup {
-    0% { opacity: 0; transform: translateY(20px); }
-    15% { opacity: 1; transform: translateY(0); }
-    85% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(20px); }
-}
-
-.secondary-nav {
-    background-color: var(--base);
-    padding: 30px;
-}
-
-.secondary-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    gap: 5%;
-}
-
-.secondary-nav li {
-    display: inline-block;
-}
-
-.secondary-nav a,
-.secondary-nav li {
-    text-decoration: none;
-    color: var(--text); /* adjust to your color variable or a hard-coded color */
-    font-size: 1.5rem;
-    transition: color 0.5s ease;
-}
-
-.secondary-nav a:hover,
-.secondary-nav li:hover {
-    color: var(--sapphire);
-}
-
-/* Active nav item style */
-.secondary-nav a.active {
-    color: var(--lavender);
-    font-style: italic;
-}
-.secondary-nav a.active:hover {
-    color: var(--sapphire);
-}
-
-.secondary-nav .search {
-    display: flex;
-    align-items: center;
-    background-color: var(--surface0); /* match other nav items */
-    border-radius: 15px;
-    padding: 0 16px;
-    gap: 8px;
-    border: 1px solid transparent;
-    transition: border-color 0.5s ease;
-}
-
-.secondary-nav .search input {
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 1.2rem;
-    color: var(--text);
-    width: 100%;
-    min-width: 80px;
-    transition: opacity 0.3s ease;
-}
-
-.secondary-nav .search input:placeholder-shown {
-    opacity: 0.7;
-}
-
-.secondary-nav .search:hover {
-    border-color: var(--sapphire);
-}
-
-.secondary-nav .search img:hover {
-    cursor: pointer;
 }

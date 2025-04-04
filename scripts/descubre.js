@@ -128,10 +128,10 @@ function loadDestinations(xmlFile) {
                 /* Popup de error si se pulsa en reservar */
                 reserveBtn.click(function() {
                     /* Eliminar popups previos */
-                    $(".popup").remove();
+                    $(".popup-error").remove();
 
                     /* Crear y posicionar el popup */
-                    let popup = $('<div class="popup">').text('Reserva no disponible en este momento');
+                    let popup = $('<div class="popup-error">').text('Reserva no disponible en este momento');
 
                     /* Posicionar respecto al botón */
                     let btnPos = $(this).offset();
@@ -153,7 +153,7 @@ function loadDestinations(xmlFile) {
 
 function showSearchPopup(inputElement) {
     let input = $(inputElement);
-    let popup = $('<div class="popup">').text("Búsqueda no disponible en este momento");
+    let popup = $('<div class="popup-error">').text("Búsqueda no disponible en este momento");
 
     /* Posicionamiento relativo al input */
     let offset = input.offset();

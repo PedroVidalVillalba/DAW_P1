@@ -13,91 +13,65 @@
   <link rel="stylesheet" href="../../styles/images.css">
   <link rel="stylesheet" href="../../styles/nav.css">
   <link rel="stylesheet" href="../../styles/footer.css">
-  <link rel="stylesheet" href="../../styles/descubre.css">
+  <link rel="stylesheet" href="../../styles/reserva.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <link rel="icon" type="image/svg" href="../../images/logo.svg">
 </head>
 
 <body>
-  <header><!-- La cabecera y barra de navegación se crean directamente con JavaScript --></header>
-
   <main>
-    <section id="barra_de_navegacion_secundaria">
-      <h2>Barra de navegación secundaria</h2>
-      <p>
-        Este párrafo y el header anterior habría que borrarlos cuando se metan
-        los estilos y ya quede claro qué es cada parte.
-      </p>
-      <nav>
-        <ul>
-          <li>
-            <a href="../../html/reserva/transporte.html">Transporte</a>
-          </li>
-          <li>
-            <a href="../../html/reserva/alojamiento.html">Alojamiento</a>
-          </li>
-          <li>
-            <a href="../../html/descubre/alquiler_coches.html">Alquiler de coches</a>
-          </li>
-          <li>
-            <a href="../../html/descubre/experiencias_exclusivas.html">Experiencias exclusivas</a>
-          </li>
-        </ul>
-      </nav>
-    </section>
-
-    <section id="filtros_principales">
-      <form>
-        <input type="text" name="destino" value="Destino" />
-        <input type="number" name="numero_viajeros" value="1" /><br />
-        <!-- Habría que mirar cómo hacer para colocar esto bien-->
-        <input type="date" name="fecha_ida" />
-        <input type="date" name="fecha_vuelta" />
-      </form>
-    </section>
-
-    <aside id="filtros_secundarios">
-      <h2>Filtros</h2>
-      <h4>Puntuación</h4>
-      <p>
-        <input type="range" min="0" max="5" name="puntuacion" value="2" />
-      </p>
-      <h4>Servicios</h4>
+    <!-- Barra de navegación secundaria (tipos de servicio) -->
+    <nav class="secondary-nav">
       <ul>
-        <li><input type="checkbox" />Filtro 1</li>
-        <li><input type="checkbox" />Filtro 2</li>
+        <li><a href="#" class="type-filter active" data-type="all">Todos</a></li>
+        <li><a href="#" class="type-filter" data-type="transporte">Transporte</a></li>
+        <li><a href="#" class="type-filter" data-type="alojamiento">Alojamiento</a></li>
+        <li><a href="#" class="type-filter" data-type="coches">Coches</a></li>
+        <li><a href="#" class="type-filter" data-type="experiencias">Experiencias</a></li>
       </ul>
-    </aside>
+    </nav>
 
-    <section id="servicios">
-      <h2>Servicios</h2>
-
-      <figure class="servicio">
-        <img src="../../images/principal/Greece.jpg" alt="Imagen de un servicio" width="300" height="250" />
-        <figcaption>
-          <p><b>Nombre:</b> Un nombre</p>
-          <p><b>Puntuación:</b> 3</p>
-          <p><b>Descripción:</b> Aquí iría la descripción del sitio</p>
-          <p><b>Rango de precio:</b> 100€</p>
-        </figcaption>
-      </figure>
-
-      <figure class="servicio">
-        <img src="../../images/principal/Mexico.jpg" alt="Imagen de otro servicio" width="300" height="250" />
-        <figcaption>
-          <p><b>Nombre:</b> Otro nombre</p>
-          <p><b>Puntuación:</b> 4</p>
-          <p><b>Descripción:</b> Otra descripción</p>
-          <p><b>Precio:</b> 72€</p>
-        </figcaption>
-      </figure>
+    <!-- Filtros por destino, personas y días -->
+    <section id="main-filters">
+        <input type="text" id="destination-filter" placeholder="Destino" class="filter-input">
+        <input type="number" id="travelers-filter" placeholder="Viajeros" min="1" class="filter-input">
+        <input type="date" id="start-date-filter" placeholder="Fecha de ida" class="filter-input">
+        <input type="date" id="end-date-filter" placeholder="Fecha de vuelta" class="filter-input">
     </section>
-  </main>
 
+    <!-- Contenedor principal flex -->
+    <div class="reservations-container">
+      <!-- Sección de filtros laterales -->
+      <aside id="sidebar-filters">
+        <div>
+          <h3>Puntuación mínima</h3>
+          <div id="rating-filter" class="star-rating">
+            <span data-value="1" class="filled">&#9733;</span>
+            <span data-value="2">&#9734;</span>
+            <span data-value="3">&#9734;</span>
+            <span data-value="4">&#9734;</span>
+            <span data-value="5">&#9734;</span>
+            <input type="hidden" name="rating" value="1">
+          </div>
+        </div>
+
+        <div>
+          <h3>Servicios</h3>
+          <div class="checkbox-group"></div>
+        </div>
+      </aside>
+
+      <!-- Sección de tarjetas dinámicas -->
+      <section id="service-cards"></section>
+    </div>
+
+  </main>
 
   <script src="../../scripts/nav.js"></script>
   <script src="../../scripts/footer.js"></script>
+  <script src="../../scripts/reserva.js"></script>
 </body>
-
-
 
 </html>
