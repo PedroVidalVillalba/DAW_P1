@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navContainer.innerHTML = `
         <a href="${rootPath}/index.html" class="logo-container" title="Inicio">
             <img src="${rootPath}/images/logo.svg" width="100" height="100" alt="Logo">
-            <p> El Problema del Viajante </p>
+            <p class="logo-title"> El Problema del Viajante </p>
         </a>
 
         <p id="mobile-menu">&#9776;</p>

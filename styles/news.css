@@ -43,7 +43,7 @@ article figcaption {
 }
 
 
-@media (max-width: 1250px) {
+@media screen and (max-width: 1250px) {
     article {
         max-width: 900px;
     }
@@ -60,7 +60,7 @@ article figcaption {
     }
 }
 
-@media (max-width: 970px) {
+@media screen and (max-width: 970px) {
     article {
         max-width: 650px;
     }
@@ -69,7 +69,7 @@ article figcaption {
     }
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
     article img {
         max-width: 100%;
     }
