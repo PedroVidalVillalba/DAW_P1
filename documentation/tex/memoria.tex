@@ -6,7 +6,6 @@
 
 \usepackage[T1]{fontenc}
 
-
 \usepackage[spanish, es-lcroman]{babel}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -20,9 +19,11 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 \usepackage{parskip}
 \usetikzlibrary{fit,backgrounds}
 \usepackage[]{hyperref}
+\usepackage{bookmark}
 
 \usepackage{changepage}
 \usepackage{tikz}
@@ -41,6 +42,8 @@
 % Configuración del encabezado
 \fancyhead[L]{\quad\leftmark} % Muestra número de sección
 \fancyhead[R]{\thepage}         % Número de página a la derecha
+\setlength{\headheight}{13.6pt}
+\addtolength{\topmargin}{-1.6pt}
 
 \usepackage{color}
 \definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
@@ -111,6 +114,7 @@
 
 
 \title{Título y portada chula}
+\author{Falgueras Casajeros, Yago and Vidal Villalba, Pedro}
 
 \begin{document}
 	\maketitle
@@ -431,13 +435,15 @@
 	En la siguiente parte del proyecto, se empieza a codificar el código HTML de las páginas, centrándose en el uso adecuado de las etiquetas HTML, siguiendo los estándares de \href{https://html.spec.whatwg.org/multipage/}{W3C}, y de momento no se codifican características de visualización de la página, pues corresponden a la parte de hojas de estilo. 
 	
 	Para cada una de las cinco página principales, se muestra a continuación los nombres de los elementos más importantes y en algunos casos sus mapas de etiquetas. Como se ha comentado en clase, solo se incluyen los mapas de etiquetas de los elementos con mayor contenido y dificultad, obviando así muchos que están formados únicamente por un encabezado y varios párrafos.
-	
 
+	
 	\begin{figure} [H]
 		\centering
 		\includegraphics[width=\textwidth]{HTML/Doc-principal.jpg}
 		\caption{Elementos página principal}
 	\end{figure}
+
+    \section{Página principal}
 
 	En primer lugar, se va a comentar la barra de navegación, que es común a todos los elementos. Es sencilla, con el logo de la empresa, y con cinco apartados que nos redirigen precisamente a las cinco páginas principales de la web. Lo más relevante son las imágenes de la zona principal, ya que es lo primero que verá un usuario al ingresar en la página. 
 	
@@ -457,9 +463,33 @@
 
 	También se incluyen los elementos de una caja de valoración, pues es relevante cómo se construye. Se ha decidido utilizar un \textbf{div} para englobar todos los elementos y poder replicarla con facilidad manteniendo sus propiedades. De esta forma, está compuesta por una imagen, correspondiente a la foto de perfil del usuario, junto a su nombre y puntuación en el encabezado \textbf{h5}. A continuación aparece el título de la reseña y su descripción.
 
-	\begin{Huge}
-		\textcolor{red}{Doc Descubre + Mapa etiquetas}
-	\end{Huge}
+    \section{Descubre}
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=\textwidth]{HTML/Doc-descubre.jpg}
+		\caption{Elementos Descubre}
+	\end{figure}
+
+    En el apartado de descubrir destinos, la página se divide en una barra de navegación secundaria debajo de la navegación principal (esta común a todas las páginas), una lista de tarjetas de destinos con destinos recomendados y una breve descripción de cada uno y un mapa interactivo en el que aparecerán marcados los destinos asociados a las tarjetas y con el que se podrá interactuar directamente o a través de las tarjetas de la parte principal. Se entrará en detalles sobre la barra de navegación secundaria y la sección de las tarjetas de destino, pues la estructura HTML del mapa interactivo poco ilustrativa ya que el comportamiento y la apariencia se consiguen a través de la librería externa Leaflet~\cite{leaflet}, que hace uso de CSS y JavaScript para conseguir la mayor parte de su funcionalidad.
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{HTML/Etiq-nav-sec.jpg}
+		\caption{Mapa de etiquetas navegación secundaria}
+	\end{figure}
+
+	Similar a lo que veíamos en el mapa de etiquetas del menú de navegación principal, esta barra de navegación secundaria está compuesta por una lista de enlaces que llevan a las distintas subpáginas de descubrir destinos. Adicionalmente, el elemento de búsqueda también se incluye en la barra de navegación, pero en este caso no está compuesto por un enlace, sino por una imagen para la lupa y un campo de input de texto para poder hacer búsquedas (las cuáles no se implementarán por falta de un servidor que respalde el sitio web, pero así serán reflejadas en el frontend de la página).
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{HTML/Etiq-destino.jpg}
+		\caption{Mapa de etiquetas tarjeta de destino}
+	\end{figure}
+
+	Todas las tarjetas de destino se engloban en una sección del documento HTML, y cada una de ellas se rige por el mapa de etiquetas que se muestra. Se usa un \textbf{div} para englobar todos los elementos en una unidad fácilmente replicable. Así, cada tarjeta está compuesta por una imagen, correspondiente a la foto del destino, junto a un título \textbf{h2} que indica el nombre del mismo, un par de párrafos con la descripción y el rango de precios y un botón de reserva.
+
+    \section{Planifica}
 
 	\begin{figure} [H]
 		\centering
@@ -485,10 +515,35 @@
 
 	La caja del calendario es la más importante de todas, pues es la que permitirá realmente la gestión del viaje. En el mapa de etiquetas aparece el título junto a un \textbf{input}, desde el cual se puede introducir una fecha, asociada a la posición del calendario. El calendario en sí no está programado con HTML, ya que será necesario utilizar JavaScript para dotarlo de la responsividad que necesita.
 
-	\begin{Huge}
-		\textcolor{red}{Doc Reserva + Mapa etiquetas}
-	\end{Huge}
+    \section{Reserva}
 
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=\textwidth]{HTML/Doc-reserva.jpg}
+		\caption{Elementos Reserva}
+	\end{figure}
+
+    La página de reservas muestra una lista de etiquetas de servicios para reservar, desde transporte para llegar al destino, alojamiento, alquiler de coches y otro tipo de experiencias. Se compone de una barra de navegación secundaria con una estructura muy similar a la que veíamos en la página Descubre para filtrar por el tipo de servicio. Abajo, hay una sección con otros filtros principales según el nombre del destino, número de viajeros y fechas del viaje. En la sección inferior, está en un lateral una barra para aplicar más filtros por puntuación y servicios ofrecidos, y en el centro una colección de tarjetas con los servicios similar a como está organizada la página de Descubre. 
+
+    Cada una de las tarjetas de servicios tiene una estructura análoga a las que había para las tarjetas de destinos, y lo mismo ocurre con la barra de navegación secundaria, por lo que no repetiremos esos mapas de etiquetas. Nos centraremos entonces en mostrar los mapas de etiquetas para los filtros principales y secundarios.
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{HTML/Etiq-filtros-principales.jpg}
+		\caption{Mapa de etiquetas filtros principales}
+	\end{figure}
+
+    Como se puede apreciar en el mapa de etiquetas, los filtros principales se corresponden con una sección con cuatro campos de input, encargados de filtrar por nombre de destino, número de viajeros y fechas de ida y vuelta, para cada uno de los cuales se usa el tipo de input apropiado. Se decidió eliminar la búsqueda de esta sección de filtros principales, pues no aportaba una mejor capacidad de encontrar el servicio que los filtros ya presentes. Además, se prescindió de englobar todos los inputs en una etiqueta \texttt{form}, pues se planea hacer el filtrado dinámicamente utilizando JavaScript, por lo que no hay necesidad de enviar los datos a ningún servidor.
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=0.6\textwidth]{HTML/Etiq-filtros-secundarios.jpg}
+		\caption{Mapa de etiquetas filtros secundarios}
+	\end{figure}
+
+    Los filtros secundarios están en un \texttt{aside}, que indica que aparecerán situados al margen de la página. Están divididos en dos secciones, cada una de ellas en un \texttt{div}, con cabeceras indicando los filtros por puntuación y por servicios. Dentro del filtro por puntuación, hay otro \texttt{div} con varios elementos \texttt{span}; cada uno de ellos contiene una estrella que el usuario podrá pulsar para seleccionar la puntuación mínima de los servicios a visualizar. Se añade un campo \texttt{input} oculto para almacenar el número de estrellas seleccionadas. Los filtros por servicio son simplemente una serie de etiquetas de input \texttt{checkbox} metidas en etiquetas \texttt{label} para el nombre del servicio a escoger.
+
+    \section{About Us}
 	\begin{figure} [H]
 		\centering
 		\includegraphics[width=0.8\textwidth]{HTML/Doc-about_us.jpg}
@@ -578,16 +633,178 @@
 
 	
 	\section{CSS Multicol}
+
+    Este es el más antiguo dentro de los métodos de layout modernos, que asumen ya que el diseño que se va a crear es flexible. Se basa en indicarle al navegador en cuántas columnas se quiere dividir un contenedor, dejando que sea el propio navegador el que haga los cálculos en función del tamaño del viewport. Esta técnica es sencilla de aplicar a priori, pero los resultados que proporciona no se adaptan del todo bien al diseño responsivo y se vuelve complicado conseguir una correcta disposición de los elementos dentro de cada columna.
+
+    Se ha utilizado en la página Descubre para dividir las tarjetas de destino en tres, dos o una columnas en función del tamaño del viewport. No se aplicó a la barra de navegación principal, que ya estaba creada y es las misma para todas las páginas, ni para la barra de navegación secundaria, que ya se había creado haciendo uso de \textit{flex} para la página Reserva, resultando en un comportamiento más fácilmente calibrable. Así mismo, como el mapa interactivo aparece en una fila por su cuenta debajo de las tarjetas, no tiene sentido aplicar \textit{multicol} para este elemento.
+
+    Se establecieron, así, tres puntos de ruptura para pantallas grandes, medianas y pequeñas, en los que las tarjetas aparecen en 3, 2 o 1 columna, respectivamente. A continuación, se muestra un código con el funcionamiento de \textit{multicol}.	
+
+	\begin{lstlisting}[]
+@media screen and (min-width: 900px) {
+    #destinations {
+        column-count: 2;
+        column-gap: 20px;
+        max-width: 900px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #destinations {
+        column-count: 3;
+        column-gap: 30px;
+        max-width: 1400px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #destinations {
+        column-count: 1;
+        max-width: 450px;
+    }
+}
+	\end{lstlisting}
+
+    La propiedad más relevante del código es \texttt{column-count}, que establece el número de columnas en las que se va a dividir el contenedor; en este caso, para pantallas con un ancho no inferior a 1400 píxeles se posicionarán los elementos a 3 columnas, para pantallas con ancho entre los 900 y los 1400 píxeles se dispondrán en dos columnas y para pantallas de hasta 900 píxeles aparecerán a una única columna.
+ 
+    Se muestran a continuación algunas capturas de pantalla de la página para diferentes anchos del navegador.
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=\textwidth]{CSS/4-1 1920.png}
+		\caption{Página Descubre - Ancho 1920px}
+	\end{figure}
+
+    La figura anterior muestra cómo se vería en un ordenador actual, o en una pantalla de tamaño grande. El contenido aparece centrado y las tarjetas aparecen a 3 columnas. La barra de navegación secundaria ocupa una única fila (aunque, de nuevo, esto se consigue mediente \textit{flex} y no con \textit{multicol}).
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[height=0.4\textheight]{CSS/4-3 1024.png}
+		\caption{Página Descubre - Ancho 1024px}
+	\end{figure}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[height=0.4\textheight]{CSS/4-4 1024.png}
+		\caption{Página Descubre - Ancho 1024px}
+	\end{figure}
+
+    En pantallas de tamaño medio, se pasa al diseño de dos columnas. El mapa se rescala para ocupar el mismo espacio proporcional de la página y la barra de búsqueda se sitúa en una fila inferior. Las tarjetas, que son las afectadas por \textit{multicol}, conservan su tamaño original, pero ahora se distribuyen en dos columnas para caber en la pantalla.
 	
-	\begin{Huge}
-		\textcolor{red}{Aquí va Descubre}
-	\end{Huge}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[height=0.4\textheight]{CSS/4-5 768.png}
+		\caption{Página Descubre - Ancho 768px}
+	\end{figure}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[height=0.4\textheight]{CSS/4-6 768.png}
+		\caption{Página Descubre - Ancho 768px}
+	\end{figure}
+
+	Por último, vemos como el diseño a una columna se ajusta correctamente a pantallas pequeñas, de forma similar al anterior. 
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{CSS/CSS Descubre.jpg}
+		\caption{Esquema Descubre}
+	\end{figure}
 	
+    Como ya se comentó, el uso de \textit{CSS Multicol} se uso para la sección que en el esquema aparece con el identificador \textit{destinations}. El uso de \textit{multicol} es sencillo, pero cuando se quiere utilizar para configurar la disposición de elementos que no sean puramente texto se vuelve complicado obtener resultados con una apariencia satisfactoria, por la dificultad para centrar los elementos o asegurar que cada parte va a la columna que le corresponda. Se incluyen en el diagrama las clases de los elementos más relevantes y que afectan a la disposición de la página.
+
 	\section{Flex Container}
+
+    El mecanismo \textit{Flex Container} permite crear con facilidad un contenedor flexible para facilitar la disposición de elementos en una dimensión, bien sea en filas o en columnas. Este diseño se aplicó a la página Reserva y en este caso a todos sus elementos, por su facilidad de uso, versatilidad y simplicidad, que lo convierten en una muy buena opción por defecto para el posicionamiento de los elementos en una página responsiva, si bien puede refinarse mediante el uso de \textit{CSS grid} en caso de necesitar mayor control en dos dimensiones.
+
+    El uso de \textit{flex} simplifica el uso de los puntos de ruptura, pues en este caso los elementos ya se distribuyen automáticamente ocupando el espacio que necesiten, de forma que el uso de los puntos de ruptura se puede limitar a cambios más significativos en la apariencia de la página, a diferencia de lo que pasaba con \textit{multicol}. A continuación se muestra un código CSS simplificado en el que se aprecia el uso de este mecanismo.
+
+	\begin{lstlisting}[]
+#main-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reservations-container {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 1400px) {
+    .reservations-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+   .filter-input {
+         flex: 1 1 100%;
+         max-width: 80%;
+     }
+
+    .reservations-container {
+        flex-direction: column;
+    }
+
+    #sidebar-filters {
+        max-height: none;
+        width: 80%;
+        margin: auto;
+    }
+
+    #service-cards {
+        max-height: none;
+        justify-content: center;
+    }
+}
+	\end{lstlisting}
+
+    Como vemos, este mecanismo se caracteriza por el uso de \texttt{display: flex}, y gracias a este se pueden utilizar múltiples propiedades como \texttt{flex-direction} para controlar si la disposición es por filas o por columnas o \texttt{justify-content} y \texttt{align-items} para justificar y alinear el contenido de la página de una forma sencilla.
+
+    Se muestran ahora capturas de pantalla de esta página para diferentes tamaños del navegador.
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=\textwidth]{CSS/5-1 1920.png}
+		\caption{Página Reserva - Ancho 1920px}
+	\end{figure}
+
+    En pantallas grandes, el contenido se ve de esta forma. Como vemos, el menú de navegación principal aparece en dos filas y dos columnas, hay una barra lateral para los filtros secundarios y las tarjetas de servicios aparecen en dos columnas al lado de los filtros secundarios. Cabe mencionar las diferencias respecto al diseño original, en especial la eliminación de las imágenes de las tarjetas para no sobrecargar la página, como se explica en la sección de Cambios \ref{sect:anexo2}.
+
+    \begin{figure} [H]
+		\centering
+		\includegraphics[height=0.4\textheight]{CSS/5-3 1024.png}
+		\caption{Página Reserva - Ancho 1024px}
+	\end{figure}
+
+    En pantallas medianas, los filtros principales siguen apareciendo en dos columnas y dos filas y la barra de filtros secundarios a la izquierda de las tarjetas, pero en este caso las tarjetas se muestran por fila de una en una. Como se puede ver en el código, la única regla \texttt{@media} que añadimos para este tamaño simplemente reduce un poco el contenedor donde están las tarjetas y la barra lateral para que aparezcan más centrados. El hecho de que se muestren ahora las tarjetas a una columna en lugar de a dos es consecuencia automática de utilizar \textit{flex} para su disposición, de nuevo dejando patente la versatilidad de este método.
 	
-	\begin{Huge}
-		\textcolor{red}{Aquí va Reserva}
-	\end{Huge}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[height=0.4\textheight]{CSS/5-5 768.png}
+		\caption{Página Reserva - Ancho 768px}
+	\end{figure}
+	\begin{figure} [H]
+		\centering
+		\includegraphics[height=0.4\textheight]{CSS/5-6 768.png}
+		\caption{Página Reserva - Ancho 768px}
+	\end{figure}
+
+	Por último, para pantallas pequeñas vemos cómo los filtros principales se disponen cada uno en una columna. Igualmente, ahora la barra de navegación lateral se sitúa por sí misma ocupando todo el ancho de la página y las tarjetas de los servicios aparecen debajo de esta, también a una sola columna.
+
+	\begin{figure} [H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{CSS/CSS Reserva.jpg}
+		\caption{Esquema Reserva}
+	\end{figure}
+	
+    Para el esquema de esta página se ha decidido usar la misma disposición que aparece en la página real, con el objetivo de facilitar la compresión de la posición de cada elemento. Se muestran las clases o identificadores de los elementos más relevantes para obtener el aspecto deseado mediante \textit{flex}.
 
 	\section{CSS Grid}
 	El mecanismo \textit{CSS Grid} permite ajustar con precisión elementos en dos dimensiones, alineando con facilidad tanto las filas como las columnas. Ha resultado muy útil su uso en la página Planifica, ya que hay muchos elementos dispuestos de forma horizontal, y que van cambiando hacia un diseño más vertical según se reduce el ancho de la pantalla.
@@ -1036,8 +1253,6 @@ function highlightEvents(instance, events) {
 	\begin{huge}
 		\textcolor{red}{Se podría incluir un tree para enseñar los archivos, o lo que se ve en el IDE}
 	\end{huge}
-	
-	
 
 	\begin{thebibliography}{9}
 		\bibitem{exp} \href{https://experiencetravelgroup.com}{Experience travel group}
@@ -1050,8 +1265,7 @@ function highlightEvents(instance, events) {
 		\bibitem{campus} Campus Virtual de la asignatura
 		\bibitem{bootstrap} \href{https://getbootstrap.com/}{Bootstrap (Librería de CSS y JavaScript)}
 		\bibitem{flatpickr} \href{https://flatpickr.js.org/}{Flatpickr (Calendario responsivo con CSS y JavaScript)}
+        \bibitem{leaflet} \href{https://leafletjs.com/}{Leaflet (Mapa interactivo con CSS y JavaScript)}
 	\end{thebibliography}
-	
-	
 	
 \end{document}

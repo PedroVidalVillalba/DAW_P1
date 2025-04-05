@@ -6,3 +6,5 @@ documentation/tex/*.log
 documentation/tex/*.gz
 documentation/tex/*.out
 documentation/tex/*.toc
+documentation/tex/*.fls
+documentation/tex/*.fdb_latexmk
