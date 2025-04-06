@@ -76,7 +76,7 @@
 		% HTML attributes
 		charset=, id=, width=, height=,
 		% CSS properties
-		width:, max-width:, float:, display, border:, grid-template-areas:, grid-template-columns:, grid-template-rows:
+		width:, max-width:, float:, display:, border:, grid-template-areas:, grid-template-columns:, grid-template-rows:, column-count:, column-gap:, flex-wrap:, justify-content:, align-items:, overflow-x:, overflow-y:, flex-direction:, flex:, max-height:, margin:
 	},  
 	morecomment=[s]{<!--}{-->},
 	tag=[s]
@@ -113,11 +113,32 @@
 
 
 
-\title{Título y portada chula}
-\author{Falgueras Casajeros, Yago and Vidal Villalba, Pedro}
+%\title{Título y portada chula}
+%\author{Falgueras Casajeros, Yago and Vidal Villalba, Pedro}
 
 \begin{document}
-	\maketitle
+	
+	\begin{titlepage}
+		\centering
+		
+		{\Huge \bfseries Desarrollo de Aplicaciones Web\par}
+		\vspace{1cm}
+		{\Huge \bfseries Proyecto 1\par}
+		\vspace{2.5cm}
+		
+		\includegraphics[width=0.8\textwidth]{Portada.jpg}\par
+		\vspace{2.5cm}
+		
+		
+		
+		{\Large
+			Falgueras Casajeros, Yago \\
+			Vidal Villalba, Pedro \\
+			\par}
+		\vspace{1.5cm}
+		
+		{\Large \today\par}
+	\end{titlepage}
 	
 	\tableofcontents
 	\newpage
@@ -144,6 +165,10 @@
 	 También es importante destacar que el objetivo principal de la página no sería realmente obtener beneficios vendiendo viajes por todo el mundo, sino que serviría como una interfaz desde la que poder consultar gran cantidad de destinos y obtener información sobre cada uno ellos, todo en un mismo lugar. Además, si se llegase a desplegar la aplicación de forma realista, sería necesario comunicarse con otras páginas web, a las que se redirigía al usuario para que realice su reserva del viaje.
 	 
 	 No obstante, sí que sería interesante ofrecer viajes personalizados dentro la aplicación, a un precio más alto de lo habitual pero que ofreciesen todo un itinerario planificado previamente por los trabajadores de la empresa ficticia. De esta forma, las personas que no quieran organizar los lugares de visita de su viaje, pueden acceder a esta característica.
+	 
+	 Por tanto, las características diferenciadoras de la página web serían la capacidad de ofrecer una experiencia verdaderamente personalizada y dinámica para cada usuario, con una interfaz moderna y filtros avanzados que permitan a los usuarios descubrir destinos, alojamientos y actividades que se ajustan exactamente a sus intereses y necesidades específicas. El otro aspecto innovador es la integración de la planificación y reserva en un único entorno, que junto a la posibilidad de sincronizarlo con otros calendarios digitales facilitan la organización del viaje sin tener que cambiar de aplicación, simplificando en gran medida la gestión de las reservas, especialmente cuando se viaja en grupo. 
+	 
+	 Dado que cada vez hay más personas que viajan de forma habitual, ya sea por desconectar de la monotonía de su trabajo o estudios, por conocer nuevas culturas o por disfrutar de paisajes diferentes y experiencias únicas, nos parece interesante crear esta página web, la cual puede servirle a todas ellas a organizar, planificar y disfrutar de su viaje.
 	
 	
 	
@@ -159,11 +184,7 @@
 		\item Experiencias exclusivas, con planificaciones de viajes realizadas previamente por expertos.
 	\end{itemize} 
 	
-	Después de analizar los elementos obtenidos, filtrarlos y establecer relaciones entre sí, se ha llegado al siguiente inventario de contenido:
-
-	\textcolor{red}{---------------Poner aquí el inventario de contenido. Hay que hacer un dibujín -------------------------}
-	
-	Otros elementos que también son relevantes para la justificación de la creación de la página web son:
+	Después de analizar los elementos obtenidos, filtrarlos y establecer relaciones entre sí, se ha llegado a ese inventario de contenido. Otros elementos que también son relevantes para la justificación de la creación de la página web son:
 	
 	\begin{enumerate}
 		\item \textbf{Audiencia}: un público genérico, ya que cada vez más personas viajan de forma relativamente habitual, y resulta de gran utilidad una página web desde la que poder gestionar todo el viaje.
@@ -185,6 +206,10 @@
 		\item \textbf{About us}: quiénes somos, nuestra historia, qué nos diferencia, FAQ, redes sociales, nuestro sistema de puntuación, certificados de calidad, premios.
 		\item \textbf{Otros}: términos de uso, política de cookies, política de privacidad.
 	\end{itemize}
+
+	En la siguiente página se muestran estos contenidos de forma visual.
+
+	\newpage
 
 	\begin{figure} [H]
 		\centering
@@ -384,8 +409,6 @@
 		\includegraphics[width=\textwidth]{storyboard-planificar.png}
 		\caption{Storyboard Planifica}
 	\end{figure}
-
-	\textcolor{red}{La imagen no se ve muy bien, igual hay que pasarla a vertical}
 	
 	Supongamos ahora que este mismo usuario, tras reservar un viaje y crearse una cuenta en la página web, decide comprobar las fechas de su reserva. Para ello, se dirige a la pestaña de \textbf{Planifica}, desde la que puede añadir a las personas que viajarán con él, lo cual facilita la organización del viaje, la elección de los lugares de visita y el reparto de gastos, además de asegurar que no habrá actividades que se superpongan.
 	
@@ -432,18 +455,17 @@
 	
 	\chapter{Documentación HTML}
 	
-	En la siguiente parte del proyecto, se empieza a codificar el código HTML de las páginas, centrándose en el uso adecuado de las etiquetas HTML, siguiendo los estándares de \href{https://html.spec.whatwg.org/multipage/}{W3C}, y de momento no se codifican características de visualización de la página, pues corresponden a la parte de hojas de estilo. 
+	En la siguiente parte del proyecto, se empieza a codificar el código HTML de las páginas, centrándose en el uso adecuado de las etiquetas HTML, siguiendo los estándares de W3C~\cite{w3c}, y de momento no se codifican características de visualización de la página, pues corresponden a la parte de hojas de estilo. 
 	
 	Para cada una de las cinco página principales, se muestra a continuación los nombres de los elementos más importantes y en algunos casos sus mapas de etiquetas. Como se ha comentado en clase, solo se incluyen los mapas de etiquetas de los elementos con mayor contenido y dificultad, obviando así muchos que están formados únicamente por un encabezado y varios párrafos.
 
-	
-	\begin{figure} [H]
-		\centering
-		\includegraphics[width=\textwidth]{HTML/Doc-principal.jpg}
-		\caption{Elementos página principal}
-	\end{figure}
-
     \section{Página principal}
+    
+    \begin{figure} [H]
+    	\centering
+    	\includegraphics[width=0.8\textwidth]{HTML/Doc-principal.jpg}
+    	\caption{Elementos página principal}
+    \end{figure}
 
 	En primer lugar, se va a comentar la barra de navegación, que es común a todos los elementos. Es sencilla, con el logo de la empresa, y con cinco apartados que nos redirigen precisamente a las cinco páginas principales de la web. Lo más relevante son las imágenes de la zona principal, ya que es lo primero que verá un usuario al ingresar en la página. 
 	
@@ -472,6 +494,8 @@
 	\end{figure}
 
     En el apartado de descubrir destinos, la página se divide en una barra de navegación secundaria debajo de la navegación principal (esta común a todas las páginas), una lista de tarjetas de destinos con destinos recomendados y una breve descripción de cada uno y un mapa interactivo en el que aparecerán marcados los destinos asociados a las tarjetas y con el que se podrá interactuar directamente o a través de las tarjetas de la parte principal. Se entrará en detalles sobre la barra de navegación secundaria y la sección de las tarjetas de destino, pues la estructura HTML del mapa interactivo poco ilustrativa ya que el comportamiento y la apariencia se consiguen a través de la librería externa Leaflet~\cite{leaflet}, que hace uso de CSS y JavaScript para conseguir la mayor parte de su funcionalidad.
+
+	\newpage
 
 	\begin{figure} [H]
 		\centering
@@ -514,6 +538,8 @@
 	\end{figure}
 
 	La caja del calendario es la más importante de todas, pues es la que permitirá realmente la gestión del viaje. En el mapa de etiquetas aparece el título junto a un \textbf{input}, desde el cual se puede introducir una fecha, asociada a la posición del calendario. El calendario en sí no está programado con HTML, ya que será necesario utilizar JavaScript para dotarlo de la responsividad que necesita.
+	
+	\newpage
 
     \section{Reserva}
 
@@ -552,6 +578,7 @@
 
 	Esta es la página más simple de las cinco principales, ya que tiene una zona principal con los diferentes apartados que hablan sobre la empresa, sus características y preguntas frecuentes. Por otro lado, en el lateral hay una lista con diferentes formas de contacto con la empresa y todas sus redes sociales, desde las que se podría acceder a más información sobre ella, y ver más imágenes sobre posibles destinos de vacaciones.
 	
+	\section{Otros elementos de HTML}
 	
 	La mayoría de las otras páginas de la web son muy semejantes a las mostradas (por ejemplo, en las que tienen un menú de navegación secundario, las diferencias entre sí son ínfimas), y otras como la pestaña de Política de privacidad o Términos y condiciones solamente tienen contenido de texto a una columna, por lo que no aporta información mostrar su mapa de etiquetas.
 	
@@ -566,7 +593,7 @@
 	\chapter{Documentación CSS}
 	
 	\section{Flexible Grids}
-	Este es el mecanismo convencional para conseguir la responsividad, mediante el uso \textit{float} y con anchos relativos. Se ha utilizado en la página About us de la siguiente manera: hay una zona principal en la que se comenta la historia de la empresa y los estándares de calidad, y un apartado secundario con información de contacto y redes sociales.
+	Este es el mecanismo convencional para conseguir la responsividad, mediante el uso \textit{float} y con anchos relativos. Se ha utilizado en la página \textbf{About us} de la siguiente manera: hay una zona principal en la que se comenta la historia de la empresa y los estándares de calidad, y un apartado secundario con información de contacto y redes sociales.
 	
 	El reparto del espacio no es equitativo, sino que se le da mayor importancia a los elementos principales. Además, se limita el ancho máximo de cada columna con el objetivo de que no se expandan horizontalmente demasiado en pantallas grandes. Se añaden dos puntos de ruptura, uno que reajusta los anchos de cada columna en pantallas de tamaño medio, y otro que eliminar el \textit{float} y convierte el diseño a una columna en pantallas pequeñas. A continuación se muestra un código simplificado del funcionamiento de \textit{flexible grids} y sus correspondientes capturas de pantalla.
 	
@@ -636,7 +663,7 @@
 
     Este es el más antiguo dentro de los métodos de layout modernos, que asumen ya que el diseño que se va a crear es flexible. Se basa en indicarle al navegador en cuántas columnas se quiere dividir un contenedor, dejando que sea el propio navegador el que haga los cálculos en función del tamaño del viewport. Esta técnica es sencilla de aplicar a priori, pero los resultados que proporciona no se adaptan del todo bien al diseño responsivo y se vuelve complicado conseguir una correcta disposición de los elementos dentro de cada columna.
 
-    Se ha utilizado en la página Descubre para dividir las tarjetas de destino en tres, dos o una columnas en función del tamaño del viewport. No se aplicó a la barra de navegación principal, que ya estaba creada y es las misma para todas las páginas, ni para la barra de navegación secundaria, que ya se había creado haciendo uso de \textit{flex} para la página Reserva, resultando en un comportamiento más fácilmente calibrable. Así mismo, como el mapa interactivo aparece en una fila por su cuenta debajo de las tarjetas, no tiene sentido aplicar \textit{multicol} para este elemento.
+    Se ha utilizado en la página \textbf{Descubre} para dividir las tarjetas de destino en tres, dos o una columnas en función del tamaño del viewport. No se aplicó a la barra de navegación principal, que ya estaba creada y es las misma para todas las páginas, ni para la barra de navegación secundaria, que ya se había creado haciendo uso de \textit{flex} para la página Reserva, resultando en un comportamiento más fácilmente calibrable. Así mismo, como el mapa interactivo aparece en una fila por su cuenta debajo de las tarjetas, no tiene sentido aplicar \textit{multicol} para este elemento.
 
     Se establecieron, así, tres puntos de ruptura para pantallas grandes, medianas y pequeñas, en los que las tarjetas aparecen en 3, 2 o 1 columna, respectivamente. A continuación, se muestra un código con el funcionamiento de \textit{multicol}.	
 
@@ -709,14 +736,16 @@
 		\caption{Esquema Descubre}
 	\end{figure}
 	
-    Como ya se comentó, el uso de \textit{CSS Multicol} se uso para la sección que en el esquema aparece con el identificador \textit{destinations}. El uso de \textit{multicol} es sencillo, pero cuando se quiere utilizar para configurar la disposición de elementos que no sean puramente texto se vuelve complicado obtener resultados con una apariencia satisfactoria, por la dificultad para centrar los elementos o asegurar que cada parte va a la columna que le corresponda. Se incluyen en el diagrama las clases de los elementos más relevantes y que afectan a la disposición de la página.
+    Como ya se comentó, \textit{CSS Multicol} ha utilizado para la sección que en el esquema aparece con el identificador \textit{destinations}. El uso de \textit{multicol} es sencillo, pero cuando se quiere utilizar para configurar la disposición de elementos que no sean puramente texto se vuelve complicado obtener resultados con una apariencia satisfactoria, por la dificultad para centrar los elementos o asegurar que cada parte va a la columna que le corresponda. Se incluyen en el diagrama las clases de los elementos más relevantes y que afectan a la disposición de la página.
 
 	\section{Flex Container}
 
-    El mecanismo \textit{Flex Container} permite crear con facilidad un contenedor flexible para facilitar la disposición de elementos en una dimensión, bien sea en filas o en columnas. Este diseño se aplicó a la página Reserva y en este caso a todos sus elementos, por su facilidad de uso, versatilidad y simplicidad, que lo convierten en una muy buena opción por defecto para el posicionamiento de los elementos en una página responsiva, si bien puede refinarse mediante el uso de \textit{CSS grid} en caso de necesitar mayor control en dos dimensiones.
+    El mecanismo \textit{Flex Container} permite crear con facilidad un contenedor flexible para facilitar la disposición de elementos en una dimensión, bien sea en filas o en columnas. Este diseño se aplicó a la página \textbf{Reserva} y en este caso a todos sus elementos, por su facilidad de uso, versatilidad y simplicidad, que lo convierten en una muy buena opción por defecto para el posicionamiento de los elementos en una página responsiva, si bien puede refinarse mediante el uso de \textit{CSS grid} en caso de necesitar mayor control en dos dimensiones.
 
     El uso de \textit{flex} simplifica el uso de los puntos de ruptura, pues en este caso los elementos ya se distribuyen automáticamente ocupando el espacio que necesiten, de forma que el uso de los puntos de ruptura se puede limitar a cambios más significativos en la apariencia de la página, a diferencia de lo que pasaba con \textit{multicol}. A continuación se muestra un código CSS simplificado en el que se aprecia el uso de este mecanismo.
 
+	\newpage
+	
 	\begin{lstlisting}[]
 #main-filters {
     display: flex;
@@ -768,6 +797,7 @@
     Como vemos, este mecanismo se caracteriza por el uso de \texttt{display: flex}, y gracias a este se pueden utilizar múltiples propiedades como \texttt{flex-direction} para controlar si la disposición es por filas o por columnas o \texttt{justify-content} y \texttt{align-items} para justificar y alinear el contenido de la página de una forma sencilla.
 
     Se muestran ahora capturas de pantalla de esta página para diferentes tamaños del navegador.
+    
 
 	\begin{figure} [H]
 		\centering
@@ -784,6 +814,8 @@
 	\end{figure}
 
     En pantallas medianas, los filtros principales siguen apareciendo en dos columnas y dos filas y la barra de filtros secundarios a la izquierda de las tarjetas, pero en este caso las tarjetas se muestran por fila de una en una. Como se puede ver en el código, la única regla \texttt{@media} que añadimos para este tamaño simplemente reduce un poco el contenedor donde están las tarjetas y la barra lateral para que aparezcan más centrados. El hecho de que se muestren ahora las tarjetas a una columna en lugar de a dos es consecuencia automática de utilizar \textit{flex} para su disposición, de nuevo dejando patente la versatilidad de este método.
+	
+	\newpage
 	
 	\begin{figure} [H]
 		\centering
@@ -837,7 +869,7 @@
 }
 	\end{lstlisting}
 
-	La propiedad más relevante del código es \texttt{grid-template-aread}, la cual, como indica su nombre, crea una plantilla de la cuadrícula, por lo que se puede ajustar fácilmente la disposición de los elementos asignándole a cada uno su área. Se pasa así de un diseño en tres columnas para pantallas más anchas, a uno de una columna en dispositivos más pequeños.
+	La propiedad más relevante del código es \texttt{grid-template-areas}, la cual, como indica su nombre, crea una plantilla de la cuadrícula, por lo que se puede ajustar fácilmente la disposición de los elementos asignándole a cada uno su área. Se pasa así de un diseño en tres columnas para pantallas más anchas, a uno de una columna en dispositivos más pequeños.
 	
 	\begin{figure} [H]
 		\centering
@@ -883,7 +915,7 @@
 
 	
 	\section{Bootstrap}
-	\textit{Bootstrap} es una librería de reglas CSS que permite reducir significativamente la cantidad de código propio necesario para desarrollar la página, a cambio de utilizar ciertas características predeterminadas. También permite añadir más variabilidad a los diseños, y en este caso se ha realizado un cambio respecto al diseño inicial en la página principal, pues se ha incluido un carrusel de imágenes (más detalles en el \nameref{chap:anexo1}).
+	\textit{Bootstrap} es una librería de reglas CSS que permite reducir significativamente la cantidad de código propio necesario para desarrollar la página, a cambio de utilizar ciertas características predeterminadas. También permite añadir más variabilidad a los diseños, y en este caso se ha realizado un cambio respecto al diseño inicial en la página principal, pues se ha incluido un carrusel de imágenes (más detalles en sección de Cambios \ref{sect:anexo2}).
 	
 	\begin{figure} [H]
 		\centering
@@ -951,7 +983,7 @@
 	
 	\begin{itemize}
 		\item \textbf{Inclusión dinámica del menú de navegación y del pie de página}: con el objetivo de evitar copiar y pegar constantemente estos elementos, con el riesgo de realizarlo de forma incorrecta, en especial si se realiza un cambio, se ha decidido añadirlo mediante un código JavaScript. Este calcula dinámicamente la dirección del directorio raíz a partir de la dirección de la página en la que se encuentra, y funciona tanto con un servidor como sin él, sin importar dónde esté ubicada la raíz.
-		\item \textbf{Calendario responsivo}: se ha utilizado el calendario proporcionado por la página web \href{https://flatpickr.js.org/}{flatpickr} para añadir sobre él eventos cargados desde un fichero, los cuales también se muestran en la pestaña Planifica.
+		\item \textbf{Calendario responsivo}: se ha utilizado el calendario proporcionado por la página web flatpickr~\cite{flatpickr} para añadir sobre él eventos cargados desde un fichero, los cuales también se muestran en la pestaña Planifica.
         \item \textbf{Generación de tarjetas}: se ha adaptado el código HTML de las páginas Descubre y Reserva, cuyo contenido principal se basa en la presencia de tarjetas con los destinos y servicios recomendados, para que ahora dichas tarjetas se generen dinámicamente a partir de archivos de datos en formato XML y JSON, respectivamente. Además, el uso e integración del JavaScript y las facilidades que proporciona la librería de jQuery permiten dotar a estas páginas de una gran interactividad, posibilitando la interacción entre las tarjetas y el mapa generado mediante la librería Leaflet \cite{leaflet}, así como la aplicación de filtros sobre las tarjetas a mostrar en la página de Reserva.
 	\end{itemize}
 	
@@ -987,6 +1019,8 @@ document.querySelector("header").appendChild(navContainer);
 	\end{lstlisting}
 	
 	A continuación, se crea el nodo correspondiente al menú de navegación, se inserta el contenido y se realiza un nuevo acceso a elementos del DOM, insertando mediante \texttt{appendChild()} un nuevo hijo al \textbf{header}, que ya se sabe que se encuentra en el código HTML por el apartado anterior.
+	
+	\newpage
 	
 	\begin{figure} [H]
 		\centering
@@ -1033,6 +1067,8 @@ mobileMenu.addEventListener("click", function () {
 
 	En el elemento \texttt{mobileMenu} que se ha mencionado anteriormente, el cual se obtiene mediante un acceso al DOM, se añade un \textit{listener} que ejecuta la función mostrada cuando se hace click sobre el botón del menú. Cuando se pulsa con el ratón, se muestra el menú mediante una transición realizada con CSS al añadirle la clase \texttt{open}, que tiene su propio formateo. Además, ajusta la clase \texttt{open} del cuerpo, alternando entre el estado abierto y cerrado, lo cual permite activar y desactivar estilos dinámicamente. El botón de cierre tiene un funcionamiento similar, por lo que no se incluye.
 	
+	\newpage
+	
 	\begin{figure} [H]
 		\centering
 		\includegraphics[height=0.4\textheight]{CSS/1-5 768.png}
@@ -1059,7 +1095,7 @@ window.addEventListener("resize", checkScreenSize);
 	
 	Este efecto no se puede mostrar con nuevas imágenes ya que es totalmente dinámico, y ya se han mostrado en múltiples ocasiones fotos con el menú de navegación de ordenador y de móvil, por lo que no se incluyen de nuevo.
 
-    En relación a la respuesta a eventos, destacan sobre todo los filtros aplicados en la página de Reserva, pues esta se programó con un enfoque orientado a eventos, de forma que los cambios en la página ocurren a medida que el usuario interactúa con los distintos elementos de esta. Se muestra a continuación una parte del código encargado de la respuesta a algunos de estos eventos. Cabe destacar que este código emplea jQuery y muchos elementos de JES6, en los que se pondrá más énfasis en la siguiente sección, pues simplifican mucho la sintaxis de acceso a los elementos del DOM.
+    En relación a la respuesta a eventos, destacan sobre todo los filtros aplicados en la página de \textbf{Reserva}, pues esta se programó con un enfoque orientado a eventos, de forma que los cambios en la página ocurren a medida que el usuario interactúa con los distintos elementos de esta. Se muestra a continuación una parte del código encargado de la respuesta a algunos de estos eventos. Cabe destacar que este código emplea jQuery y muchos elementos de JES6, en los que se pondrá más énfasis en la siguiente sección, pues simplifican mucho la sintaxis de acceso a los elementos del DOM.
 
     \begin{lstlisting}
 $('.type-filter').on('click', function(e) {
@@ -1091,6 +1127,8 @@ $('.service-checkbox').on('change', function() {
     \end{itemize}
 
     Se muestra a continuación el efecto que produce la aplicación de estos filtros en respuesta a los eventos propiciados por el usuario.
+    
+    \newpage
 
 	\begin{figure} [H]
 		\centering
@@ -1104,7 +1142,7 @@ $('.service-checkbox').on('change', function() {
 	
 	\section{Uso de jQuery y JES6}
 
-    Para ilustrar el uso de objetos jQuery, vale por ejemplo el código de la sección anterior relacionado con la respuesta a eventos para filtros, pero a continuación mostramos otro distinto que también emplea esta librería. Este efecto es el relacionado con la interactividad entre las tarjetas de destinos y el mapa. 
+    Para ilustrar el uso de objetos jQuery, podría servir el código de la sección anterior relacionado con la respuesta a eventos para filtros, pero a continuación mostramos otro distinto que también emplea esta librería. Este efecto es el relacionado con la interacción entre las tarjetas de destinos y el mapa. 
 
     \begin{lstlisting}
 let card = $('<div>', { class: 'destination-card' });
@@ -1156,7 +1194,7 @@ marker.on('click', function() {
 
     En relación con JES6, este se utiliza constatemente en los códigos ya mostrados, por ejemplo en el uso de \texttt{let} y \texttt{const} en la declaración de variables, la utilización de funciones arrow o el uso de \texttt{async}/\texttt{await} en la lectura de archivos.
 
-    Por ejemplo, se puede ver en el siguiente código, usado para la actualización de los filtros de servicios relevantes en la página Reserva, un uso constante de elementos de JES6, entremezclado también con jQuery, por ejemplo, en el uso de funciones arrow para filtrar los servicios utilizando un estilo funcional, o el uso de \texttt{const} en lugar de \texttt{var} para declarar datos que no van a variar en toda la función. 
+    Por ejemplo, se puede ver en el siguiente código, usado para la actualización de los filtros de servicios relevantes en la página \textbf{Reserva}, un uso constante de elementos de JES6, entremezclado también con jQuery, por ejemplo, en el uso de funciones arrow para filtrar los servicios utilizando un estilo funcional, o el uso de \texttt{const} en lugar de \texttt{var} para declarar datos que no van a variar en toda la función. 
 
     \begin{lstlisting}
 function updateServiceFilters(visibleServices) {
@@ -1190,12 +1228,12 @@ function updateServiceFilters(visibleServices) {
     \end{lstlisting}
 	
 	\section{Carga de contenido}
-	En esta sección se mostrarán dos posibles formas de cargar contenido, una utilizando API Fetch para leer un archivo JSON, en el que se encuentran los eventos que luego se muestran en el calendario, y otra que usa AJAX mediante jQuery para cargar un archivo XML a partir del que generar más fácilmente las tarjetas de destinos en la página Descubre y permitir su interacción dinámica con el mapa de esa página.
+	En esta sección se mostrarán dos posibles formas de cargar contenido, una utilizando API Fetch para leer un archivo JSON, en el que se encuentran los eventos que luego se muestran en el calendario, y otra que usa AJAX mediante jQuery para cargar un archivo XML a partir del que generar más fácilmente las tarjetas de destinos en la página \textbf{Descubre} y permitir su interacción dinámica con el mapa de esa página.
 	\subsection{Formato XML}
 
-    Para cargar el archivo XML con la información de las tarjetas de destinos, se utilizó la API de AJAX integrada en jQuery, que resulta muy moderna y fácil de utilizar. Se optó por trasladar la estructura y contenido de las tarjetas desde el HTML de la página Descubre a un archivo XML, lo que permite desacoplar los datos de los destinos de la estructura y presentación del documento, y facilita la interactividad con el mapa de esa misma página.
+    Para cargar el archivo XML con la información de las tarjetas de destinos, se utilizó la API de AJAX integrada en jQuery, que resulta muy moderna y fácil de utilizar. Se optó por trasladar la estructura y contenido de las tarjetas desde el HTML de la página \textbf{Descubre} a un archivo XML, lo que permite desacoplar los datos de los destinos de la estructura y presentación del documento, y facilita la interactividad con el mapa de esa misma página.
 
-    Esta decisión llevó de forma natural a adoptar un diseño \textit{Single Page Application} (SPA), de forma que lo que antes eran cinco páginas HTML distintas con cada una de las variantes de la página Descubre, accesibles mediante la barra de navegación secundaria, ahora se transformaron en una página única, y la barra de navegación secundaria pasa a utilizarse ahora para indicarle al código JavaScript de qué archivo XML obtener los datos. Este diseño es mucho más limpio y fácil de mantener, evitando tener que propagar los cambios a múltiples páginas cada vez que se quiera actualizar la web; es también más eficiente, pues en vez de recargar toda la paǵina, incluido el mapa que es costoso, solo se tienen que recargar las tarjetas y los marcadores. Una estrategia similar se empleó en la página Reserva, donde antes los filtros de tipo de servicio de la barra de navegación secundaria estaban pensados para enlazar páginas distintas y se transformaron en simplemente un filtro más, agilizando el desarrollo y facilitando el mantenimiento.
+    Esta decisión llevó de forma natural a adoptar un diseño \textit{Single Page Application} (SPA), de forma que lo que antes eran cinco páginas HTML distintas con cada una de las variantes de la página \textbf{Descubre}, accesibles mediante la barra de navegación secundaria, ahora se transformaron en una página única, y la barra de navegación secundaria pasa a utilizarse ahora para indicarle al código JavaScript de qué archivo XML obtener los datos. Este diseño es mucho más limpio y fácil de mantener, evitando tener que propagar los cambios a múltiples páginas cada vez que se quiera actualizar la web; es también más eficiente, pues en vez de recargar toda la paǵina, incluido el mapa que es costoso, solo se tienen que recargar las tarjetas y los marcadores. Una estrategia similar se empleó en la página Reserva, donde antes los filtros de tipo de servicio de la barra de navegación secundaria estaban pensados para enlazar páginas distintas y se transformaron en simplemente un filtro más, agilizando el desarrollo y facilitando el mantenimiento.
 
     A continuación se muestra el formato utilizado para una tarjeta de destino en XML.
 
@@ -1273,7 +1311,7 @@ $.ajax({
 	\end{figure}
 
 	\subsection{Formato JSON}
-	Como se ha mencionado, se carga un archivo JSON sencillo que incluye los próximos eventos relevantes para el usuario, los cuales se muestran en el calendario señalando los días en los que ocurren, y junto a él en una lista donde aparece la fecha en formato de texto y el nombre del evento. Se utliiza también el formato JSON para cargar la información de las tarjetas de servicios en la página Reserva, pero como esta funcionalidad es análoga a la anterior, explicaremos en detalle la empleada para el calendario. El formato utilizado en el archivo JSON es
+	Como se ha mencionado, se carga un archivo JSON sencillo que incluye los próximos eventos relevantes para el usuario en \textbf{Planifica}, los cuales se muestran en el calendario señalando los días en los que ocurren, y junto a él en una lista donde aparece la fecha en formato de texto y el nombre del evento. Se utiliza también el formato JSON para cargar la información de las tarjetas de servicios en la página \textbf{Reserva}, pero como esta funcionalidad es análoga a la anterior, explicaremos en detalle la empleada para el calendario. El formato utilizado en el archivo JSON es
 	
 	\begin{lstlisting}
 {"events": [
@@ -1336,7 +1374,7 @@ function highlightEvents(instance, events) {
 	\end{figure}
 	
 
-	En las dos imágenes anteriores se muestran las diferencias entre el calendario proporcionado por \href{https://flatpickr.js.org/}{flatpickr} y las modificaciones añadidas con JavaScript. De nuevo, hay detalles que no se muestran en las imágenes como la responsividad al pasar el ratón por encima de los días del calendario, o por encima de la lista de eventos.
+	En las dos imágenes anteriores se muestran las diferencias entre el calendario proporcionado por flatpickr~\cite{flatpickr} y las modificaciones añadidas con JavaScript. De nuevo, hay detalles que no se muestran en las imágenes como la responsividad al pasar el ratón por encima de los días del calendario, o por encima de la lista de eventos.
 	
 	
 	
@@ -1441,7 +1479,7 @@ function highlightEvents(instance, events) {
     
     Para la página Reserva, los cambios son sustanciales. En primer lugar, como ocurría en Descubre, de un diseño inicial que utilizaba varias páginas para cada uno de los tipos de servicios, se pasó a un diseño SPA en el que la barra de navegación secundaria se transformó en una capa adicional de filtros. Por este motivo, se incluyó la opción \textit{Todos} para poder optar por no filtrar por tipo de servicio. 
 
-    En lo que respecta a los filtros principales por destino, número de viajeros y fechas, se decidió eliminar la opción de búsqueda, que desequilibraba el diseño de la página y se consideró prescindible al disponer ya de numerosos filtros. En cuanto a la barra lateral de filtros secundarios, se mantuvo su propósito y su estructura, pero se adaptó su diseño por uno mucho menos recargado, en línea con el diseño del resto del sitio web, pasanto a usar un fondo neutro y reservando el color para los márgenes y los títulos; también se adaptó el estilo de las estrellas de puntuación y los \textit{checkbox} para adaptarlo a los colores que se utilizaron para la interactividad en el resto de páginas. 
+    En lo que respecta a los filtros principales por destino, número de viajeros y fechas, se decidió eliminar la opción de búsqueda, que desequilibraba el diseño de la página y se consideró prescindible al disponer ya de numerosos filtros. En cuanto a la barra lateral de filtros secundarios, se mantuvo su propósito y su estructura, pero se adaptó su diseño por uno mucho menos recargado, en línea con el diseño del resto del sitio web, pasando a usar un fondo neutro y reservando el color para los márgenes y los títulos; también se modificó el estilo de las estrellas de puntuación y los \textit{checkbox} para adaptarlo a los colores que se utilizaron para la interactividad en el resto de páginas. 
 
     Otro cambio muy destacable es el referente a las tarjetas de servicios. Como en todas las páginas, se optó por un diseño más minimalista y simplificado, eliminando las imágenes para no saturar la página y poder apreciar mejor el efecto de los filtros que se estaban aplicando, además de facilitar su aplicación en tiempo real, pues se ahorra el coste de renderizar las imágenes. En general, como se viene mencionando, se optó por un diseño más limpio y pulido que proporcionase una estética más profesional y cohesionada a toda la página.
 
@@ -1461,7 +1499,7 @@ function highlightEvents(instance, events) {
 	
 	\subsection{Diseño About us}
 	
-	De forma similar a lo que ocurría con la pestaña de Planifica, en la página About us se han eliminado los fondos de colores de los recuadros, dejando únicamente el borde que separa cada sección, aunque el diseño se ha mantenido semejante. Los colores de los bordes también se han cambiado ligeramente, con el objetivo de mejorar el aspecto de la página. Finalmente, el borde de la sección de Preguntas frecuentes es naranja, y el de Contacto verde, lo cual dota a la página de un aspecto más vivo.
+	De forma similar a lo que ocurría en otras pestañas, en la página About us se han eliminado los fondos de colores de los recuadros, dejando únicamente el borde que separa cada sección, aunque el diseño se ha mantenido semejante. Los colores de los bordes también se han cambiado ligeramente, con el objetivo de mejorar el aspecto de la página. Finalmente, el borde de la sección de Preguntas frecuentes es naranja, y el de Contacto verde, lo cual dota a la página de un aspecto más vivo.
 	
 	\begin{figure} [H]
 		\centering
@@ -1481,7 +1519,7 @@ function highlightEvents(instance, events) {
 	\section{Estructura de ficheros}
     La estructura de ficheros y directorios general se ha mantenido a lo largo del proyecto, aunque se ha añadido algún subdirectorio a los que se mencionan en la sección \ref{ficheros}. Concretamente, cada una de las cinco páginas principales tiene su propio directorio dentro de \texttt{/html} e \texttt{/images} (para las que emplean imágenes), con el objetivo de facilitar la gestión de grandes cantidades de contenido. 
 
-    Destaca también la creación del directorio \texttt{/data}, para guardar los archivos XML y JSON utilizados en la generación dinámica del contenido de las páginas, que también se estructuraron en su propio subdirectorio en el caso de los archivos XML de la página Descubre para imitar la estructura original que tenía originalmente esta pagina y que se conseguía antes a través de archivos HTML. 
+    Destaca también la creación del directorio \texttt{/data}, para guardar los archivos XML y JSON utilizados en la generación dinámica del contenido de las páginas, que también se estructuraron en su propio subdirectorio en el caso de los archivos XML de la página \textbf{Descubre} para imitar la estructura original que tenía originalmente esta página y que se conseguía antes a través de archivos HTML. 
 
     El directorio \texttt{/documentation} sigue presente para albergar todo lo relacionado con la redacción de esta memoria, pero se excluye aquí y en la entrega pues no aporta nada interesante y su único propósito es servir de soporte para la creación de este documento. Se muestra a continuación la estructura de directorios y ficheros final del proyecto.
 
