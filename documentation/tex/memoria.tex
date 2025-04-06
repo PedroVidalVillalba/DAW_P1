@@ -942,20 +942,21 @@
 	
 	
 	
+	% ----------------------------------------------------------------------------
+	% ----------------------------------------------------------------------------
 	
 	\chapter{Documentación JavaScript}	
 	
-	Se ha incluido código JavaScript en tres elementos principales, los cuales se comentarán ahora en qué consiste cada uno, y luego se entrará en detalles específicos en cada uno de los apartados, pues tienen varias partes.
+	Se ha incluido código JavaScript en tres elementos principales, los cuales se comentarán ahora para posteriormente entrar en detalles específicos en cada uno de los apartados posteriores.
 	
 	\begin{itemize}
-		\item \textbf{Inclusión dinámica del menú de navegación y del pie de página}: con el objetivo de evitar copiar y pegar constantemente estos elementos, con el riesgo de realizarlo de forma incorrecta, en especial si se realiza un cambio, se ha decidido añadirlo mediante un código JavaScript. Este calcula la ruta desde la que se encuentra cada página, y funciona tanto con un servidor como sin él, sin importar dónde esté ubicada la raíz.
+		\item \textbf{Inclusión dinámica del menú de navegación y del pie de página}: con el objetivo de evitar copiar y pegar constantemente estos elementos, con el riesgo de realizarlo de forma incorrecta, en especial si se realiza un cambio, se ha decidido añadirlo mediante un código JavaScript. Este calcula dinámicamente la dirección del directorio raíz a partir de la dirección de la página en la que se encuentra, y funciona tanto con un servidor como sin él, sin importar dónde esté ubicada la raíz.
 		\item \textbf{Calendario responsivo}: se ha utilizado el calendario proporcionado por la página web \href{https://flatpickr.js.org/}{flatpickr} para añadir sobre él eventos cargados desde un fichero, los cuales también se muestran en la pestaña Planifica.
-		\item \textcolor{red}{Lo tuyo}
+        \item \textbf{Generación de tarjetas}: se ha adaptado el código HTML de las páginas Descubre y Reserva, cuyo contenido principal se basa en la presencia de tarjetas con los destinos y servicios recomendados, para que ahora dichas tarjetas se generen dinámicamente a partir de archivos de datos en formato XML y JSON, respectivamente. Además, el uso e integración del JavaScript y las facilidades que proporciona la librería de jQuery permiten dotar a estas páginas de una gran interactividad, posibilitando la interacción entre las tarjetas y el mapa generado mediante la librería Leaflet \cite{leaflet}, así como la aplicación de filtros sobre las tarjetas a mostrar en la página de Reserva.
 	\end{itemize}
-
 	
-	
-	\section{Acceso al DOM}
+	\section{Inclusión de JavaScript}
+    \subsection{Acceso al DOM}
 	
 	Se enumeran los accesos al DOM producidos en la inclusión dinámica del menú de navegación:
 	
@@ -965,9 +966,9 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 	\end{lstlisting}
 
-	En primer lugar, se crea un \textit{listener} con una función que se ejecutará una vez que el HTML haya sido totalmente cargado y procesado por el navegador. Este tipo de acceso a eventos es la primera línea de código de todos los scripts.
+	En primer lugar, se crea un \textit{listener} con una función que se ejecutará una vez que el HTML haya sido totalmente cargado y procesado por el navegador. Este tipo de acceso a eventos es la primera línea de código de todos los scripts, pues asegura que el script no se ejecuta habiendo elementos sin cargar, lo que podría causar errores.
 	
-	\begin{lstlisting}
+    \begin{lstlisting}
 let header = document.querySelector("header");
 if (!header) {
 	header = document.createElement("header");
@@ -1057,27 +1058,219 @@ window.addEventListener("resize", checkScreenSize);
 	Otro evento incluido en este script está relacionado con los cambios en el tamaño de la pantalla. Cuando se redimensiona la pantalla, se comprueba el ancho de esta, lo cual permite saber cuándo mostrar y ocultar el menú de móvil. Además, en caso de que esté abierta la barra lateral (\texttt{menuLinks}) cuando se amplíe la pantalla a un ancho superior a 900px, esta se cierra automáticamente, con una transición suave creada con CSS.
 	
 	Este efecto no se puede mostrar con nuevas imágenes ya que es totalmente dinámico, y ya se han mostrado en múltiples ocasiones fotos con el menú de navegación de ordenador y de móvil, por lo que no se incluyen de nuevo.
+
+    En relación a la respuesta a eventos, destacan sobre todo los filtros aplicados en la página de Reserva, pues esta se programó con un enfoque orientado a eventos, de forma que los cambios en la página ocurren a medida que el usuario interactúa con los distintos elementos de esta. Se muestra a continuación una parte del código encargado de la respuesta a algunos de estos eventos. Cabe destacar que este código emplea jQuery y muchos elementos de JES6, en los que se pondrá más énfasis en la siguiente sección, pues simplifican mucho la sintaxis de acceso a los elementos del DOM.
+
+    \begin{lstlisting}
+$('.type-filter').on('click', function(e) {
+    e.preventDefault();
+    currentFilters.type = $(this).data('type');
+    $('.type-filter').removeClass('active');
+    $(this).addClass('active');
+    applyFilters();
+});
+
+$('#destination-filter').on('input', function() {
+    currentFilters.destination = $(this).val();
+    applyFilters();
+});
+
+$('.service-checkbox').on('change', function() {
+    const service = $(this).data('service');
+    currentFilters.services = $('.service-checkbox:checked')
+        .map((i, el) => $(el).data('service')).get();
+    applyFilters();
+});
+    \end{lstlisting}
+
+    Los eventos a los que se responde en los ejemplos que se recogen aquí son:
+    \begin{itemize}
+        \item \texttt{click}, que ocurrirá cuando se pulse en algún elemento de la barra de navegación secundaria de la página Reserva, lo que producirá que se filtren los servicios de las tarjetas por tipo, además de marcar el tipo marcado como activo, lo que cambiará su estilo. 
+        \item \texttt{input}, que se lanzará cada vez que se modifique el texto en el filtro de destino de los filtros principales, y lo mismo ocurrirá con el número de viajantes (aunque no se muestra en el código aquí recogido por brevedad). Así, cada vez que se modifique el campo, se filtrarán las tarjetas de servicios a aquellas cuyo destino contenga parte del campo introducido y una capacidad suficiente para el número de viajantes. Gracias a este evento, no es necesario pulsar un botón ni ninguna otra acción especial para aplicar los filtros, sino que estos se irán aplicando a medida que el usuario escriba.
+        \item \texttt{change}, que se activará cada vez que se seleccione o deseleccione un \textit{checkbox} de los filtros secundarios en la barra lateral. Si un servicio está marcado, se filtrarán las tarjetas para solo mostrar aquellas que lo incluyan. Además, el resto de filtros sobre los servicios también cambiarán para solamente mostrar posibles filtros que apliquen sobre las tarjetas que se estén visualizando en ese momento.
+    \end{itemize}
+
+    Se muestra a continuación el efecto que produce la aplicación de estos filtros en respuesta a los eventos propiciados por el usuario.
+
+	\begin{figure} [H]
+		\centering
+        \includegraphics[width=0.8\textwidth]{CSS/5-3 1024.png}
+        \includegraphics[width=0.8\textwidth]{CSS/5 extra.png}
+		\caption{Comparativa antes y después de aplicar filtros en la página Reserva}
+	\end{figure}
+
+    Como se puede ver, de la gran cantidad de tarjetas de servicios que se mostraban al principio, tras filtrar el tipo de servicio a \textit{Alojamiento}, filtrar por destino con \textit{México}, el número de viajeros a 3, la puntuación mínima a 4 estrellas y seleccionar como servicios necesarios \textit{Wifi} y \textit{Piscina}, obtenemos una única tarjeta de destino que cumpla con nuestras especificaciones. Además, se puede ver cómo la lista de filtros de servicios en la barra lateral también se redujo para solo incluír aquellos posibles filtros relevantes, es decir, los que producirían alguna coincidencia.
 	
-	\begin{Huge}
-		\textcolor{red}{Falta un evento (algo con un listener). Que no sea click ni resize si puede ser}
-	\end{Huge}
 	
 	\section{Uso de jQuery y JES6}
-	\begin{Huge}
-		\textcolor{red}{Falta un código con jQuery}
-	\end{Huge}
 
-	En relación con JES6, se utiliza constatemente en los códigos ya mostrados, por ejemplo en el uso de \texttt{let} y \texttt{const} en la declaración de variables, o la utilización de funciones arrow.
-	\begin{Huge}
-		\textcolor{red}{Yo mucho JES6 no tengo. Si tienes algo mejor mételo}
-	\end{Huge}
+    Para ilustrar el uso de objetos jQuery, vale por ejemplo el código de la sección anterior relacionado con la respuesta a eventos para filtros, pero a continuación mostramos otro distinto que también emplea esta librería. Este efecto es el relacionado con la interactividad entre las tarjetas de destinos y el mapa. 
+
+    \begin{lstlisting}
+let card = $('<div>', { class: 'destination-card' });
+let marker = L.marker([latitude, longitude], { riseOnHover: true }).addTo(markerGroup).bindPopup(name);
+
+/* Guardar referencias para hacerlo interactivo */
+card.data('marker', marker);
+marker.card = card;
+
+/* Eventos en la carta */
+card.hover(
+    function() {
+        marker.openPopup();
+        marker.setZIndexOffset(1000);
+        map.setView([latitude, longitude], 5);
+    },
+    function() {
+        marker.closePopup();
+        marker.setZIndexOffset(0);
+    }
+);
+card.on('click', function() {
+    map.setView([latitude, longitude], 12);
+});
+
+/* Eventos en el mapa */
+marker.on('mouseover', function() {
+    this.openPopup();
+    this.setZIndexOffset(1000);
+    this.card.addClass('highlight');
+});
+marker.on('mouseout', function() {
+    this.closePopup();
+    this.setZIndexOffset(0);
+    this.card.removeClass('highlight');
+});
+marker.on('click', function() {
+    map.setView([latitude, longitude], 12);
+});
+    \end{lstlisting}
+
+    En este código, se genera mediante jQuery una carta de destino dinámicamente (esa parte se omite) y un marcador en el mapa mediante la librería Leaflet ya mencionada. Se guardan referencias cruzadas entre ambos elementos y se añaden eventos en la carta de tal forma que al posicionarse sobre ella o pulsarla se haga zoom en el mapa en la ubicación correspondiente. De igual forma, cuando se pase el botón sobre el marcador en el mapa o se pulse, se destacará la carta asociada. Este comportamiento se puede apreciar en el siguiente pantallazo (aunque el comportamiento no se aprecia del todo bien debido a las limitaciones intrínsecas de intentar hacer una captura de pantalla a un comportamiento dinámico).
+
+	\begin{figure} [H]
+		\centering
+        \includegraphics[width=0.8\textwidth]{CSS/4 extra.png}
+		\caption{Interactividad en el mapa de Descubre gracias a jQuery}
+	\end{figure}
+
+    En relación con JES6, este se utiliza constatemente en los códigos ya mostrados, por ejemplo en el uso de \texttt{let} y \texttt{const} en la declaración de variables, la utilización de funciones arrow o el uso de \texttt{async}/\texttt{await} en la lectura de archivos.
+
+    Por ejemplo, se puede ver en el siguiente código, usado para la actualización de los filtros de servicios relevantes en la página Reserva un uso constante de elementos de JES6, entremezclado también con jQuery, por ejemplo, en el uso de funciones arrow para filtrar los servicios utilizando un estilo funcional, o el uso de \texttt{const} en lugar de \texttt{var} para declarar datos que no van a variar en toda la función. 
+
+    \begin{lstlisting}
+function updateServiceFilters(visibleServices) {
+    const allServices = visibleServices
+        .flatMap(service => service.servicios)
+        .filter((value, index, self) => self.indexOf(value) === index); // Servicios unicos
+
+    const container = $('.checkbox-group');
+    container.empty();
+
+    allServices.forEach(service => {
+        const label = service.charAt(0).toUpperCase() + service.slice(1).toLowerCase();
+        container.append(`
+        <label>
+            <input type="checkbox" 
+                   class="service-checkbox" 
+                   data-service="${service}"
+                   ${currentFilters.services.includes(service) ? 'checked' : ''}>
+            ${label}
+        </label>
+    `);
+    });
+
+    // Re-asignar eventos
+    $('.service-checkbox').off('change').on('change', function() {
+        currentFilters.services = $('.service-checkbox:checked')
+            .map((i, el) => $(el).data('service')).get();
+        applyFilters();
+    });
+}
+    \end{lstlisting}
 	
 	\section{Carga de contenido}
-	En esta sección se mostrarán dos posibles formas de cargar contenido, una utilizando API Fetch para leer un archivo JSON, en el que se encuentran los eventos que luego se muestran en el calendario, y otra que usa \textcolor{red}{??????????????????????} para cargar un archivo XML y \textcolor{red}{habla algo del Single Page Application si quieres}
+	En esta sección se mostrarán dos posibles formas de cargar contenido, una utilizando API Fetch para leer un archivo JSON, en el que se encuentran los eventos que luego se muestran en el calendario, y otra que usa AJAX mediante jQuery para cargar un archivo XML a partir del que generar más fácilmente las tarjetas de destinos en la página Descubre y permitir su interacción dinámica con el mapa de esa página.
 	\subsection{Formato XML}
-	\begin{Huge}
-		\textcolor{red}{Falta -----------------------------------}
-	\end{Huge}
+
+    Para cargar el archivo XML con la información de las tarjetas de destinos, se utilizó la API de AJAX integrada en jQuery, que resulta muy moderna y fácil de utilizar. Se optó por trasladar la estructura y contenido de las tarjetas desde el HTML de la página Descubre a un archivo XML, lo que permite desacoplar los datos de los destinos de la estructura y presentación del documento, y facilita la interactividad con el mapa de esa misma página.
+
+    Esta decisión llevó de forma natural a adoptar un diseño \textit{Single Page Application} (SPA), de forma que lo que antes eran cinco páginas HTML distintas con cada una de las variantes de la página Descubre, accesibles mediante la barra de navegación secundaria, ahora se transformaron en una página única, y la barra de navegación secundaria pasa a utilizarse ahora para indicarle al código JavaScript de qué archivo XML obtener los datos. Este diseño es mucho más limpio y fácil de mantener, evitando tener que propagar los cambios a múltiples páginas cada vez que se quiera actualizar la web; es también más eficiente, pues en vez de recargar toda la paǵina, incluido el mapa que es costoso, solo se tienen que recargar las tarjetas y los marcadores. Una estrategia similar se empleó en la página Reserva, donde antes los filtros de tipo de servicio de la barra de navegación secundaria estaban pensados para enlazar páginas distintas y se transformaron en simplemente un filtro más, agilizando el desarrollo y facilitando el mantenimiento.
+
+    A continuación se muestra el formato utilizado para una tarjeta de destino en XML.
+
+	\begin{lstlisting}
+<?xml version="1.0" encoding="utf-8"?>
+<destinations>
+    <destination>
+        <image>
+            <src>descubre/1-Greece.jpg</src>
+            <alt>Grecia</alt>
+            <width>350</width>
+            <height>250</height>
+        </image>
+        <details>
+            <name>Atenas</name>
+            <description>
+            Cuna de la civilizacion occidental. Descubre la Acropolis,
+            el Partenon y platos tradicionales como la moussaka.
+            </description>
+            <price>
+                <lower>1800</lower>
+                <upper>3200</upper>
+            </price>
+        </details>
+        <location>
+            <latitude>37.9838</latitude>
+            <longitude>23.7275</longitude>
+        </location>
+    </destination>
+    <!-- ... -->
+</destinations>
+	\end{lstlisting}
+
+    Este archivo se carga mediante el siguiente código que emplea jQuery, y a partir de él se crea cada una de las tarjetas que se muestran en la página.
+
+	\begin{lstlisting}
+$.ajax({
+    url: rootPath + "/data/descubre/" + xmlFile,
+    type: "GET",
+    dataType: "xml",
+    success: function(xml) {
+        /* Eliminar el contenido previo */
+        $('#destinations').empty();
+
+        /* Procesar cada destino del archivo XML */
+        $(xml).find('destination').each(function() {
+            let imageSrc = $(this).find('image > src').text().trim();
+            let imageAlt = $(this).find('image > alt').text().trim();
+            let width = $(this).find('image > width').text().trim();
+            let height = $(this).find('image > height').text().trim();
+            let name = $(this).find('details > name').text().trim();
+            let description = $(this).find('details > description').text().trim();
+            let lowerPrice = $(this).find('details > price > lower').text().trim();
+            let upperPrice = $(this).find('details > price > upper').text().trim();
+            let latitude = parseFloat($(this).find('location > latitude').text().trim());
+            let longitude = parseFloat($(this).find('location > longitude').text().trim());
+
+            // ...
+        });
+    },
+    error: function() {
+        console.error('Error cargando el archivo XML');
+    }
+});
+	\end{lstlisting}
+
+    Como vemos, a través del método de jQuery \texttt{\$.ajax} se puede procesar un archivo XML indicando su dirección, el tipo de método HTTP empleado para obtenerlo, el tipo del archivo, y las funciones a ejecutar en caso de éxito y de fracaso. En la función de éxito, que es donde va la mayor parte del código, se puede acceder al contenido del archivo XML utilizando la sintáxis estándar de jQuery. Así, mediante el método \texttt{find()}, se puede acceder a los distintos campos del XML por su nombre, que en este caso guardamos en sendas variables para posteriormente poder construir las tarjetas dinámicamente. 
+
+    El efecto obtenido gracias a este código es el de una página SPA altamente interactiva y fácilmente modificable en cuanto a contenido. Para ilustrarlo, se muestra el cambio en la página tras pulsar en un elemento de la barra de navegación.
+    
+	\begin{figure} [H]
+		\centering
+        \includegraphics[width=0.8\textwidth]{CSS/4 extra1.png}
+		\caption{Cambio de las tarjetas y marcadores en Descubre a partir de datos en XML}
+	\end{figure}
 
 	\subsection{Formato JSON}
 	Como se ha mencionado, se carga un archivo JSON sencillo que incluye los próximos eventos relevantes para el usuario, los cuales se muestran en el calendario señalando los días en los que ocurren, y junto a él en una lista donde aparece la fecha en formato de texto y el nombre del evento. El formato utilizado en el archivo JSON es
@@ -1267,5 +1460,4 @@ function highlightEvents(instance, events) {
 		\bibitem{flatpickr} \href{https://flatpickr.js.org/}{Flatpickr (Calendario responsivo con CSS y JavaScript)}
         \bibitem{leaflet} \href{https://leafletjs.com/}{Leaflet (Mapa interactivo con CSS y JavaScript)}
 	\end{thebibliography}
-	
 \end{document}
