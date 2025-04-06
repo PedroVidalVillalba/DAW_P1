@@ -1156,7 +1156,7 @@ marker.on('click', function() {
 
     En relación con JES6, este se utiliza constatemente en los códigos ya mostrados, por ejemplo en el uso de \texttt{let} y \texttt{const} en la declaración de variables, la utilización de funciones arrow o el uso de \texttt{async}/\texttt{await} en la lectura de archivos.
 
-    Por ejemplo, se puede ver en el siguiente código, usado para la actualización de los filtros de servicios relevantes en la página Reserva un uso constante de elementos de JES6, entremezclado también con jQuery, por ejemplo, en el uso de funciones arrow para filtrar los servicios utilizando un estilo funcional, o el uso de \texttt{const} en lugar de \texttt{var} para declarar datos que no van a variar en toda la función. 
+    Por ejemplo, se puede ver en el siguiente código, usado para la actualización de los filtros de servicios relevantes en la página Reserva, un uso constante de elementos de JES6, entremezclado también con jQuery, por ejemplo, en el uso de funciones arrow para filtrar los servicios utilizando un estilo funcional, o el uso de \texttt{const} en lugar de \texttt{var} para declarar datos que no van a variar en toda la función. 
 
     \begin{lstlisting}
 function updateServiceFilters(visibleServices) {
@@ -1273,7 +1273,7 @@ $.ajax({
 	\end{figure}
 
 	\subsection{Formato JSON}
-	Como se ha mencionado, se carga un archivo JSON sencillo que incluye los próximos eventos relevantes para el usuario, los cuales se muestran en el calendario señalando los días en los que ocurren, y junto a él en una lista donde aparece la fecha en formato de texto y el nombre del evento. El formato utilizado en el archivo JSON es
+	Como se ha mencionado, se carga un archivo JSON sencillo que incluye los próximos eventos relevantes para el usuario, los cuales se muestran en el calendario señalando los días en los que ocurren, y junto a él en una lista donde aparece la fecha en formato de texto y el nombre del evento. Se utliiza también el formato JSON para cargar la información de las tarjetas de servicios en la página Reserva, pero como esta funcionalidad es análoga a la anterior, explicaremos en detalle la empleada para el calendario. El formato utilizado en el archivo JSON es
 	
 	\begin{lstlisting}
 {"events": [
@@ -1375,15 +1375,11 @@ function highlightEvents(instance, events) {
 	\label{sect:anexo2}
 	En esta sección se incluye una lista de cambios realizados a lo largo del proyecto, que difieren respecto al diseño original que se planteó. Cada uno incluye una breve descripción y una justificación de por qué se ha hecho.
 	
-	\begin{Huge}
-		\textcolor{red}{------------------------ Faltan tus cambios -----------------------}
-	\end{Huge}
-	
 	\subsection{Diseño Página principal}
 	
 	En la página principal se ha cambiado la zona principal en la que se pretendían mostrar dos imágenes en el diseño inicial. Después de investigar todas las posibilidades que ofrece la librería \textit{Bootstrap}, se decidió incorporar un carrusel de fotos, que dota a la página de un aspecto más profesional y trabajado.
 	
-	Otro cambio menos relevante es que ha optado por un color azul para el fondo de la sección de noticias, el cual es más suave que el color flamenco inicial, y encaja mejor en el diseño de la página. El apartado de valoraciones se mantiene sin cambios.
+	Otro cambio menos relevante es que ha optado por un color azul para el fondo de la sección de noticias, el cual es más suave que el color flamenco inicial, y encaja mejor en el diseño de la página. El apartado de valoraciones se mantiene sin cambios. Cabe destacar también el cambio en el logo a una versión más minimalista, creado vectorialmente con SVG, que permite un uso más eficiente del mismo a la hora de incorporarlo a la pestaña de navegación y en otros lugares de la web.
 	
 	\begin{figure} [H]
 		\centering
@@ -1397,6 +1393,27 @@ function highlightEvents(instance, events) {
 			\includegraphics[width=\textwidth]{full-1.png}
 		\end{minipage}
 		\caption{Comparativa diseño inicial y final de la página Principal}
+	\end{figure}
+
+
+    \subsection{Diseño Descubre}
+
+    En la página Descubre se mantuvo un diseño bastante similar al que estaba planeado desde un principio, con cambios estéticos que afectan principalmente a un diseño menos recargado para las tarjetas de destino. Así, estas pasaron de tener un fondo colorido a un blanco neutro, con un ligero borde que se destaca al interactuar con ellas. También se optó por el uso de bordes más redondeados y se cambió ligeramente la disposición de los componentes de la tarjeta, consiguiendo así una estética más pulida y un diseño más coherente con el resto del sitio web. Por supuesto, también hay cambios apreciables con respecto a la apariencia del mapa, pero estos ya eran esperados, pues en el diseño inicial se utilizó una imagen de stock que ya se esperaba que fuera sustituida por un mapa realista e interactivo con la apariencia estándar que estos tienen. 
+
+    Otro cambio significativo, ya no en el diseño sino en la estructura, es el ya mencionado uso de un diseño \textit{Single Page Application}. Así, de un diseño inicial en el que cada uno de los subapartados de la página se correspondería con un archivo HTML diferente, se pasó a una única página en el que las tarjetas y marcadores se actualizarían a partir de datos leídos de un archivo XML. Este diseño resulta mucho más escalable, eficiente y sencillo de mantener y desarrollar, desacoplando los datos de la estructura y la apariencia.
+
+	\begin{figure} [H]
+		\centering
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{mockup-descubre.png}
+		\end{minipage}
+		\hspace{0.04\textwidth}
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{full-2.png}
+		\end{minipage}
+		\caption{Comparativa diseño inicial y final de la página Descubre}
 	\end{figure}
 	
 	
@@ -1420,6 +1437,27 @@ function highlightEvents(instance, events) {
 		\caption{Comparativa diseño inicial y final de la página Planifica}
 	\end{figure}
 
+    \subsection{Diseño Reserva}
+    
+    Para la página Reserva, los cambios son sustanciales. En primer lugar, como ocurría en Descubre, de un diseño inicial que utilizaba varias páginas para cada uno de los tipos de servicios, se pasó a un diseño SPA en el que la barra de navegación secundaria se transformó en una capa adicional de filtros. Por este motivo, se incluyó la opción \textit{Todos} para poder optar por no filtrar por tipo de servicio. 
+
+    En lo que respecta a los filtros principales por destino, número de viajeros y fechas, se decidió eliminar la opción de búsqueda, que desequilibraba el diseño de la página y se consideró prescindible al disponer ya de numerosos filtros. En cuanto a la barra lateral de filtros secundarios, se mantuvo su propósito y su estructura, pero se adaptó su diseño por uno mucho menos recargado, en línea con el diseño del resto del sitio web, pasanto a usar un fondo neutro y reservando el color para los márgenes y los títulos; también se adaptó el estilo de las estrellas de puntuación y los \textit{checkbox} para adaptarlo a los colores que se utilizaron para la interactividad en el resto de páginas. 
+
+    Otro cambio muy destacable es el referente a las tarjetas de servicios. Como en todas las páginas, se optó por un diseño más minimalista y simplificado, eliminando las imágenes para no saturar la página y poder apreciar mejor el efecto de los filtros que se estaban aplicando, además de facilitar su aplicación en tiempo real, pues se ahorra el coste de renderizar las imágenes. En general, como se viene mencionando, se optó por un diseño más limpio y pulido que proporcionase una estética más profesional y cohesionada a toda la página.
+
+	\begin{figure} [H]
+		\centering
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{mockup-reserva.png}
+		\end{minipage}
+		\hspace{0.04\textwidth}
+		\begin{minipage}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{full-4.png}
+		\end{minipage}
+		\caption{Comparativa diseño inicial y final de la página Reserva}
+	\end{figure}
 	
 	\subsection{Diseño About us}
 	
@@ -1441,11 +1479,30 @@ function highlightEvents(instance, events) {
 	
 	
 	\section{Estructura de ficheros}
-	La estructura de ficheros general se ha mantenido a lo largo del proyecto, aunque se ha añadido algún subdirectorio a los que se mencionan en \ref{ficheros}. Concretamente, cada una de las cinco páginas principales tiene su propio directorio dentro de /html y /images, con el objetivo de facilitar la gestión de grandes cantidades de contenido.
-	
-	\begin{huge}
-		\textcolor{red}{Se podría incluir un tree para enseñar los archivos, o lo que se ve en el IDE}
-	\end{huge}
+    La estructura de ficheros y directorios general se ha mantenido a lo largo del proyecto, aunque se ha añadido algún subdirectorio a los que se mencionan en la sección \ref{ficheros}. Concretamente, cada una de las cinco páginas principales tiene su propio directorio dentro de \texttt{/html} e \texttt{/images} (para las que emplean imágenes), con el objetivo de facilitar la gestión de grandes cantidades de contenido. 
+
+    Destaca también la creación del directorio \texttt{/data}, para guardar los archivos XML y JSON utilizados en la generación dinámica del contenido de las páginas, que también se estructuraron en su propio subdirectorio en el caso de los archivos XML de la página Descubre para imitar la estructura original que tenía originalmente esta pagina y que se conseguía antes a través de archivos HTML. 
+
+    El directorio \texttt{/documentation} sigue presente para albergar todo lo relacionado con la redacción de esta memoria, pero se excluye aquí y en la entrega pues no aporta nada interesante y su único propósito es servir de soporte para la creación de este documento. Se muestra a continuación la estructura de directorios y ficheros final del proyecto.
+
+	\begin{figure} [h]
+		\centering
+		\begin{minipage}[c]{0.25\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{estructura_ficheros_final1.png}
+		\end{minipage}
+		% \hspace{0.05\textwidth}
+		\begin{minipage}[c]{0.25\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{estructura_ficheros_final2.png}
+		\end{minipage}
+		% \hspace{0.05\textwidth}
+		\begin{minipage}[c]{0.25\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{estructura_ficheros_final3.png}
+		\end{minipage}
+		\caption{Estructura final de ficheros}
+	\end{figure}
 
 	\begin{thebibliography}{9}
 		\bibitem{exp} \href{https://experiencetravelgroup.com}{Experience travel group}
